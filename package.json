@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "build": "browserify web/js/EditorController.js > main.js",
-    "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js",
-    "cov-test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js && coveralls < coverage/lcov.info"
+    "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js"
   },
   "bin": {},
   "repository": {
