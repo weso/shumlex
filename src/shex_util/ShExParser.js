@@ -1,6 +1,5 @@
 const shexp = require('shex').Parser;
 const XMIGenerator = require ("../xmi_util/xmigen/XMIGenerator.js");
-const idioma = require("../../web/js/lang/alertloc.js");
 
 /**
  * Parsea ShEx para la generación del grafo o de XMI
@@ -59,7 +58,7 @@ class ShExParser {
     try {
       this.source = this.shexparser.parse(shex);
     } catch (ex) {
-      alert(idioma.getLocalizedAlert("shexerror1") + ex + idioma.getLocalizedAlert("shexerror2"));
+      alert(ex);
       return null;
     }
     return this.source;

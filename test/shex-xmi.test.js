@@ -1,9 +1,6 @@
 const shexparser = require('../src/shex_util/ShExParser.js');
 const XMIRep = require('../src/repo/xmirepository.js');
 const ShExRep = require('../src/repo/shexrepository.js');
-const idioma = require("../web/js/lang/alertloc.js");
-const es = require('../web/js/lang/langrepo.js').es;
-const en = require('../web/js/lang/langrepo.js').en;
 
 /**
  * Comprueba que no se generen ID null

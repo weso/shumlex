@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "browserify web/js/EditorController.js > main.js",
-    "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js alert.test.js",
-    "cov-test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js alert.test.js && coveralls < coverage/lcov.info"
+    "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js",
+    "cov-test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js puml.test.js joint.test.js && coveralls < coverage/lcov.info"
   },
   "bin": {},
   "repository": {
@@ -22,11 +22,6 @@
     "jest": "^25.2.4"
   },
   "dependencies": {
-    "browserify": "^16.5.0",
-    "cytoscape": "^3.15.0",
-    "cytoscape-dagre": "^2.2.2",
-    "cytoscape-panzoom": "^2.5.3",
-    "jquery": "^3.5.1",
     "shex": "^0.9.2",
     "uniqid": "^5.2.0",
     "xml2js": "^0.4.23"

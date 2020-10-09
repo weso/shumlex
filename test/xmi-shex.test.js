@@ -1,9 +1,6 @@
 const xmiparser = require('../src/xmi_util/XMIParser.js');
 const XMIRep = require('../src/repo/xmirepository.js');
 const ShExRep = require('../src/repo/shexrepository.js');
-const idioma = require("../web/js/lang/alertloc.js");
-const es = require('../web/js/lang/langrepo.js').es;
-const en = require('../web/js/lang/langrepo.js').en;
 
 /**
  * Realiza las comprobaciones estándar para los test
