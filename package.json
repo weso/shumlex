@@ -14,7 +14,7 @@
   },
    "publishConfig": {
     "registry": "https://registry.npmjs.org/@weso/shumlex"
-  }
+  },
   "author": "Jorge Fidalgo <UO258524@uniovi.es>",
   "bugs": {
     "url": "https://github.com/weso/shumlex/issues"
