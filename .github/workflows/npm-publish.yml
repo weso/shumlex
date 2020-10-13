@@ -43,6 +43,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@weso'
       - run: npm ci
-      - run: npm publish --access=public
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PERSONAL_TOKEN}}
