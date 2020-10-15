@@ -1,8 +1,8 @@
-const shexparser = require('../../src/shex_util/ShExParser.js');
-const xmiparser = require('../../src/xmi_util/XMIParser.js');
+const shexparser = require('./src/shex_util/ShExParser.js');
+const xmiparser = require('./src/xmi_util/XMIParser.js');
 
-const GrafoGen = require("../../src/visual/GrafoGen.js");
-const UMLGen = require("../../src/visual/UMLGen.js");
+const GrafoGen = require("./src/visual/GrafoGen.js");
+const UMLGen = require("./src/visual/UMLGen.js");
 let grgen = new GrafoGen();
 let umlgen = new UMLGen();
 
