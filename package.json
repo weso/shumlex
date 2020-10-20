@@ -1,6 +1,6 @@
 {
   "name": "shumlex",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "ShEx - Uml integration",
   "main": "main.js",
   "scripts": {

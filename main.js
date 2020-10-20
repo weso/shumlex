@@ -1,6 +1,6 @@
 const shexparser = require('./src/shex_util/ShExParser.js');
 const xmiparser = require('./src/xmi_util/XMIParser.js');
-const plantumlEncoder = require('./lib/plantuml-encoder');
+const plantumlEncoder = require('./lib/plantuml-encoder/main.js');
 
 const GrafoGen = require("./src/visual/GrafoGen.js");
 const UMLGen = require("./src/visual/UMLGen.js");
@@ -26,7 +26,7 @@ function crearPUML(xmi) {
 function crearDiagramaUML(xmi) {
     let puml = crearPUML(xmi);
     let encoded = plantumlEncoder.encode(puml);
-    return "http://www.plantuml.com/plantuml/img/${encoded}"
+    return "http://www.plantuml.com/plantuml/img/" + encoded
 }
 
 module.exports = {
