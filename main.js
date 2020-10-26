@@ -1,6 +1,6 @@
 const shexparser = require('./src/shex_util/ShExParser.js');
 const xmiparser = require('./src/xmi_util/XMIParser.js');
-const plantumlEncoder = require('./lib/plantuml-encoder/main.js');
+const plantumlEncoder = require('./lib/plantuml-encoder/puml.js');
 
 const GrafoGen = require("./src/visual/GrafoGen.js");
 const UMLGen = require("./src/visual/UMLGen.js");
