@@ -143,7 +143,7 @@ class UMLGen {
             }
 
         } catch (ex) {
-            alert("Se ha producido un error durante la generación de UML.\n" +
+            console.log("Se ha producido un error durante la generación de UML.\n" +
                 "El XMI está bien formado, pero faltan elementos o atributos clave para la generación.\n"
                 + ex);
             return "";

@@ -58,7 +58,7 @@ class ShExParser {
     try {
       this.source = this.shexparser.parse(shex);
     } catch (ex) {
-      alert(ex);
+      console.log(ex);
       return null;
     }
     return this.source;

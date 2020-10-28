@@ -22,7 +22,7 @@ class XMIParser {
         xmlparser.parseString(xmi, function (err, result) {
             self.source = result;
             if(err) {
-                alert(err.toString().replace("Error: ", ""));
+                console.log(err.toString().replace("Error: ", ""));
             }
         });
 
@@ -107,7 +107,7 @@ class XMIParser {
             shExEquivalent = shexgen.createShExHeader() + shExEquivalent;
 
         } catch (ex) {
-            alert(ex);
+            console.log(ex);
             return "";
         } finally {
             //Reseteamos el generador
