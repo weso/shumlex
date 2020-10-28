@@ -8,6 +8,7 @@ let grgen = new GrafoGen();
 let umlgen = new UMLGen();
 
 function shExToXMI(text) {
+	shexparser.resetParser();
     return shexparser.parseShExToXMI(text);
 }
 

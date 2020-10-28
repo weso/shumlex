@@ -15,6 +15,10 @@ class ShExParser {
 
     this.xmigen = new XMIGenerator();
   }
+  
+  resetParser() {
+	  this.shexparser.reset();
+  }
 
   /**
    * Parsea ShEx y convoca la generación de XMI a partir del JSON obtenido
