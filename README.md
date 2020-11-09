@@ -6,7 +6,7 @@ Welcome to Shumlex.
 
 Its purpose is to develop a tool which allows an integration between both Shape Expressions and UML, enabling the user to create an UML equivalent to the desired set of Shape Expressions, as well as the opposite. Moreover, it seeks to ease such tasks by contributing some complementary features which allow a integrated display of the data.
 
-Shumlex is available as a *[NPM Package](https://www.npmjs.com/package/shumlex) as well as a *[GitHub Package](https://github.com/weso/shumlex/packages/436974).
+Shumlex is available as a [NPM Package](https://www.npmjs.com/package/shumlex) as well as a [GitHub Package](https://github.com/weso/shumlex/packages/436974).
 
 A creation by Mr. Jorge Álvarez Fidalgo for WESO Group.
 
@@ -14,27 +14,27 @@ A creation by Mr. Jorge Álvarez Fidalgo for WESO Group.
 
 ### NPM
 
-* Install the latest version.
+#### Install the latest version.
 > npm install shumlex
 
 ### GPK
 
-You must log in to Github Packages or create a .npmrc file with the authentication info to install it. (See *[link](https://docs.github.com/es/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages))
+You must log in to Github Packages or create a .npmrc file with the authentication info to install it. (See [link](https://docs.github.com/es/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages))
 
-* Install the latest version.
+#### Install the latest version.
 > npm install @weso/shumlex@0.2.2
 
 
 ## Test
 
-You may run the available tests in the installed module:
+#### You may run the available tests in the installed module:
 > npm test
 
 Both ShEx-XMI and XMI-ShEX conversions are tested, including all of the proposed examples in the application, as well as a few addons. Graph generation is tested as well.
 
 ## How to use
 
---- In construction
+### In construction
 
 ## Importing and exporting our XMI in Visual Paradigm
 
