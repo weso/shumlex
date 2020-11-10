@@ -34,7 +34,71 @@ Both ShEx-XMI and XMI-ShEX conversions are tested, including all of the proposed
 
 ## How to use
 
-### In construction
+Once installed, import the package. For instance:
+
+```
+const shumlex = require('shumlex')
+```
+
+Shumlex provides four different methods, which are shown below.
+
+### ShEx To XMI: _shExToXMI()_
+
+This method provides a XMI value (as a String) equivalent to any given ShEx value (as a String parameter).
+
+```
+let xmi = shumlex.shExToXMI(shex)
+```
+
+In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the XMI in a String variable named _xmi_.
+
+### XMI To ShEx: _XMIToShEx()_
+
+This method provides a ShEx value (as a String) equivalent to any given XMI value (as a String parameter).
+
+```
+let shex = shumlex.XMIToShEx(xmi)
+```
+
+In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI schema and we save the ShEx in a String variable named _shex_.
+
+### ShEx to Cytoscape Graph: _crearGrafo():_
+
+This method provides a JSON value which may be used to represent the ShEx value passed as a String parameter in a Cytoscape graph of Dagre layout.
+
+```
+ let grf = shumlex.crearGrafo(shex)
+ ```
+
+In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the JSON in a variable named _grf_.
+
+With such JSON value we can easily create a Cytoscape graph, just like this:
+
+```
+ let cy = cyto({
+    container: document.getElementById('graph'), // Container
+    elements: grf,  // JSON created by crearGrafo()
+    style: style,
+    layout: {
+      name: 'dagre',
+      nodeSep: 60,
+      edgeSep: 40,
+      rankSep: 80
+    }
+```
+
+### XMI to PlantUML Class Diagram: _crearDiagramaUML()_
+
+This method provides a PlantUML URL which contains, as a image, UML Class Diagram corresponding to the XMI value passed as a String parameter.
+
+```
+let uml = shumlex.crearDiagramaUML(xmi)
+```
+
+In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI value and we save the URL in a variable named _uml_.
+
+This URL may be used as a _src_ attribute in a HTML _img_ element to effortlessly show the class diagram in a webpage.
+
 
 ## Importing and exporting our XMI in Visual Paradigm
 
