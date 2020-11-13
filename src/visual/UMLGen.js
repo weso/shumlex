@@ -24,9 +24,8 @@ class UMLGen {
      * @returns {string}    En formato PUML
      */
     generarCodigoPUML(xmi) {
-        let puml = "@startuml\n";
+        let puml = "classDiagram\n";
         puml += this.parseXMIToPUML(xmi);
-        puml += "@enduml";
         return puml;
     }
 
@@ -117,17 +116,22 @@ class UMLGen {
                     name === "Prefixes") {
                     this.enums.set(id, name);
                     //Generamos la enumeración que contiene los prefijos
-                    pumlEquivalent += "enum " + name + " {\n";
+                    pumlEquivalent += "class " + name + " {\n&lt;&lt;enumeration&gt;&gt;\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        pumlEquivalent +=  packagedElements[i].ownedLiteral[j].$.name + "\n";
+						let prefix = packagedElements[i].ownedLiteral[j].$.name;
+						let fragments = prefix.split(" ");
+						if(fragments[0] === "prefix") {
+							prefix = `${fragments[0]} <${fragments[1]}> ${fragments[2]}`;
+						}
+                        pumlEquivalent +=  prefix + "\n";
                     }
-                    pumlEquivalent += "} \n";
+                    pumlEquivalent += "}\n";
 
                 }
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    pumlEquivalent += "enum \"" + name + "\" {\n";
+                    pumlEquivalent += "class " + name.replace(":", "_") + " {\n&lt;&lt;enumeration&gt;&gt;\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
                         pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
                     }

@@ -11,5 +11,7 @@ function mostraruml() {
 	let val = $("#xmitext").val();
 	let umlgen = uml.crearPUML(val);
 	$("#output").text(umlgen);
+	$("#outputtoshow").text(umlgen);
 	mermaid.init({}, "#uml");
+	mermaid.init({}, "#outputtoshow");
 }

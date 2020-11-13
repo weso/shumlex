@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+.npmrc
 
 /target
 /project
@@ -15,3 +16,4 @@
 npm-debug.log*
 
 .idea
+bmain.js
