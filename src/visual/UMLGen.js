@@ -165,8 +165,8 @@ class UMLGen {
 
         //Extraemos las restricciones y se las asignamos al nombre, si existen
         let cn = this.constraints.get(element.$["xmi:id"]);
-        let name = "\"" + element.$.name + (cn === undefined ? "" : " " + cn) + "\"";
-        let clase = "class " + name + "\n";
+        let name = element.$.name.replace(":", "_") + (cn === undefined ? "" : " " + cn);
+        let clase = "class " + name + " {\n";
 
         //Relaciones de herencia
         if(element.generalization) {
@@ -185,6 +185,7 @@ class UMLGen {
 
         //Generamos los atributos de la clase
         clase += this.createUMLAttributes(attributes, name);
+		clase += "}\n"
 
         return clase;
     }
@@ -253,7 +254,7 @@ class UMLGen {
         let card = ShExCardinality.cardinalityOf(at);
         let cn = this.constraints.get(at.$["xmi:id"]);
 
-        return name + " : " + at.$.name + " " + this.getType(at) + " " + card
+        return name + " : " + at.$.name.replace(":", "_") + " " + this.getType(at).replace(":", "_") + " " + card
             + (cn === undefined ? "" : cn) + " \n";
     }
 
