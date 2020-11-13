@@ -131,7 +131,7 @@ class UMLGen {
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    pumlEquivalent += "class " + name.replace(":", "_") + " {\n&lt;&lt;enumeration&gt;&gt;\n";
+                    pumlEquivalent += "class " + this.adaptPref(name) + " {\n&lt;&lt;enumeration&gt;&gt;\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
                         pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
                     }
@@ -165,7 +165,7 @@ class UMLGen {
 
         //Extraemos las restricciones y se las asignamos al nombre, si existen
         let cn = this.constraints.get(element.$["xmi:id"]);
-        let name = element.$.name.replace(":", "_") + (cn === undefined ? "" : " " + cn);
+        let name = this.adaptPref(element.$.name) + (cn === undefined ? "" : " " + cn);
         let clase = "class " + name + " {\n";
 
         //Relaciones de herencia
@@ -184,8 +184,10 @@ class UMLGen {
         }
 
         //Generamos los atributos de la clase
-        clase += this.createUMLAttributes(attributes, name);
+        let ats = this.createUMLAttributes(attributes, name);
+		ats.ins.forEach(el => clase += el);
 		clase += "}\n"
+		ats.out.forEach(el => clase += el);
 
         return clase;
     }
@@ -197,26 +199,27 @@ class UMLGen {
      * @returns {string}    Listado de atributos
      */
     createUMLAttributes(ats, name) {
-        let content = "";
+		let insideElements = [];
+		let outsideElements = [];
         for(let i = 0; i < ats.length; i++) {
             let shape = this.shm.getShape(ats[i].$.type);
             let subSet = this.shm.getSubSet(ats[i].$.type);
             //Asociación entre clases
             if(ats[i].$.association                                 //Modelio ver.
                 || shape !== undefined || subSet !== undefined) {   //VP ver.
-                content += this.createUMLAsoc(ats[i], name);
+                outsideElements.push(this.createUMLAsoc(ats[i], name));
             }
             //Restricción de tipo de nodo
             else if(ats[i].$.name.toLowerCase() === "nodekind") {
                 let kind = this.types.get(ats[i].$.type);
-                content += name + " : " + "nodeKind: " + kind + " \n";
+                insideElements.push(name + " : " + "nodeKind: " + kind + " \n");
             }
             //Atributo común
             else {
-                content += this.createUMLBasicAt(ats[i], name);
+                insideElements.push(this.createUMLBasicAt(ats[i], name));
             }
         }
-        return content;
+        return { out: outsideElements, ins: insideElements};
     }
 
     /**
@@ -238,8 +241,8 @@ class UMLGen {
 
         //at.$.type indica el nombre de la clase
         //at.$.name indica el nombre de la relación
-        return name + relation + ccard + " \""
-            + this.classes.get(at.$.type) + "\" : \"" + at.$.name + "\"\n";
+        return name + relation + ccard + " "
+            + this.adaptPref(this.classes.get(at.$.type)) + " : " + this.adaptPref(at.$.name) + "\n";
     }
 
     /**
@@ -254,7 +257,7 @@ class UMLGen {
         let card = ShExCardinality.cardinalityOf(at);
         let cn = this.constraints.get(at.$["xmi:id"]);
 
-        return name + " : " + at.$.name.replace(":", "_") + " " + this.getType(at).replace(":", "_") + " " + card
+        return name + " : " + this.adaptPref(at.$.name) + " " + this.adaptPref(this.getType(at)) + " " + card
             + (cn === undefined ? "" : cn) + " \n";
     }
 
@@ -288,6 +291,10 @@ class UMLGen {
         }
         return ".";
     }
+	
+	adaptPref(prefix) {
+		return prefix.replace(":", "_").replace("<", "").replace(">", "");
+	}
 
 }
 module.exports = UMLGen;
