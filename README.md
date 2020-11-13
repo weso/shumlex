@@ -6,7 +6,7 @@ Welcome to Shumlex.
 
 Its purpose is to develop a tool which allows an integration between both Shape Expressions and UML, enabling the user to create an UML equivalent to the desired set of Shape Expressions, as well as the opposite. Moreover, it seeks to ease such tasks by contributing some complementary features which allow a integrated display of the data.
 
-Shumlex is available as a *[NPM Package](https://www.npmjs.com/package/shumlex) as well as a *[GitHub Package](https://github.com/weso/shumlex/packages/436974).
+Shumlex is available as a [NPM Package](https://www.npmjs.com/package/shumlex) as well as a [GitHub Package](https://github.com/weso/shumlex/packages/436974).
 
 A creation by Mr. Jorge Álvarez Fidalgo for WESO Group.
 
@@ -14,27 +14,91 @@ A creation by Mr. Jorge Álvarez Fidalgo for WESO Group.
 
 ### NPM
 
-* Install the latest version.
+#### Install the latest version.
 > npm install shumlex
 
 ### GPK
 
-You must log in to Github Packages or create a .npmrc file with the authentication info to install it. (See *[link](https://docs.github.com/es/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages))
+You must log in to Github Packages or create a .npmrc file with the authentication info to install it. (See [link](https://docs.github.com/es/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages))
 
-* Install the latest version.
+#### Install the latest version.
 > npm install @weso/shumlex@0.2.2
 
 
 ## Test
 
-You may run the available tests in the installed module:
+#### You may run the available tests in the installed module:
 > npm test
 
 Both ShEx-XMI and XMI-ShEX conversions are tested, including all of the proposed examples in the application, as well as a few addons. Graph generation is tested as well.
 
 ## How to use
 
---- In construction
+Once installed, import the package. For instance:
+
+```
+const shumlex = require('shumlex')
+```
+
+Shumlex provides four different methods, which are shown below.
+
+### ShEx To XMI: _shExToXMI()_
+
+This method provides a XMI value (as a String) equivalent to any given ShEx value (as a String parameter).
+
+```
+let xmi = shumlex.shExToXMI(shex)
+```
+
+In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the XMI in a String variable named _xmi_.
+
+### XMI To ShEx: _XMIToShEx()_
+
+This method provides a ShEx value (as a String) equivalent to any given XMI value (as a String parameter).
+
+```
+let shex = shumlex.XMIToShEx(xmi)
+```
+
+In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI schema and we save the ShEx in a String variable named _shex_.
+
+### ShEx to Cytoscape Graph: _crearGrafo():_
+
+This method provides a JSON value which may be used to represent the ShEx value passed as a String parameter in a Cytoscape graph of Dagre layout.
+
+```
+ let grf = shumlex.crearGrafo(shex)
+ ```
+
+In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the JSON in a variable named _grf_.
+
+With such JSON value we can easily create a Cytoscape graph, just like this:
+
+```
+ let cy = cyto({
+    container: document.getElementById('graph'), // Container
+    elements: grf,  // JSON created by crearGrafo()
+    style: style,
+    layout: {
+      name: 'dagre',
+      nodeSep: 60,
+      edgeSep: 40,
+      rankSep: 80
+    }
+```
+
+### XMI to PlantUML Class Diagram: _crearDiagramaUML()_
+
+This method provides a PlantUML URL which contains, as a image, UML Class Diagram corresponding to the XMI value passed as a String parameter.
+
+```
+let uml = shumlex.crearDiagramaUML(xmi)
+```
+
+In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI value and we save the URL in a variable named _uml_.
+
+This URL may be used as a _src_ attribute in a HTML _img_ element to effortlessly show the class diagram in a webpage.
+
 
 ## Importing and exporting our XMI in Visual Paradigm
 
