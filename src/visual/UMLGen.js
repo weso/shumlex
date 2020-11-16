@@ -135,7 +135,7 @@ class UMLGen {
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
                         pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
                     }
-                    pumlEquivalent += "} \n";
+                    pumlEquivalent += "}\n";
                 }
             }
 
@@ -168,16 +168,6 @@ class UMLGen {
         let name = this.adaptPref(element.$.name) + (cn === undefined ? "" : " " + cn);
         let clase = "class " + name + " {\n";
 
-        //Relaciones de herencia
-        if(element.generalization) {
-            for(let i = 0; i < element.generalization.length; i++) {
-                let hename = element.generalization[i].$.name !== undefined ?
-                    ("\"" + element.generalization[i].$.name + "\"") : "";
-                clase += "\"" + this.classes.get(element.generalization[i].$.general) + "\" <|-- " + name
-                    + " : " + hename + "\n";
-            }
-        }
-
         let attributes = element.ownedAttribute;
         if(!attributes) {
             attributes = [];
@@ -186,8 +176,21 @@ class UMLGen {
         //Generamos los atributos de la clase
         let ats = this.createUMLAttributes(attributes, name);
 		ats.ins.forEach(el => clase += el);
-		clase += "}\n"
+		clase += "}\n";
+		if(ats.ins.length === 0) {
+			clase = "";
+		}
 		ats.out.forEach(el => clase += el);
+		
+		//Relaciones de herencia
+        if(element.generalization) {
+            for(let i = 0; i < element.generalization.length; i++) {
+                let hename = element.generalization[i].$.name ?
+                    (" : " + element.generalization[i].$.name) : "";
+                clase += this.adaptPref(this.classes.get(element.generalization[i].$.general)) + " <|-- " + this.adaptPref(name)
+                    + hename + "\n";
+            }
+        }
 
         return clase;
     }
