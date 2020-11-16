@@ -121,7 +121,7 @@ class UMLGen {
 						let prefix = packagedElements[i].ownedLiteral[j].$.name;
 						let fragments = prefix.split(" ");
 						if(fragments[0] === "prefix") {
-							prefix = `${fragments[0]} <${fragments[1]}> ${fragments[2]}`;
+							prefix = `${fragments[0]} \\${fragments[1]} ${fragments[2]}`;
 						}
                         pumlEquivalent +=  prefix + "\n";
                     }
@@ -259,9 +259,12 @@ class UMLGen {
 
         let card = ShExCardinality.cardinalityOf(at);
         let cn = this.constraints.get(at.$["xmi:id"]);
+		if (cn !== undefined) {
+			cn = cn.split(" ").join(" \\");
+		}
 
-        return name + " : " + this.adaptPref(at.$.name) + " " + this.adaptPref(this.getType(at)) + " " + card
-            + (cn === undefined ? "" : cn) + " \n";
+        return name + " : " + this.adaptPref(at.$.name) + " \"" + this.adaptPref(this.getType(at)) + "\\" + card
+            + (cn === undefined ? "" : " \\" +  cn) + "\" \n";
     }
 
     /**
