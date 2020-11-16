@@ -116,7 +116,7 @@ class UMLGen {
                     name === "Prefixes") {
                     this.enums.set(id, name);
                     //Generamos la enumeración que contiene los prefijos
-                    pumlEquivalent += "class " + name + " {\n&lt;&lt;enumeration&gt;&gt;\n";
+                    pumlEquivalent += "class " + name + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
 						let prefix = packagedElements[i].ownedLiteral[j].$.name;
 						let fragments = prefix.split(" ");
@@ -131,7 +131,7 @@ class UMLGen {
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    pumlEquivalent += "class " + this.adaptPref(name) + " {\n&lt;&lt;enumeration&gt;&gt;\n";
+                    pumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
                         pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
                     }
@@ -215,7 +215,7 @@ class UMLGen {
             //Restricción de tipo de nodo
             else if(ats[i].$.name.toLowerCase() === "nodekind") {
                 let kind = this.types.get(ats[i].$.type);
-                insideElements.push(name + " : " + "nodeKind: " + kind + " \n");
+                insideElements.push("nodeKind: " + kind + " \n");
             }
             //Atributo común
             else {
