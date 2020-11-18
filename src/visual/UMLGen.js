@@ -133,7 +133,7 @@ class UMLGen {
                     this.enums.set(id, name);
                     pumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
+                        pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
                     }
                     pumlEquivalent += "}\n";
                 }
@@ -299,7 +299,7 @@ class UMLGen {
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(":", "_").replace("<", "").replace(">", "");
+		return prefix.replace(":", "_").replace("<", "_").replace(">", "_");
 	}
 
 }

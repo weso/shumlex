@@ -27,18 +27,34 @@ function crearPUML(xmi) {
 }
 
 function crearDiagramaUML(xmi) {
-	let umlgen = crearPUML(xmi);
+	function removeClosed(str, p1, p2, offset, s)
+	{
+		return str.replace("CLOSED ", "");
+	}
+		
+	let umlgen = crearPUML(xmi).replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
 	$("#output").text(umlgen);
+	$("#outputtoshow").removeAttr("data-processed");
 	$("#outputtoshow").text(umlgen);
 	mermaid.init({}, "#outputtoshow");
+	
+	function replacer(str, p1, p2, offset, s)
+		{
+			return "<" + str.replace(/_/g, "") + ">";
+		}
 	
 	//Borrar caracteres empleados para la generación
 	$( "#outputtoshow tspan" ).each(function( index ) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/\\/g, "")
 								.replace(/\"/g, "")
+								.replace(/_[A-Za-z0-9]+_/g, replacer)
 								.replace(/_/g, ":")
-								.replace(/:?[A-Za-z0-9]+ : /g, ""))
+								.replace(/::/g, "_:")
+								.replace(/:Blank/g, "_Blank")
+								.replace(/\*(<|>)/g, "~")
+								.replace(/CLOSED/g, " CLOSED")
+								.replace(/:?[^prefix][A-Za-z0-9]+ : /g, ""))
 	});
 	$( "#outputtoshow .label" ).each(function( index ) {
 		let contenido = $(this).text();
@@ -49,11 +65,8 @@ function crearDiagramaUML(xmi) {
 		let contenido = $(this).text();
 		if(contenido === "Prefixes")
 			return;
-		function replacer(str, p1, p2, offset, s)
-		{
-			return "<" + str + ">";
-		}
-		$(this).text(contenido.replace(/^[^:][A-Za-z0-9]+$/g, replacer))
+		
+		//$(this).text(contenido.replace(/^[^:][A-Za-z0-9]+$/g, replacer))
 	});
 }
 
