@@ -141,6 +141,9 @@ class UMLGen {
 
             //Generamos las clases y su contenido
             for (let i = 0; i < packagedElements.length; i++) {
+				if(packagedElements[i]["$"].name === ":ribosomal_RNA") {
+					console.log("WO");
+				}
                 if (packagedElements[i]["$"]["xmi:type"] === "uml:Class") {
                     pumlEquivalent += this.createUMLClass(packagedElements[i])
                 }
@@ -293,13 +296,16 @@ class UMLGen {
             if(enumer) {
                 return enumer;
             }
-            return this.types.get(attr.$.type);
+			let type = this.types.get(attr.$.type);
+			if(type) {
+				return type;
+			}
         }
         return ".";
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(":", "_").replace("<", "_").replace(">", "_");
+		return prefix.replace(":", "_").replace("<", "_").replace(">", "_").replace("^", "_inverse_");
 	}
 
 }

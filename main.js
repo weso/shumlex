@@ -36,7 +36,7 @@ function crearDiagramaUML(xmi) {
 	$("#output").text(umlgen);
 	$("#outputtoshow").removeAttr("data-processed");
 	$("#outputtoshow").text(umlgen);
-	mermaid.init({}, "#outputtoshow");
+	mermaid.init({flowchart: { useMaxWidth: false }}, "#outputtoshow");
 	
 	function replacer(str, p1, p2, offset, s)
 		{
@@ -48,6 +48,7 @@ function crearDiagramaUML(xmi) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/\\/g, "")
 								.replace(/\"/g, "")
+								.replace(/_inverse_/g, "^")
 								.replace(/_[A-Za-z0-9]+_/g, replacer)
 								.replace(/_/g, ":")
 								.replace(/::/g, "_:")
