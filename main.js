@@ -63,6 +63,8 @@ function crearDiagramaUML(id, xmi) {
 		if(contenido === "Prefixes")
 			return;
 	});
+	
+	$("#" + id + " svg").removeAttr("width");
 }
 
 module.exports = {
