@@ -19,23 +19,23 @@ class UMLGen {
     }
 
     /**
-     * Genera el código PlantUML
+     * Genera el código Mermaid
      * @param xmi   XMI fuente
-     * @returns {string}    En formato PUML
+     * @returns {string}    En formato MUML
      */
-    generarCodigoPUML(xmi) {
-        let puml = "classDiagram\n";
-        puml += this.parseXMIToPUML(xmi);
-        return puml;
+    generarCodigoMUML(xmi) {
+        let muml = "classDiagram\n";
+        muml += this.parseXMIToMUML(xmi);
+        return muml;
     }
 
     /**
-     * Parsea el valor XMI a código PUML
+     * Parsea el valor XMI a código MUML
      * @param xmi   XMI a parsear
      * @returns {string}
      */
-    parseXMIToPUML(xmi) {
-        let pumlEquivalent = "";
+    parseXMIToMUML(xmi) {
+        let mumlEquivalent = "";
 
         let source = xmiparser.parseXMI(xmi);
 
@@ -116,26 +116,26 @@ class UMLGen {
                     name === "Prefixes") {
                     this.enums.set(id, name);
                     //Generamos la enumeración que contiene los prefijos
-                    pumlEquivalent += "class " + name + " {\n<<enumeration>>\n";
+                    mumlEquivalent += "class " + name + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
 						let prefix = packagedElements[i].ownedLiteral[j].$.name;
 						let fragments = prefix.split(" ");
 						if(fragments[0] === "prefix") {
 							prefix = `${fragments[0]} \\${fragments[1]} ${fragments[2]}`;
 						}
-                        pumlEquivalent +=  prefix + "\n";
+                        mumlEquivalent +=  prefix + "\n";
                     }
-                    pumlEquivalent += "}\n";
+                    mumlEquivalent += "}\n";
 
                 }
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    pumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
+                    mumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
+                        mumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
                     }
-                    pumlEquivalent += "}\n";
+                    mumlEquivalent += "}\n";
                 }
             }
 
@@ -145,7 +145,7 @@ class UMLGen {
 					console.log("WO");
 				}
                 if (packagedElements[i]["$"]["xmi:type"] === "uml:Class") {
-                    pumlEquivalent += this.createUMLClass(packagedElements[i])
+                    mumlEquivalent += this.createUMLClass(packagedElements[i])
                 }
             }
 
@@ -155,8 +155,15 @@ class UMLGen {
                 + ex);
             return "";
         }
+		
+		function removeClosed(str, p1, p2, offset, s)
+		{
+			return str.replace("CLOSED ", "");
+		}
+		
+		mumlEquivalent = mumlEquivalent.replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
 
-        return pumlEquivalent;
+        return mumlEquivalent;
     }
 
     /**

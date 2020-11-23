@@ -8,5 +8,5 @@ shxtx.click(mostraruml);
 
 function mostraruml() {
 	let val = $("#xmitext").val();
-	uml.crearDiagramaUML(val);
+	uml.crearDiagramaUML("outputtoshow", val);
 }

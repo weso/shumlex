@@ -22,21 +22,17 @@ function crearGrafo(shex) {
 	return grgen.shExAGrafo(shex);
 }
 
-function crearPUML(xmi) {
-	return umlgen.generarCodigoPUML(xmi);
+function crearMUML(xmi) {
+	return umlgen.generarCodigoMUML(xmi);
 }
 
-function crearDiagramaUML(xmi) {
-	function removeClosed(str, p1, p2, offset, s)
-	{
-		return str.replace("CLOSED ", "");
-	}
-		
-	let umlgen = crearPUML(xmi).replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
+function crearDiagramaUML(id, xmi) {
+			
+	let umlgen = crearMUML(xmi);
 	$("#output").text(umlgen);
-	$("#outputtoshow").removeAttr("data-processed");
-	$("#outputtoshow").text(umlgen);
-	mermaid.init({flowchart: { useMaxWidth: false }}, "#outputtoshow");
+	$("#" + id).removeAttr("data-processed");
+	$("#" + id).text(umlgen);
+	mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
 	
 	function replacer(str, p1, p2, offset, s)
 		{
@@ -44,7 +40,7 @@ function crearDiagramaUML(xmi) {
 		}
 	
 	//Borrar caracteres empleados para la generación
-	$( "#outputtoshow tspan" ).each(function( index ) {
+	$( "#" + id + " tspan" ).each(function( index ) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/\\/g, "")
 								.replace(/\"/g, "")
@@ -55,19 +51,17 @@ function crearDiagramaUML(xmi) {
 								.replace(/:Blank/g, "_Blank")
 								.replace(/\*(<|>)/g, "~")
 								.replace(/CLOSED/g, " CLOSED")
-								.replace(/:?[^prefix][A-Za-z0-9]+ : /g, ""))
+								.replace(/_?:?<?[^prefix][A-Za-z0-9]+>? : /g, ""))
 	});
-	$( "#outputtoshow .label" ).each(function( index ) {
+	$( "#" + id + " .label" ).each(function( index ) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/_/g, ":"))
 	});
 	//Añadir <> a los que carezcan de prefijo
-	$( "#outputtoshow .title" ).each(function( index ) {
+	$( "#" + id + " .title" ).each(function( index ) {
 		let contenido = $(this).text();
 		if(contenido === "Prefixes")
 			return;
-		
-		//$(this).text(contenido.replace(/^[^:][A-Za-z0-9]+$/g, replacer))
 	});
 }
 
@@ -75,6 +69,6 @@ module.exports = {
     shExToXMI,
     XMIToShEx,
 	crearGrafo,
-	crearPUML,
+	crearMUML,
 	crearDiagramaUML
 }
