@@ -8,32 +8,32 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _gender {
+class ___dp___gender {
 <<enumeration>>
 :Male
 :Female
 }
-class _User {
-_User : _name "xsd_string\\" 
-_User : _age "xsd_int\\ ?" 
-_User : _gender "_gender\\" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
+___dp___User : ___dp___age "xsd___dp___int\\ ?" 
+___dp___User : ___dp___gender "___dp___gender\\" 
 }
-class _TypeTest_ {
-_TypeTest_ : _z "xsd_string\\" 
-_TypeTest_ : _b "xsd_date\\" 
-_TypeTest_ : _c "xsd_time\\" 
-_TypeTest_ : _d "xsd_dateTime\\" 
-_TypeTest_ : _e "xsd_duration\\" 
-_TypeTest_ : _f "xsd_byte\\" 
-_TypeTest_ : _g "xsd_decimal\\" 
-_TypeTest_ : _h "xsd_int\\" 
-_TypeTest_ : _i "xsd_integer\\" 
-_TypeTest_ : _j "xsd_long\\" 
-_TypeTest_ : _k "xsd_short\\" 
-_TypeTest_ : _l "xsd_boolean\\" 
-_TypeTest_ : _m "xsd_double\\" 
-_TypeTest_ : _n "xsd_float\\" 
-_TypeTest_ : _xyz "xsd_invent\\" 
+class ___anga___TypeTest___angc___ {
+___anga___TypeTest___angc___ : ___dp___z "xsd___dp___string\\" 
+___anga___TypeTest___angc___ : ___dp___b "xsd___dp___date\\" 
+___anga___TypeTest___angc___ : ___dp___c "xsd___dp___time\\" 
+___anga___TypeTest___angc___ : ___dp___d "xsd___dp___dateTime\\" 
+___anga___TypeTest___angc___ : ___dp___e "xsd___dp___duration\\" 
+___anga___TypeTest___angc___ : ___dp___f "xsd___dp___byte\\" 
+___anga___TypeTest___angc___ : ___dp___g "xsd___dp___decimal\\" 
+___anga___TypeTest___angc___ : ___dp___h "xsd___dp___int\\" 
+___anga___TypeTest___angc___ : ___dp___i "xsd___dp___integer\\" 
+___anga___TypeTest___angc___ : ___dp___j "xsd___dp___long\\" 
+___anga___TypeTest___angc___ : ___dp___k "xsd___dp___short\\" 
+___anga___TypeTest___angc___ : ___dp___l "xsd___dp___boolean\\" 
+___anga___TypeTest___angc___ : ___dp___m "xsd___dp___double\\" 
+___anga___TypeTest___angc___ : ___dp___n "xsd___dp___float\\" 
+___anga___TypeTest___angc___ : ___dp___xyz "xsd___dp___invent\\" 
 }
 `
     }
@@ -46,35 +46,35 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _name "xsd_string\\" 
-_User : _age "xsd_int\\" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
+___dp___User : ___dp___age "xsd___dp___int\\" 
 }
-_User -->  _User : _knows
-_User -->  _Company : _worksFor
-_User --> " {1,10}" _Product_ : _buys
-_User <|-- _Ultrauser
-_Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser
+___dp___User -->  ___dp___User : ___dp___knows
+___dp___User -->  ___dp___Company : ___dp___worksFor
+___dp___User --> " {1,10}" ___anga___Product___angc___ : ___dp___buys
+___dp___User <|-- ___dp___Ultrauser
+___dp___Titanuser *--  _Blank1 : AND
+___dp___User <|-- ___dp___Titanuser
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _titancode "xsd_string\\" 
+_Blank2 : ___dp___titancode "xsd___dp___string\\" 
 }
-class _Company {
-_Company : _name "xsd_string\\" 
+class ___dp___Company {
+___dp___Company : ___dp___name "xsd___dp___string\\" 
 }
-_Company --> " *" _User : _hasEmployee
-_Company --> " {5,}" _Product_ : _possess
-class _Product_ {
-_Product_ : _name "Any\\" 
-_Product_ : _sku "xsd_boolean\\" 
+___dp___Company --> " *" ___dp___User : ___dp___hasEmployee
+___dp___Company --> " {5,}" ___anga___Product___angc___ : ___dp___possess
+class ___anga___Product___angc___ {
+___anga___Product___angc___ : ___dp___name "Any\\" 
+___anga___Product___angc___ : ___dp___sku "xsd___dp___boolean\\" 
 }
-_Product_ --> " +" _Organization_ : _manufacturer
-class _Organization_ {
-_Organization_ : _name "xsd_string\\" 
+___anga___Product___angc___ --> " +" ___anga___Organization___angc___ : ___dp___manufacturer
+class ___anga___Organization___angc___ {
+___anga___Organization___angc___ : ___dp___name "xsd___dp___string\\" 
 }
-_Organization_ --> " ?" _Organization_ : _isPartOf
-_Organization_ --> " {5}" _User : _hasDirectives
+___anga___Organization___angc___ --> " ?" ___anga___Organization___angc___ : ___dp___isPartOf
+___anga___Organization___angc___ --> " {5}" ___dp___User : ___dp___hasDirectives
 `;
    }
 
@@ -86,25 +86,25 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class Extra__VIPUser {
+class Extra____dp___VIPUser {
 <<enumeration>>
 a
 }
-class _User {
-_User : _name "xsd_string\\" 
-_User : _age "xsd_int\\ ?" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
+___dp___User : ___dp___age "xsd___dp___int\\ ?" 
 }
-_User <|-- _Ultrauser
-_Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser
+___dp___User <|-- ___dp___Ultrauser
+___dp___Titanuser *--  _Blank1 : AND
+___dp___User <|-- ___dp___Titanuser
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _titancode "xsd_string\\" 
+_Blank2 : ___dp___titancode "xsd___dp___string\\" 
 }
-class _VIPUser {
-_VIPUser : Extra "Extra__VIPUser\\" 
+class ___dp___VIPUser {
+___dp___VIPUser : Extra "Extra____dp___VIPUser\\" 
 }
-_User <|-- _VIPUser
+___dp___User <|-- ___dp___VIPUser
 `;
     }
 
@@ -116,30 +116,30 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
+class ___dp___User {
 nodeKind: IRI 
 }
-_User *--  _Blank1 : AND
+___dp___User *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\" 
 }
-class _Ultrauser {
+class ___dp___Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser
-class _Titanuser {
+___dp___User <|-- ___dp___Ultrauser
+class ___dp___Titanuser {
 nodeKind: NonLiteral 
 }
-_Titanuser *--  _Blank3 : AND
-_User <|-- _Titanuser
+___dp___Titanuser *--  _Blank3 : AND
+___dp___User <|-- ___dp___Titanuser
 _Blank3 *--  _Blank4 : Shape
-class _Product_ {
+class ___anga___Product___angc___ {
 nodeKind: BNode 
 }
-_Product_ *--  _Blank5 : AND
+___anga___Product___angc___ *--  _Blank5 : AND
 _Blank5 *--  _Blank6 : Shape
-class _AThing_ {
+class ___anga___AThing___angc___ {
 nodeKind: IRI 
 }
 `;
@@ -153,30 +153,30 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
+class ___dp___User {
 nodeKind: IRI 
 }
-_User *--  _Blank1 : AND
+___dp___User *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\" 
 }
-class _Ultrauser {
+class ___dp___Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser
-class _Titanuser {
+___dp___User <|-- ___dp___Ultrauser
+class ___dp___Titanuser {
 nodeKind: NonLiteral 
 }
-_Titanuser *--  _Blank3 : AND
-_User <|-- _Titanuser
+___dp___Titanuser *--  _Blank3 : AND
+___dp___User <|-- ___dp___Titanuser
 _Blank3 *--  _Blank4 : Shape
-class _Product_ {
+class ___anga___Product___angc___ {
 nodeKind: BNode 
 }
-_Product_ *--  _Blank5 : AND
+___anga___Product___angc___ *--  _Blank5 : AND
 _Blank5 *--  _Blank6 : Shape
-class _AThing_ {
+class ___anga___AThing___angc___ {
 nodeKind: IRI 
 }
 `;
@@ -190,14 +190,14 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _name "xsd_string\\ \\/[a-z]+/" 
-_User : _age "xsd_int\\ ? \\MinInclusive \\18" 
-_User : _c "xsd_int\\ \\TotalDigits \\3" 
-_User : _d "xsd_int\\ \\FractionDigits \\4" 
-_User : _e "xsd_string\\ \\Length \\6" 
-_User : _f "xsd_string\\ \\MinLength \\3" 
-_User : _g "xsd_string\\ \\MaxLength \\15" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\ \\/[a-z]+/" 
+___dp___User : ___dp___age "xsd___dp___int\\ ? \\MinInclusive \\18" 
+___dp___User : ___dp___c "xsd___dp___int\\ \\TotalDigits \\3" 
+___dp___User : ___dp___d "xsd___dp___int\\ \\FractionDigits \\4" 
+___dp___User : ___dp___e "xsd___dp___string\\ \\Length \\6" 
+___dp___User : ___dp___f "xsd___dp___string\\ \\MinLength \\3" 
+___dp___User : ___dp___g "xsd___dp___string\\ \\MaxLength \\15" 
 }
 `;
     }
@@ -210,28 +210,28 @@ prefix \\: <https://schema.org/>
 prefix \\codes: <http://example.codes/>
 base <http://example.org/>
 }
-class _status {
+class ___dp___status {
 <<enumeration>>
 codes:*~ - codes:unknown - codes:bad.*~ 
 "111"
 }
-class _phone {
+class ___dp___phone {
 <<enumeration>>
 "+34"*~ - "+3468031" - "+3467182"*~ 
 }
-class _quantity {
+class ___dp___quantity {
 <<enumeration>>
 99*~ - 9987 - 991*~ 
 }
-class _url {
+class ___dp___url {
 <<enumeration>>
 codes:Personal*~
 }
-class _Product {
-_Product : _status "_status\\" 
-_Product : _phone "_phone\\" 
-_Product : _quantity "_quantity\\" 
-_Product : _url "_url\\" 
+class ___dp___Product {
+___dp___Product : ___dp___status "___dp___status\\" 
+___dp___Product : ___dp___phone "___dp___phone\\" 
+___dp___Product : ___dp___quantity "___dp___quantity\\" 
+___dp___Product : ___dp___url "___dp___url\\" 
 }
 `;
     }
@@ -244,22 +244,22 @@ prefix \\codes: <http://example.codes/>
 prefix \\: <http://schema.org/>
 base <http://example.org/>
 }
-class _status {
+class ___dp___status {
 <<enumeration>>
 . - codes:bad 
 }
-class _name {
+class ___dp___name {
 <<enumeration>>
 . - "Trademark" 
 }
-class _price {
+class ___dp___price {
 <<enumeration>>
 . - 66 
 }
-class _Product {
-_Product : _status "_status\\" 
-_Product : _name "_name\\" 
-_Product : _price "_price\\" 
+class ___dp___Product {
+___dp___Product : ___dp___status "___dp___status\\" 
+___dp___Product : ___dp___name "___dp___name\\" 
+___dp___Product : ___dp___price "___dp___price\\" 
 }
 `;
     }
@@ -272,33 +272,33 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _frlabel {
+class ___dp___frlabel {
 <<enumeration>>
 @fr 
 }
-class _enlabel {
+class ___dp___enlabel {
 <<enumeration>>
 @en*~ 
 }
-class _splabel {
+class ___dp___splabel {
 <<enumeration>>
 @es*~ - @es-AR - @es-ES 
 }
-class _label {
+class ___dp___label {
 <<enumeration>>
 . - @kz 
 }
-class _FrenchProduct {
-_FrenchProduct : _frlabel "_frlabel\\" 
+class ___dp___FrenchProduct {
+___dp___FrenchProduct : ___dp___frlabel "___dp___frlabel\\" 
 }
-class _EnglishProduct {
-_EnglishProduct : _enlabel "_enlabel\\" 
+class ___dp___EnglishProduct {
+___dp___EnglishProduct : ___dp___enlabel "___dp___enlabel\\" 
 }
-class _SpanishProduct {
-_SpanishProduct : _splabel "_splabel\\" 
+class ___dp___SpanishProduct {
+___dp___SpanishProduct : ___dp___splabel "___dp___splabel\\" 
 }
-class _AnyProduct {
-_AnyProduct : _label "_label\\" 
+class ___dp___AnyProduct {
+___dp___AnyProduct : ___dp___label "___dp___label\\" 
 }
 `;
     }
@@ -311,33 +311,33 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _name "xsd_string\\" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
 }
-_User *-- " ?" _Blank1 : EachOf
-_User *-- " *" _Blank2 : EachOf
-_User -->  _Garage : _owns
+___dp___User *-- " ?" _Blank1 : EachOf
+___dp___User *-- " *" _Blank2 : EachOf
+___dp___User -->  ___dp___Garage : ___dp___owns
 class _Blank1 {
-_Blank1 : _givenName "xsd_string\\" 
-_Blank1 : _familyName "xsd_string\\" 
+_Blank1 : ___dp___givenName "xsd___dp___string\\" 
+_Blank1 : ___dp___familyName "xsd___dp___string\\" 
 }
 class _Blank2 {
-_Blank2 : _c "xsd_string\\" 
+_Blank2 : ___dp___c "xsd___dp___string\\" 
 }
-_Blank2 --> " {2,}" _Something_ : _has
-_Garage *-- " +" _Blank3 : EachOf
+_Blank2 --> " {2,}" ___anga___Something___angc___ : ___dp___has
+___dp___Garage *-- " +" _Blank3 : EachOf
 class _Blank3 {
-_Blank3 : _AE86_ "xsd_string\\" 
+_Blank3 : ___anga___AE86___angc___ "xsd___dp___string\\" 
 }
 _Blank3 *-- " ?" _Blank4 : EachOf
 _Blank3 *-- " ?" _Blank5 : EachOf
 class _Blank4 {
-_Blank4 : _Levin_ "xsd_string\\" 
-_Blank4 : _Cilinders_ "xsd_int\\" 
+_Blank4 : ___anga___Levin___angc___ "xsd___dp___string\\" 
+_Blank4 : ___anga___Cilinders___angc___ "xsd___dp___int\\" 
 }
 class _Blank5 {
-_Blank5 : _Trueno_ "xsd_string\\" 
-_Blank5 : _Cilinders_ "xsd_int\\" 
+_Blank5 : ___anga___Trueno___angc___ "xsd___dp___string\\" 
+_Blank5 : ___anga___Cilinders___angc___ "xsd___dp___int\\" 
 }
 `;
     }
@@ -350,33 +350,33 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _name "xsd_string\\" 
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
 }
-_User *-- " ?" _Blank1 : EachOf
-_User *-- " *" _Blank2 : EachOf
-_User -->  _Garage : _owns
+___dp___User *-- " ?" _Blank1 : EachOf
+___dp___User *-- " *" _Blank2 : EachOf
+___dp___User -->  ___dp___Garage : ___dp___owns
 class _Blank1 {
-_Blank1 : _givenName "xsd_string\\" 
-_Blank1 : _familyName "xsd_string\\" 
+_Blank1 : ___dp___givenName "xsd___dp___string\\" 
+_Blank1 : ___dp___familyName "xsd___dp___string\\" 
 }
 class _Blank2 {
-_Blank2 : _c "xsd_string\\" 
+_Blank2 : ___dp___c "xsd___dp___string\\" 
 }
-_Blank2 --> " {2,}" _Something_ : _has
-_Garage *-- " +" _Blank3 : EachOf
+_Blank2 --> " {2,}" ___anga___Something___angc___ : ___dp___has
+___dp___Garage *-- " +" _Blank3 : EachOf
 class _Blank3 {
-_Blank3 : _AE86_ "xsd_string\\" 
+_Blank3 : ___anga___AE86___angc___ "xsd___dp___string\\" 
 }
 _Blank3 *-- " ?" _Blank4 : EachOf
 _Blank3 *-- " ?" _Blank5 : EachOf
 class _Blank4 {
-_Blank4 : _Levin_ "xsd_string\\" 
-_Blank4 : _Cilinders_ "xsd_int\\" 
+_Blank4 : ___anga___Levin___angc___ "xsd___dp___string\\" 
+_Blank4 : ___anga___Cilinders___angc___ "xsd___dp___int\\" 
 }
 class _Blank5 {
-_Blank5 : _Trueno_ "xsd_string\\" 
-_Blank5 : _Cilinders_ "xsd_int\\" 
+_Blank5 : ___anga___Trueno___angc___ "xsd___dp___string\\" 
+_Blank5 : ___anga___Cilinders___angc___ "xsd___dp___int\\" 
 }
 `;
     }
@@ -389,23 +389,23 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-_User *--  _Blank1 : OneOf
+___dp___User *--  _Blank1 : OneOf
 class _Blank1 {
-_Blank1 : _name "xsd_string\\" 
+_Blank1 : ___dp___name "xsd___dp___string\\" 
 }
 _Blank1 *--  _Blank2 : EachOf
 class _Blank2 {
-_Blank2 : _givenName "xsd_string\\ +" 
-_Blank2 : _familyName "xsd_string\\" 
+_Blank2 : ___dp___givenName "xsd___dp___string\\ +" 
+_Blank2 : ___dp___familyName "xsd___dp___string\\" 
 }
-class _Car {
-_Car : _model "xsd_string\\" 
+class ___dp___Car {
+___dp___Car : ___dp___model "xsd___dp___string\\" 
 }
-_Car *-- " {1,2}" _Blank3 : OneOf
+___dp___Car *-- " {1,2}" _Blank3 : OneOf
 class _Blank3 {
-_Blank3 : _turbo "xsd_string\\" 
-_Blank3 : _misfiring "xsd_string\\" 
-_Blank3 : _atm "xsd_string\\" 
+_Blank3 : ___dp___turbo "xsd___dp___string\\" 
+_Blank3 : ___dp___misfiring "xsd___dp___string\\" 
+_Blank3 : ___dp___atm "xsd___dp___string\\" 
 }
 `;
     }
@@ -418,21 +418,21 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _Car {
-_Car : _name "xsd_string\\" 
+class ___dp___Car {
+___dp___Car : ___dp___name "xsd___dp___string\\" 
 }
-_Car -->  __1 : _belongs
-class _User {
-_User : _name "xsd_string\\" 
+___dp___Car -->  ____dp___1 : ___dp___belongs
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
 }
-_User *--  __2 : _worksFor
-_Company <|-- __2
-_GreatGrandson *--  __3 : _parent
-__3 *--  __4 : _parent
-class __4 {
-__4 : _parent "Any\\ +" 
+___dp___User *--  ____dp___2 : ___dp___worksFor
+___dp___Company <|-- ____dp___2
+___dp___GreatGrandson *--  ____dp___3 : ___dp___parent
+____dp___3 *--  ____dp___4 : ___dp___parent
+class ____dp___4 {
+____dp___4 : ___dp___parent "Any\\ +" 
 }
-_Garage <|-- __1
+___dp___Garage <|-- ____dp___1
 `;
     }
 
@@ -444,24 +444,24 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _gender {
+class ___dp___gender {
 <<enumeration>>
 :Male
 :Female
 }
-class _User CLOSED {
+class ___dp___User CLOSED {
 nodeKind: IRI 
 }
-_User CLOSED *--  _Blank1 : AND
+___dp___User CLOSED *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\ \\MaxLength \\3" 
-_Blank2 : _age "xsd_int\\ ?" 
-_Blank2 : _gender "_gender\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\ \\MaxLength \\3" 
+_Blank2 : ___dp___age "xsd___dp___int\\ ?" 
+_Blank2 : ___dp___gender "___dp___gender\\" 
 }
-_Blank2 -->  _User CLOSED : _knows
-class _Company CLOSED {
-_Company : _name "xsd_string\\" 
+_Blank2 -->  ___dp___User CLOSED : ___dp___knows
+class ___dp___Company CLOSED {
+___dp___Company : ___dp___name "xsd___dp___string\\" 
 }
 `;
     }
@@ -474,24 +474,24 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _gender {
+class ___dp___gender {
 <<enumeration>>
 :Male
 :Female
 }
-class _User CLOSED {
+class ___dp___User CLOSED {
 nodeKind: IRI 
 }
-_User CLOSED *--  _Blank1 : AND
+___dp___User CLOSED *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\ \\MaxLength \\3" 
-_Blank2 : _age "xsd_int\\ ?" 
-_Blank2 : _gender "_gender\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\ \\MaxLength \\3" 
+_Blank2 : ___dp___age "xsd___dp___int\\ ?" 
+_Blank2 : ___dp___gender "___dp___gender\\" 
 }
-_Blank2 -->  _User CLOSED : _knows
-class _Company CLOSED {
-_Company : _name "xsd_string\\" 
+_Blank2 -->  ___dp___User CLOSED : ___dp___knows
+class ___dp___Company CLOSED {
+___dp___Company : ___dp___name "xsd___dp___string\\" 
 }
 `;
     }
@@ -504,17 +504,17 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _inverse__gender {
+class ___inverse______dp___gender {
 <<enumeration>>
 :Male
 :Female
 }
-class _User {
-_User : _inverse__name "xsd_string\\" 
-_User : _inverse__gender "_inverse__gender\\" 
+class ___dp___User {
+___dp___User : ___inverse______dp___name "xsd___dp___string\\" 
+___dp___User : ___inverse______dp___gender "___inverse______dp___gender\\" 
 }
-_Person <|-- _User : ^
-_Company --> " +" _User : _inverse__worksFor
+___dp___Person <|-- ___dp___User : ^
+___dp___Company --> " +" ___dp___User : ___inverse______dp___worksFor
 `;
     }
 
@@ -526,20 +526,20 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class Extra__FollowSpaniards {
+class Extra____dp___FollowSpaniards {
 <<enumeration>>
 :follows
 }
-class _nationality {
+class ___dp___nationality {
 <<enumeration>>
 :Spain
 }
-class _FollowSpaniards {
-_FollowSpaniards : Extra "Extra__FollowSpaniards\\" 
+class ___dp___FollowSpaniards {
+___dp___FollowSpaniards : Extra "Extra____dp___FollowSpaniards\\" 
 }
-_FollowSpaniards *-- " +" __1 : _follows
-class __1 {
-__1 : _nationality "_nationality\\" 
+___dp___FollowSpaniards *-- " +" ____dp___1 : ___dp___follows
+class ____dp___1 {
+____dp___1 : ___dp___nationality "___dp___nationality\\" 
 }
 `;
     }
@@ -552,20 +552,20 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class Extra__FollowSpaniards {
+class Extra____dp___FollowSpaniards {
 <<enumeration>>
 :follows
 }
-class _nationality {
+class ___dp___nationality {
 <<enumeration>>
 :Spain
 }
-class _FollowSpaniards {
-_FollowSpaniards : Extra "Extra__FollowSpaniards\\" 
+class ___dp___FollowSpaniards {
+___dp___FollowSpaniards : Extra "Extra____dp___FollowSpaniards\\" 
 }
-_FollowSpaniards *-- " +" __1 : _follows
-class __1 {
-__1 : _nationality "_nationality\\" 
+___dp___FollowSpaniards *-- " +" ____dp___1 : ___dp___follows
+class ____dp___1 {
+____dp___1 : ___dp___nationality "___dp___nationality\\" 
 }
 `;
     }
@@ -578,23 +578,23 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _email "IRI\\" 
+class ___dp___User {
+___dp___User : ___dp___email "IRI\\" 
 }
-_User *--  _Blank1 : $_name
+___dp___User *--  _Blank1 : $___dp___name
 _Blank1 *--  _Blank2 : OneOf
 class _Blank2 {
-_Blank2 : _name "Any\\" 
+_Blank2 : ___dp___name "Any\\" 
 }
 _Blank2 *--  _Blank3 : EachOf
 class _Blank3 {
-_Blank3 : _givenName "Any\\" 
-_Blank3 : _familyName "Any\\" 
+_Blank3 : ___dp___givenName "Any\\" 
+_Blank3 : ___dp___familyName "Any\\" 
 }
-class _Employee {
-_Employee : _employeeId "Any\\" 
+class ___dp___Employee {
+___dp___Employee : ___dp___employeeId "Any\\" 
 }
-_Employee -->  _Blank1 : &_name
+___dp___Employee -->  _Blank1 : &___dp___name
 `;
     }
 
@@ -606,23 +606,23 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_User : _email "IRI\\" 
+class ___dp___User {
+___dp___User : ___dp___email "IRI\\" 
 }
-_User *--  _Blank1 : $_name
+___dp___User *--  _Blank1 : $___dp___name
 _Blank1 *--  _Blank2 : OneOf
 class _Blank2 {
-_Blank2 : _name "Any\\" 
+_Blank2 : ___dp___name "Any\\" 
 }
 _Blank2 *--  _Blank3 : EachOf
 class _Blank3 {
-_Blank3 : _givenName "Any\\" 
-_Blank3 : _familyName "Any\\" 
+_Blank3 : ___dp___givenName "Any\\" 
+_Blank3 : ___dp___familyName "Any\\" 
 }
-class _Employee {
-_Employee : _employeeId "Any\\" 
+class ___dp___Employee {
+___dp___Employee : ___dp___employeeId "Any\\" 
 }
-_Employee -->  _Blank1 : &_name
+___dp___Employee -->  _Blank1 : &___dp___name
 `;
     }
 
@@ -634,30 +634,30 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-_User *--  _Blank1 : AND
+___dp___User *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
 _Blank1 *--  _Blank3 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\" 
-_Blank2 : _owns "IRI\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\" 
+_Blank2 : ___dp___owns "IRI\\" 
 }
-_Blank3 -->  _Product : _owns
-_Titanuser *--  _Blank4 : AND
-_User <|-- _Titanuser
+_Blank3 -->  ___dp___Product : ___dp___owns
+___dp___Titanuser *--  _Blank4 : AND
+___dp___User <|-- ___dp___Titanuser
 _Blank4 *--  _Blank5 : Shape
 _Blank4 *--  _Blank6 : Shape
 class _Blank5 {
-_Blank5 : _titancode "xsd_string\\" 
+_Blank5 : ___dp___titancode "xsd___dp___string\\" 
 }
 class _Blank6 {
-_Blank6 : _owns "Literal\\" 
+_Blank6 : ___dp___owns "Literal\\" 
 }
-class _Ultrauser {
+class ___dp___Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser
-class _Product {
-_Product : _productId "xsd_string\\ \\MinLength \\5 \\MaxLength \\10" 
+___dp___User <|-- ___dp___Ultrauser
+class ___dp___Product {
+___dp___Product : ___dp___productId "xsd___dp___string\\ \\MinLength \\5 \\MaxLength \\10" 
 }
 `;
     }
@@ -670,26 +670,26 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-_User *--  _Blank1 : OR
+___dp___User *--  _Blank1 : OR
 _Blank1 *--  _Blank2 : Shape
 _Blank1 *--  _Blank3 : Shape
 class _Blank2 {
-_Blank2 : _name "xsd_string\\" 
-_Blank2 : _owns "IRI\\" 
+_Blank2 : ___dp___name "xsd___dp___string\\" 
+_Blank2 : ___dp___owns "IRI\\" 
 }
-_Blank3 -->  _Product : _owns
-_Titanuser *--  _Blank4 : OR
-_User <|-- _Titanuser : OR
+_Blank3 -->  ___dp___Product : ___dp___owns
+___dp___Titanuser *--  _Blank4 : OR
+___dp___User <|-- ___dp___Titanuser : OR
 _Blank4 *--  _Blank5 : Shape
 _Blank4 *--  _Blank6 : Shape
 class _Blank5 {
-_Blank5 : _titancode "xsd_string\\" 
+_Blank5 : ___dp___titancode "xsd___dp___string\\" 
 }
 class _Blank6 {
-_Blank6 : _owns "Literal\\" 
+_Blank6 : ___dp___owns "Literal\\" 
 }
-class _Product {
-_Product : _productId "xsd_string\\ \\OR \\MinLength \\5 \\OR \\MaxLength \\10" 
+class ___dp___Product {
+___dp___Product : ___dp___productId "xsd___dp___string\\ \\OR \\MinLength \\5 \\OR \\MaxLength \\10" 
 }
 `;
     }

@@ -162,7 +162,7 @@ class UMLGen {
 		}
 		
 		mumlEquivalent = mumlEquivalent
-							.replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
+							.replace(/[\r\n]+(___dp___|___anga___)[A-Za-z0-9]+(___angc___)? CLOSED :/g, removeClosed);
 
         return mumlEquivalent;
     }
@@ -313,7 +313,7 @@ class UMLGen {
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(":", "_").replace("<", "_").replace(">", "_").replace("^", "_inverse_");
+		return prefix.replace(":", "___dp___").replace("<", "___anga___").replace(">", "___angc___").replace("^", "___inverse___");
 	}
 
 }

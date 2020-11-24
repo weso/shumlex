@@ -26,47 +26,64 @@ function crearMUML(xmi) {
 	return umlgen.generarCodigoMUML(xmi);
 }
 
-function crearDiagramaUML(id, xmi) {
+function crearDiagramaUML(id, xmi, options) {
+	
+	let ops = options;
+	if (!options) {
+		ops = {};
+	}
+	
+	let maxheight = ops.max_height ? ops.max_height : "500px";
+	let maxwidth = ops.max_width ? ops.max_width : "100vw";
 			
 	let umlgen = crearMUML(xmi);
 	$("#output").text(umlgen);
 	$("#" + id).removeAttr("data-processed");
-	$("#" + id).css("max-height", "500px");
-	$("#" + id).css("max-width", "100vw");
+	$("#" + id).css("max-height", maxheight);
+	$("#" + id).css("max-width", maxwidth);
 	$("#" + id).text(umlgen);
 	mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
-	
-	function replacer(str, p1, p2, offset, s)
-		{
-			return "<" + str.replace(/_/g, "") + ">";
-		}
 	
 	//Borrar caracteres empleados para la generación
 	$( "#" + id + " tspan" ).each(function( index ) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/\\/g, "")
 								.replace(/\"/g, "")
-								.replace(/_inverse_/g, "^")
-								.replace(/_[A-Za-z0-9]+_/g, replacer)
-								.replace(/ _/g, " :")
-								.replace(/::/g, "_:")
+								.replace(/___inverse___/g, "^")
+								.replace(/___anga___/g, "<")
+								.replace(/___angc___/g, ">")
+								.replace(/___dp___/g, ":")
 								.replace(/:Blank/g, "_Blank")
 								.replace(/\*(<|>)/g, "~")
 								.replace(/CLOSED/g, " CLOSED")
-								.replace(/_?:?<?[^prefix][A-Za-z0-9]+>? : /g, "")
+								.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "")
 								)
 	});
 	
 	$( "#" + id + " .label" ).each(function( index ) {
 		let contenido = $(this).text();
-		$(this).text(contenido.replace(/_/g, ":"))
+		$(this).text(contenido.replace(/___dp___/g, ":"))
+	});
+	
+	//Ajustar título
+	$( "#" + id + " .title:contains(':')").each(function( index ) {
+		$(this).attr("x", 20 + parseInt($(this).attr("x")));
+	});
+	
+	$( "#" + id + " .title:contains('<')" ).each(function( index ) {
+		$(this).attr("x", 40 + parseInt($(this).attr("x")));
+	});
+	
+	$( "#" + id + " .title:contains('^')" ).each(function( index ) {
+		$(this).attr("x", 20 + parseInt($(this).attr("x")));
 	});
 	
 	//Añadir <> a los que carezcan de prefijo
 	$( "#" + id + " .title" ).each(function( index ) {
 		let contenido = $(this).text();
-		if(contenido === "Prefixes")
+		if(contenido === "Prefixes" || contenido.includes(":"))
 			return;
+		$(this).text("<" + contenido + ">")
 	});
 	
 	//Eliminar repeticiones de enumeraciones
@@ -88,6 +105,8 @@ function crearDiagramaUML(id, xmi) {
 	});
 	
 	$("#" + id + " svg").removeAttr("width");
+	
+	$(".cardinality text").attr("font-size", "12");
 }
 
 module.exports = {
