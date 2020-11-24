@@ -19,24 +19,23 @@ class UMLGen {
     }
 
     /**
-     * Genera el código PlantUML
+     * Genera el código Mermaid
      * @param xmi   XMI fuente
-     * @returns {string}    En formato PUML
+     * @returns {string}    En formato MUML
      */
-    generarCodigoPUML(xmi) {
-        let puml = "@startuml\n";
-        puml += this.parseXMIToPUML(xmi);
-        puml += "@enduml";
-        return puml;
+    generarCodigoMUML(xmi) {
+        let muml = "classDiagram\n";
+        muml += this.parseXMIToMUML(xmi);
+        return muml;
     }
 
     /**
-     * Parsea el valor XMI a código PUML
+     * Parsea el valor XMI a código MUML
      * @param xmi   XMI a parsear
      * @returns {string}
      */
-    parseXMIToPUML(xmi) {
-        let pumlEquivalent = "";
+    parseXMIToMUML(xmi) {
+        let mumlEquivalent = "";
 
         let source = xmiparser.parseXMI(xmi);
 
@@ -117,28 +116,36 @@ class UMLGen {
                     name === "Prefixes") {
                     this.enums.set(id, name);
                     //Generamos la enumeración que contiene los prefijos
-                    pumlEquivalent += "enum " + name + " {\n";
+                    mumlEquivalent += "class " + name + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        pumlEquivalent +=  packagedElements[i].ownedLiteral[j].$.name + "\n";
+						let prefix = packagedElements[i].ownedLiteral[j].$.name;
+						let fragments = prefix.split(" ");
+						if(fragments[0] === "prefix") {
+							prefix = `${fragments[0]} \\${fragments[1]} ${fragments[2]}`;
+						}
+                        mumlEquivalent +=  prefix + "\n";
                     }
-                    pumlEquivalent += "} \n";
+                    mumlEquivalent += "}\n";
 
                 }
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    pumlEquivalent += "enum \"" + name + "\" {\n";
+                    mumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        pumlEquivalent += packagedElements[i].ownedLiteral[j].$.name + "\n";
+                        mumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
                     }
-                    pumlEquivalent += "} \n";
+                    mumlEquivalent += "}\n";
                 }
             }
 
             //Generamos las clases y su contenido
             for (let i = 0; i < packagedElements.length; i++) {
+				if(packagedElements[i]["$"].name === ":ribosomal_RNA") {
+					console.log("WO");
+				}
                 if (packagedElements[i]["$"]["xmi:type"] === "uml:Class") {
-                    pumlEquivalent += this.createUMLClass(packagedElements[i])
+                    mumlEquivalent += this.createUMLClass(packagedElements[i])
                 }
             }
 
@@ -148,8 +155,16 @@ class UMLGen {
                 + ex);
             return "";
         }
+		
+		function removeClosed(str, p1, p2, offset, s)
+		{
+			return str.replace("CLOSED ", "");
+		}
+		
+		mumlEquivalent = mumlEquivalent
+							.replace(/[\r\n]+(___dp___|___anga___)[A-Za-z0-9]+(___angc___)? CLOSED :/g, removeClosed);
 
-        return pumlEquivalent;
+        return mumlEquivalent;
     }
 
     /**
@@ -161,18 +176,8 @@ class UMLGen {
 
         //Extraemos las restricciones y se las asignamos al nombre, si existen
         let cn = this.constraints.get(element.$["xmi:id"]);
-        let name = "\"" + element.$.name + (cn === undefined ? "" : " " + cn) + "\"";
-        let clase = "class " + name + "\n";
-
-        //Relaciones de herencia
-        if(element.generalization) {
-            for(let i = 0; i < element.generalization.length; i++) {
-                let hename = element.generalization[i].$.name !== undefined ?
-                    ("\"" + element.generalization[i].$.name + "\"") : "";
-                clase += "\"" + this.classes.get(element.generalization[i].$.general) + "\" <|-- " + name
-                    + " : " + hename + "\n";
-            }
-        }
+        let name = this.adaptPref(element.$.name) + (cn === undefined ? "" : " " + cn);
+        let clase = "class " + name + " {\n";
 
         let attributes = element.ownedAttribute;
         if(!attributes) {
@@ -180,7 +185,23 @@ class UMLGen {
         }
 
         //Generamos los atributos de la clase
-        clase += this.createUMLAttributes(attributes, name);
+        let ats = this.createUMLAttributes(attributes, name);
+		ats.ins.forEach(el => clase += el);
+		clase += "}\n";
+		if(ats.ins.length === 0) {
+			clase = "";
+		}
+		ats.out.forEach(el => clase += el);
+		
+		//Relaciones de herencia
+        if(element.generalization) {
+            for(let i = 0; i < element.generalization.length; i++) {
+                let hename = element.generalization[i].$.name ?
+                    (" : " + element.generalization[i].$.name) : "";
+                clase += this.adaptPref(this.classes.get(element.generalization[i].$.general)) + " <|-- " + this.adaptPref(name)
+                    + hename + "\n";
+            }
+        }
 
         return clase;
     }
@@ -192,26 +213,27 @@ class UMLGen {
      * @returns {string}    Listado de atributos
      */
     createUMLAttributes(ats, name) {
-        let content = "";
+		let insideElements = [];
+		let outsideElements = [];
         for(let i = 0; i < ats.length; i++) {
             let shape = this.shm.getShape(ats[i].$.type);
             let subSet = this.shm.getSubSet(ats[i].$.type);
             //Asociación entre clases
             if(ats[i].$.association                                 //Modelio ver.
                 || shape !== undefined || subSet !== undefined) {   //VP ver.
-                content += this.createUMLAsoc(ats[i], name);
+                outsideElements.push(this.createUMLAsoc(ats[i], name));
             }
             //Restricción de tipo de nodo
             else if(ats[i].$.name.toLowerCase() === "nodekind") {
                 let kind = this.types.get(ats[i].$.type);
-                content += name + " : " + "nodeKind: " + kind + " \n";
+                insideElements.push("nodeKind: " + kind + " \n");
             }
             //Atributo común
             else {
-                content += this.createUMLBasicAt(ats[i], name);
+                insideElements.push(this.createUMLBasicAt(ats[i], name));
             }
         }
-        return content;
+        return { out: outsideElements, ins: insideElements};
     }
 
     /**
@@ -233,8 +255,8 @@ class UMLGen {
 
         //at.$.type indica el nombre de la clase
         //at.$.name indica el nombre de la relación
-        return name + relation + ccard + " \""
-            + this.classes.get(at.$.type) + "\" : \"" + at.$.name + "\"\n";
+        return name + relation + ccard + " "
+            + this.adaptPref(this.classes.get(at.$.type)) + " : " + this.adaptPref(at.$.name) + "\n";
     }
 
     /**
@@ -248,9 +270,12 @@ class UMLGen {
 
         let card = ShExCardinality.cardinalityOf(at);
         let cn = this.constraints.get(at.$["xmi:id"]);
+		if (cn !== undefined) {
+			cn = cn.split(" ").join(" \\");
+		}
 
-        return name + " : " + at.$.name + " " + this.getType(at) + " " + card
-            + (cn === undefined ? "" : cn) + " \n";
+        return name + " : " + this.adaptPref(at.$.name) + " \"" + this.adaptPref(this.getType(at)) + "\\" + card
+            + (cn === undefined ? "" : " \\" +  cn) + "\" \n";
     }
 
     /**
@@ -279,10 +304,17 @@ class UMLGen {
             if(enumer) {
                 return enumer;
             }
-            return this.types.get(attr.$.type);
+			let type = this.types.get(attr.$.type);
+			if(type) {
+				return type;
+			}
         }
         return ".";
     }
+	
+	adaptPref(prefix) {
+		return prefix.replace(":", "___dp___").replace("<", "___anga___").replace(">", "___angc___").replace("^", "___inverse___");
+	}
 
 }
 module.exports = UMLGen;

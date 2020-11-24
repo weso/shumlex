@@ -63,31 +63,35 @@ class ShExRepository {
      * @returns {string}
      */
     static getShex2() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n\n"
-            + ":User {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:age xsd:int ?;\n" +
-            "\t:gender [:Male :Female ];\n" +
-            "}\n\n"
-            + "<TypeTest> {\n" +
-            "\t:z xsd:string;\n" +
-            "\t:b xsd:date;\n" +
-            "\t:c xsd:time;\n" +
-            "\t:d xsd:dateTime;\n" +
-            "\t:e xsd:duration;\n" +
-            "\t:f xsd:byte;\n" +
-            "\t:g xsd:decimal;\n" +
-            "\t:h xsd:int;\n" +
-            "\t:i xsd:integer;\n" +
-            "\t:j xsd:long;\n" +
-            "\t:k xsd:short;\n" +
-            "\t:l xsd:boolean;\n" +
-            "\t:m xsd:double;\n" +
-            "\t:n xsd:float;\n" +
-            "\t:xyz xsd:invent;\n" +
-            "}\n\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+	:name xsd:string;
+	:age xsd:int ?;
+	:gender [:Male :Female ];
+}
+
+<TypeTest> {
+	:z xsd:string;
+	:b xsd:date;
+	:c xsd:time;
+	:d xsd:dateTime;
+	:e xsd:duration;
+	:f xsd:byte;
+	:g xsd:decimal;
+	:h xsd:int;
+	:i xsd:integer;
+	:j xsd:long;
+	:k xsd:short;
+	:l xsd:boolean;
+	:m xsd:double;
+	:n xsd:float;
+	:xyz xsd:invent;
+}
+
+`;
     }
 
     /**
