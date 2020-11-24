@@ -1,10 +1,9 @@
 {
   "name": "shumlex",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "ShEx - Uml integration",
   "main": "main.js",
   "scripts": {
-    "build": "browserify index.js > bmain.js",
     "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js mermaid.test.js joint.test.js"
   },
   "bin": {},
@@ -24,7 +23,6 @@
     "jest": "^25.2.4"
   },
   "dependencies": {
-    "browserify": "^17.0.0",
     "jquery": "^3.5.1",
     "shex": "^0.9.2",
     "uniqid": "^5.2.0",
