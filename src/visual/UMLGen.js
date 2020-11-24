@@ -161,7 +161,8 @@ class UMLGen {
 			return str.replace("CLOSED ", "");
 		}
 		
-		mumlEquivalent = mumlEquivalent.replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
+		mumlEquivalent = mumlEquivalent
+							.replace(/[\r\n]+_[A-Za-z0-9]+_? CLOSED :/g, removeClosed);
 
         return mumlEquivalent;
     }

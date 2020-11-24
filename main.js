@@ -31,6 +31,8 @@ function crearDiagramaUML(id, xmi) {
 	let umlgen = crearMUML(xmi);
 	$("#output").text(umlgen);
 	$("#" + id).removeAttr("data-processed");
+	$("#" + id).css("max-height", "500px");
+	$("#" + id).css("max-width", "100vw");
 	$("#" + id).text(umlgen);
 	mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
 	
@@ -46,22 +48,43 @@ function crearDiagramaUML(id, xmi) {
 								.replace(/\"/g, "")
 								.replace(/_inverse_/g, "^")
 								.replace(/_[A-Za-z0-9]+_/g, replacer)
-								.replace(/_/g, ":")
+								.replace(/ _/g, " :")
 								.replace(/::/g, "_:")
 								.replace(/:Blank/g, "_Blank")
 								.replace(/\*(<|>)/g, "~")
 								.replace(/CLOSED/g, " CLOSED")
-								.replace(/_?:?<?[^prefix][A-Za-z0-9]+>? : /g, ""))
+								.replace(/_?:?<?[^prefix][A-Za-z0-9]+>? : /g, "")
+								)
 	});
+	
 	$( "#" + id + " .label" ).each(function( index ) {
 		let contenido = $(this).text();
 		$(this).text(contenido.replace(/_/g, ":"))
 	});
+	
 	//Añadir <> a los que carezcan de prefijo
 	$( "#" + id + " .title" ).each(function( index ) {
 		let contenido = $(this).text();
 		if(contenido === "Prefixes")
 			return;
+	});
+	
+	//Eliminar repeticiones de enumeraciones
+	$( "#" + id + " tspan[dy]:contains('«enumeration»')" ).each(function( index ) {
+		let height = 10;
+		let line = $(this).parent().next();
+		let liney = line.attr("y1");
+		line.attr("y1", liney - height);
+		line.attr("y2", liney - height);
+		let text = line.next();
+		text.attr("y", text.attr("y") - height);
+		let line2 = text.next();
+		let liney2 = line2.attr("y1");
+		line2.attr("y1", liney2 - height);
+		line2.attr("y2", liney2 - height);
+		let rect = $(this).parent().prev();
+		rect.height(rect.height() - height);
+		$(this).remove();	
 	});
 	
 	$("#" + id + " svg").removeAttr("width");
