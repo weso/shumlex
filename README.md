@@ -102,11 +102,11 @@ In this example, we are passing as parameters two variables:
 If an element with such ID exists, and the XMI is correct, the corresponding SVG will be displayed at the given container.
 
 _options_ is an optional parameter, with JSON format, which may be used to configurate the SVG.
-`
+```
 {
 max_height: "500px",   // Max Height of the SVG
 max_width: "100vw"     // Max Width of the SVG
-}`
+}```
 
 ## Importing and exporting our XMI in Visual Paradigm
 
