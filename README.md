@@ -1,5 +1,5 @@
 # Shumlex
-[![Version Status](https://img.shields.io/badge/version-0.2.2-green.svg)](https://github.com/weso/shumlex)
+[![Version Status](https://img.shields.io/badge/version-0.3.1-green.svg)](https://github.com/weso/shumlex)
 
 ## Introduction
 Welcome to Shumlex. 
@@ -42,7 +42,7 @@ const shumlex = require('shumlex')
 
 Shumlex provides four different methods, which are shown below.
 
-### ShEx To XMI: _shExToXMI()_
+### ShEx To XMI: _shExToXMI(shexValue)_
 
 This method provides a XMI value (as a String) equivalent to any given ShEx value (as a String parameter).
 
@@ -52,7 +52,7 @@ let xmi = shumlex.shExToXMI(shex)
 
 In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the XMI in a String variable named _xmi_.
 
-### XMI To ShEx: _XMIToShEx()_
+### XMI To ShEx: _XMIToShEx(xmiValue)_
 
 This method provides a ShEx value (as a String) equivalent to any given XMI value (as a String parameter).
 
@@ -62,7 +62,7 @@ let shex = shumlex.XMIToShEx(xmi)
 
 In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI schema and we save the ShEx in a String variable named _shex_.
 
-### ShEx to Cytoscape Graph: _crearGrafo():_
+### ShEx to Cytoscape Graph: _crearGrafo(shexValue):_
 
 This method provides a JSON value which may be used to represent the ShEx value passed as a String parameter in a Cytoscape graph of Dagre layout.
 
@@ -87,18 +87,26 @@ With such JSON value we can easily create a Cytoscape graph, just like this:
     }
 ```
 
-### XMI to PlantUML Class Diagram: _crearDiagramaUML()_
+### XMI to SVG Class Diagram: _crearDiagramaUML(containerId, xmiValue, options)_
 
-This method provides a PlantUML URL which contains, as a image, UML Class Diagram corresponding to the XMI value passed as a String parameter.
+This method creates in the given container, using SVG, a UML Class Diagram corresponding to the XMI value passed as a String parameter.
 
 ```
-let uml = shumlex.crearDiagramaUML(xmi)
+shumlex.crearDiagramaUML("displaydiv", xmi)
 ```
 
-In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI value and we save the URL in a variable named _uml_.
+In this example, we are passing as parameters two variables:
+* The ID of the container element in our page where we want to display the SVG, as a String value.
+* A String variable (_xmi_) which contains the XMI input value.
 
-This URL may be used as a _src_ attribute in a HTML _img_ element to effortlessly show the class diagram in a webpage.
+If an element with such ID exists, and the XMI is correct, the corresponding SVG will be displayed at the given container.
 
+_options_ is an optional parameter, with JSON format, which may be used to configurate the SVG.
+`
+{
+max_height: "500px",   // Max Height of the SVG
+max_width: "100vw"     // Max Width of the SVG
+}`
 
 ## Importing and exporting our XMI in Visual Paradigm
 
