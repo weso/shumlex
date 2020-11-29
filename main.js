@@ -81,7 +81,7 @@ function crearDiagramaUML(id, xmi, options) {
 	//Añadir <> a los que carezcan de prefijo
 	$( "#" + id + " .title" ).each(function( index ) {
 		let contenido = $(this).text();
-		if(contenido === "Prefixes" || contenido.includes(":"))
+		if(contenido === "Prefixes" || contenido.includes(":") || contenido.includes("_Blank"))
 			return;
 		$(this).text("<" + contenido + ">")
 	});
