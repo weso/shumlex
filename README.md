@@ -106,7 +106,8 @@ _options_ is an optional parameter, with JSON format, which may be used to confi
 {
 max_height: "500px",   // Max Height of the SVG
 max_width: "100vw"     // Max Width of the SVG
-}```
+}
+```
 
 ## Importing and exporting our XMI in Visual Paradigm
 
