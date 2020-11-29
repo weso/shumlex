@@ -6,6 +6,9 @@ const ShapeManager = require("../managers/ShapeManager.js");
 let XMISources = {0: "VisualParadigm", 1: "Modelio"};
 let XMISource = XMISources[0];
 
+const mermaid = require('../../lib/mermaid/mermaid.min.js');
+const $ = require('jquery');
+
 class UMLGen {
 
     constructor() {
@@ -17,6 +20,82 @@ class UMLGen {
         this.enums = new Map();
         this.constraints = new Map();
     }
+	
+	crearSVG(id, umlcr, ops) {
+		
+		let maxheight = ops.max_height ? ops.max_height : "500px";
+		let maxwidth = ops.max_width ? ops.max_width : "100vw";
+		$("#output").text(umlcr);
+		$("#" + id).removeAttr("data-processed");
+		$("#" + id).css("max-height", maxheight);
+		$("#" + id).css("max-width", maxwidth);
+		$("#" + id).text(umlcr);
+		mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
+		
+		//Borrar caracteres empleados para la generación
+		$( "#" + id + " tspan" ).each(function( index ) {
+			let contenido = $(this).text();
+			$(this).text(contenido.replace(/\\/g, "")
+									.replace(/\"/g, "")
+									.replace(/___inverse___/g, "^")
+									.replace(/___anga___/g, "<")
+									.replace(/___angc___/g, ">")
+									.replace(/___dp___/g, ":")
+									.replace(/:Blank/g, "_Blank")
+									.replace(/\*(<|>)/g, "~")
+									.replace(/CLOSED/g, " CLOSED")
+									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "")
+									)
+		});
+		
+		$( "#" + id + " .label" ).each(function( index ) {
+			let contenido = $(this).text();
+			$(this).text(contenido.replace(/___dp___/g, ":"))
+		});
+		
+		//Ajustar título
+		$( "#" + id + " .title:contains(':')").each(function( index ) {
+			$(this).attr("x", 20 + parseInt($(this).attr("x")));
+		});
+		
+		$( "#" + id + " .title:contains('<')" ).each(function( index ) {
+			$(this).attr("x", 40 + parseInt($(this).attr("x")));
+		});
+		
+		$( "#" + id + " .title:contains('^')" ).each(function( index ) {
+			$(this).attr("x", 20 + parseInt($(this).attr("x")));
+		});
+		
+		//Añadir <> a los que carezcan de prefijo
+		$( "#" + id + " .title" ).each(function( index ) {
+			let contenido = $(this).text();
+			if(contenido === "Prefixes" || contenido.includes(":") || contenido.includes("<") || contenido.includes("_Blank"))
+				return;
+			$(this).text("<" + contenido + ">")
+		});
+		
+		//Eliminar repeticiones de enumeraciones
+		$( "#" + id + " tspan[dy]:contains('«enumeration»')" ).each(function( index ) {
+			let height = 10;
+			let line = $(this).parent().next();
+			let liney = line.attr("y1");
+			line.attr("y1", liney - height);
+			line.attr("y2", liney - height);
+			let text = line.next();
+			text.attr("y", text.attr("y") - height);
+			let line2 = text.next();
+			let liney2 = line2.attr("y1");
+			line2.attr("y1", liney2 - height);
+			line2.attr("y2", liney2 - height);
+			let rect = $(this).parent().prev();
+			rect.height(rect.height() - height);
+			$(this).remove();	
+		});
+		
+		$("#" + id + " svg").removeAttr("width");
+		
+		$(".cardinality text").attr("font-size", "12");	
+	}
 
     /**
      * Genera el código Mermaid
