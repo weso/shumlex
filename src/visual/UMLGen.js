@@ -245,6 +245,14 @@ class UMLGen {
 
         return mumlEquivalent;
     }
+	
+	descargaSVG(idsvg, idbt) {
+		let bs = btoa($("#" + idsvg).html());
+		console.log(bs);
+		console.log($("#" + idsvg).html());
+		$("#" + idbt).attr("href", `data:image/svg+xml;base64,${bs}`);
+		$("#" + idbt).attr("download", `shumlex-class-diagram.svg`);
+	}
 
     /**
      * Crea una clase en PUML

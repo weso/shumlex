@@ -4,6 +4,7 @@
   "description": "ShEx - Uml integration",
   "main": "main.js",
   "scripts": {
+	"build": "browserify index.js > bmain.js",
     "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js mermaid.test.js joint.test.js"
   },
   "bin": {},
