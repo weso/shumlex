@@ -1,5 +1,5 @@
 # Shumlex
-[![Version Status](https://img.shields.io/badge/version-0.3.1-green.svg)](https://github.com/weso/shumlex)
+[![Version Status](https://img.shields.io/badge/version-0.3.3-green.svg)](https://github.com/weso/shumlex)
 
 ## Introduction
 Welcome to Shumlex. 
@@ -111,7 +111,7 @@ max_width: "100vw"     // Max Width of the SVG
 
 ### Downloading SVG: _base64SVG(svgId)_
 
-Returns the encoded base64 value for the given SVG. This allows for an easy implementation of a download link, just like the following:
+Returns the encoded base64 value for the given SVG located in the document ID passed as parameter. This allows for an easy implementation of a download link, just like the following:
 ```
 let svg64 = shumlex.base64SVG("svg");
 $("#download_button").attr("href", svg64);
