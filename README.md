@@ -109,6 +109,15 @@ max_width: "100vw"     // Max Width of the SVG
 }
 ```
 
+### Downloading SVG: _base64SVG(svgId)_
+
+Returns the encoded base64 value for the given SVG. This allows for an easy implementation of a download link, just like the following:
+```
+let svg64 = shumlex.base64SVG("svg");
+$("#download_button").attr("href", svg64);
+$("#download_button").attr("download", `shumlex-class-diagram.svg`);
+```
+
 ## Importing and exporting our XMI in Visual Paradigm
 
 ### Import

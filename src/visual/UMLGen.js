@@ -222,9 +222,6 @@ class UMLGen {
 
             //Generamos las clases y su contenido
             for (let i = 0; i < packagedElements.length; i++) {
-				if(packagedElements[i]["$"].name === ":ribosomal_RNA") {
-					console.log("WO");
-				}
                 if (packagedElements[i]["$"]["xmi:type"] === "uml:Class") {
                     mumlEquivalent += this.createUMLClass(packagedElements[i])
                 }
