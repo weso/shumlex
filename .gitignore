@@ -17,3 +17,5 @@ npm-debug.log*
 
 .idea
 bmain.js
+index.html
+index.js

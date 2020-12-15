@@ -33,8 +33,8 @@ function crearDiagramaUML(id, xmi, options) {
 	umlgen.crearSVG(id, umlcr, ops);
 }
 
-function descargaSVG(idsvg, idbt) {
-	umlgen.descargaSVG(idsvg, idbt);
+function base64SVG(idsvg) {
+	return umlgen.base64SVG(idsvg);
 }
 
 module.exports = {
@@ -43,5 +43,5 @@ module.exports = {
 	crearGrafo,
 	crearMUML,
 	crearDiagramaUML,
-	descargaSVG
+	base64SVG
 }

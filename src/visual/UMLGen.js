@@ -45,6 +45,8 @@ class UMLGen {
 									.replace(/\*(<|>)/g, "~")
 									.replace(/CLOSED/g, " CLOSED")
 									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "")
+									.replace(/«/g, "<<")
+									.replace(/»/g, ">>")
 									)
 		});
 		
@@ -75,7 +77,7 @@ class UMLGen {
 		});
 		
 		//Eliminar repeticiones de enumeraciones
-		$( "#" + id + " tspan[dy]:contains('«enumeration»')" ).each(function( index ) {
+		$( "#" + id + " tspan[dy]:contains('<<enumeration>>')" ).each(function( index ) {
 			let height = 10;
 			let line = $(this).parent().next();
 			let liney = line.attr("y1");
@@ -246,12 +248,9 @@ class UMLGen {
         return mumlEquivalent;
     }
 	
-	descargaSVG(idsvg, idbt) {
+	base64SVG(idsvg) {
 		let bs = btoa($("#" + idsvg).html());
-		console.log(bs);
-		console.log($("#" + idsvg).html());
-		$("#" + idbt).attr("href", `data:image/svg+xml;base64,${bs}`);
-		$("#" + idbt).attr("download", `shumlex-class-diagram.svg`);
+		return `data:image/svg+xml;base64,${bs}`;
 	}
 
     /**
