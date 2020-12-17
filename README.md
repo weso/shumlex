@@ -85,6 +85,7 @@ With such JSON value we can easily create a Cytoscape graph, just like this:
       edgeSep: 40,
       rankSep: 80
     }
+ });
 ```
 
 ### XMI to SVG Class Diagram: _crearDiagramaUML(containerId, xmiValue, options)_
@@ -116,6 +117,31 @@ Returns the encoded base64 value for the given SVG located in the document ID pa
 let svg64 = shumlex.base64SVG("svg");
 $("#download_button").attr("href", svg64);
 $("#download_button").attr("download", `shumlex-class-diagram.svg`);
+```
+
+## Downloading Graph as SVG
+If you are using Cytoscape to visualize the graph provided by _crearGrafo()_, a download implementation can be added by using [cytoscape-svg](https://github.com/kinimesi/cytoscape-svg). The following are the key code fragments by which we achieve a download of the current graph state in [Fidalgo's Shumlex](https://jorgealvarezfidalgo.github.io/Shumlex/web/html/grafo.html).
+
+Importing and registering the Cytoscape extension.
+```
+const cyto = require('cytoscape');
+let svg = require('cytoscape-svg');
+cyto.use( svg );
+```
+Creating the graph and setting the _download_ attribute to the link, so it'll download said file instead of relocating the page.
+```
+cy = cyto({...});
+	$("#dwnsvg-btn").attr("download", `shumlex-graph.svg`);
+```
+Anytime the link is clicked, we produce the SVG of the current graph and set the corresponding base64 value as _href_. 
+```
+function grafoASVG() {
+  var svgContent = cy.svg({scale: 1, full: true});
+  let bs = btoa(svgContent);
+  $("#dwnsvg-btn").attr("href", `data:image/svg+xml;base64,${bs}`);
+}
+...
+$("#dwnsvg-btn").click(grafo.grafoASVG);
 ```
 
 ## Importing and exporting our XMI in Visual Paradigm
