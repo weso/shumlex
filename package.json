@@ -1,10 +1,10 @@
 {
-  "name": "shumlex",
-  "version": "0.3.3",
+  "name": "@weso/shumlex",
+  "version": "0.3.4",
   "description": "ShEx - Uml integration",
   "main": "main.js",
   "scripts": {
-	"build": "browserify index.js > bmain.js",
+    "build": "browserify index.js > bmain.js",
     "test": "jest --coverage shex-xmi.test.js xmi-shex.test.js grafo.test.js mermaid.test.js joint.test.js"
   },
   "bin": {},
@@ -13,7 +13,7 @@
     "url": "git://github.com/weso/shumlex.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "author": "Jorge Fidalgo <UO258524@uniovi.es>",
   "bugs": {
