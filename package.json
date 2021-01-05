@@ -1,5 +1,5 @@
 {
-  "name": "@weso/shumlex",
+  "name": "shumlex",
   "version": "0.3.4",
   "description": "ShEx - Uml integration",
   "main": "main.js",
@@ -13,7 +13,7 @@
     "url": "git://github.com/weso/shumlex.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "author": "Jorge Fidalgo <UO258524@uniovi.es>",
   "bugs": {
