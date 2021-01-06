@@ -41,6 +41,7 @@ class UMLGen {
 									.replace(/___anga___/g, "<")
 									.replace(/___angc___/g, ">")
 									.replace(/___dp___/g, ":")
+									.replace(/___gual___/g, "-")
 									.replace(/:Blank/g, "_Blank")
 									.replace(/\*(<|>)/g, "~")
 									.replace(/CLOSED/g, " CLOSED")
@@ -396,7 +397,11 @@ class UMLGen {
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(":", "___dp___").replace("<", "___anga___").replace(">", "___angc___").replace("^", "___inverse___");
+		return prefix.replace(":", "___dp___")
+						.replace("<", "___anga___")
+						.replace(">", "___angc___")
+						.replace("^", "___inverse___")
+						.replace("-", "___gual___");
 	}
 
 }
