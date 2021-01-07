@@ -53,7 +53,8 @@ class UMLGen {
 		
 		$( "#" + id + " .label" ).each(function( index ) {
 			let contenido = $(this).text();
-			$(this).text(contenido.replace(/___dp___/g, ":"))
+			$(this).text(contenido.replace(/___dp___/g, ":")
+									.replace(/___gual___/g, "-"))
 		});
 		
 		//Ajustar título
