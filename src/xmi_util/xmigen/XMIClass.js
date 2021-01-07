@@ -51,6 +51,11 @@ class XMIClass {
             ats = shOrAt.ats;
             generalizations = shOrAt.generalizations;
         }
+		else if(shape.type === "ShapeNot") {
+			let shNotAt = this.checkShapeNot(shape, sh);
+            ats = shNotAt.ats;
+            generalizations = shNotAt.generalizations;
+		}
         //Si no es una ShapeAnd, generar atributos de modo corriente
         else {
             ats = this.xmiatt.createXMIAttributes(expression, prName);
@@ -138,6 +143,34 @@ class XMIClass {
             generalizations: generalizations
         };
     }
+	
+	checkShapeNot(shape, sh) {
+		let exprsForGen = [];
+		let exprsForComp = [];
+		let ats = "";
+        let generalizations = "";
+		if(shape.shapeExpr.type === "ShapeRef") {      // :NoUser Not @:User
+			exprsForGen.push(shape.shapeExpr);
+			generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id, "NOT");
+       }
+	   else if (shape.shapeExpr.type === "Shape" && shape.shapeExpr.expression
+                && shape.shapeExpr.expression.predicate === "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") {
+			exprsForGen.push(shape.shapeExpr.expression.valueExpr.values);
+			generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id, "NOT");
+       }
+		else {
+			exprsForComp.push(shape.shapeExpr);
+			if(shape.shapeExpr.closed === true) {
+				this.xmicon.markAsClosed(sh.id);
+			}
+			let subClassName = this.xmiatt.getComponentNumber();
+			ats = this.xmiatt.createComponent("NOT", subClassName, exprsForComp);
+		}
+		return {
+            ats: ats,
+            generalizations: generalizations
+        };
+	}
 
     clear() {
         this.xmiatt.clear();
