@@ -115,6 +115,10 @@ describe('Pruebas de la transformación conjunta', () => {
     test('Disyunciones', () => {
         checkGen(ShExRep.getShex23(), XMIRep.getXMI23(), ShExRep.getShex23());
     });
+	
+	test('Negaciones', () => {
+        checkGen(ShExRep.getShex24(), XMIRep.getXMI24(), ShExRep.getShex24());
+    });
 
 
 });

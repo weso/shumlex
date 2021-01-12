@@ -59,6 +59,9 @@ class ShExAttributes {
             || shape !== undefined || subSet !== undefined) {   //VP ver.
             brackets = true;
             content += this.associationToShEx(attr);
+			if(attr.$.name === "NOT") {
+				header += " Not";
+			}	
         }
         //Restricción de tipo nodal
         else if(attr.$.name.toLowerCase() === "nodekind") {
@@ -181,6 +184,9 @@ class ShExAttributes {
             }
             else if(attr.$.name === "OR" && attr.$.aggregation === "composite") {
                 return this.createLogicOperation(subSet, "OR");
+            }
+			else if(attr.$.name === "NOT" && attr.$.aggregation === "composite") {
+                return this.createLogicOperation(subSet, "Not");
             }
             //Es una expresión EachOf con cardinalidad
             else {
@@ -351,9 +357,11 @@ class ShExAttributes {
     createGeneralization(name, inv, lop) {
         switch(lop){
             case "AND":
-                return " " + inv + "@" + IRIManager.getShexTerm(name) + " AND";
+                return " " + inv + "@" + IRIManager.getShexTerm(name) + " AND";	//Esto parece no usarse nunca. ¿Debió quedar de una versión pasada?
             case "OR":
-                return " " + inv + "@" + IRIManager.getShexTerm(name) + " OR";
+                return " " + inv + "@" + IRIManager.getShexTerm(name) + " OR";	//Y esto tmb
+			case "NOT":
+				return " " + inv + "Not @" + IRIManager.getShexTerm(name);
             default:
                 return "\n\t" + inv + "a [" + IRIManager.getShexTerm(name) + "];";
         }

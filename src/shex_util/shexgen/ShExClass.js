@@ -45,15 +45,22 @@ class ShExClass {
                     }
                 }
             }
-            if(!element.ownedAttribute || !created) {
+			//Shape NOT
+			if(element.generalization.length === 1 && element.generalization[0].$.name === "NOT") {
+				brackets = false;
+				content += this.shexat.generalizationToShEx(element.generalization, "NOT");
+			}
+            else if(!element.ownedAttribute || !created) {
                 content += this.shexat.generalizationToShEx(element.generalization);
             }
         }
 
         let attributes = element.ownedAttribute;
         if(!attributes) {
-            brackets = true;
             attributes = [];
+			if(!element.generalization) {
+				brackets = true;
+			}
         }
         //Se crean los atributos de la clase
         let ats = this.shexat.attributesToShEx(attributes, brackets);

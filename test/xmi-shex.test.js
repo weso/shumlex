@@ -98,6 +98,10 @@ describe('Pruebas de la transformación XMI-ShEx', () => {
     test('Disyunciones', () => {
         checkGen(XMIRep.getXMI23(), ShExRep.getShex23());
     });
+	
+	test('Negaciones', () => {
+        checkGen(XMIRep.getXMI24(), ShExRep.getShex24());
+    });
 
     test('VP: ShapeRef', () => {
         checkGen(XMIRep.getXMI3VP(), ShExRep.getShex3());
