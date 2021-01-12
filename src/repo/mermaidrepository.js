@@ -56,9 +56,8 @@ ___dp___User --> " {1,10}" ___anga___Product___angc___ : ___dp___buys
 ___dp___User <|-- ___dp___Ultrauser
 ___dp___Titanuser *--  _Blank1 : AND
 ___dp___User <|-- ___dp___Titanuser
-_Blank1 *--  _Blank2 : Shape
-class _Blank2 {
-_Blank2 : ___dp___titancode "xsd___dp___string\\" 
+class _Blank1 {
+_Blank1 : ___dp___titancode "xsd___dp___string\\" 
 }
 class ___dp___Company {
 ___dp___Company : ___dp___name "xsd___dp___string\\" 
@@ -97,9 +96,8 @@ ___dp___User : ___dp___age "xsd___dp___int\\ ?"
 ___dp___User <|-- ___dp___Ultrauser
 ___dp___Titanuser *--  _Blank1 : AND
 ___dp___User <|-- ___dp___Titanuser
-_Blank1 *--  _Blank2 : Shape
-class _Blank2 {
-_Blank2 : ___dp___titancode "xsd___dp___string\\" 
+class _Blank1 {
+_Blank1 : ___dp___titancode "xsd___dp___string\\" 
 }
 class ___dp___VIPUser {
 ___dp___VIPUser : Extra "Extra____dp___VIPUser\\" 
@@ -120,9 +118,8 @@ class ___dp___User {
 nodeKind: IRI 
 }
 ___dp___User *--  _Blank1 : AND
-_Blank1 *--  _Blank2 : Shape
-class _Blank2 {
-_Blank2 : ___dp___name "xsd___dp___string\\" 
+class _Blank1 {
+_Blank1 : ___dp___name "xsd___dp___string\\" 
 }
 class ___dp___Ultrauser {
 nodeKind: Literal 
@@ -131,14 +128,12 @@ ___dp___User <|-- ___dp___Ultrauser
 class ___dp___Titanuser {
 nodeKind: NonLiteral 
 }
-___dp___Titanuser *--  _Blank3 : AND
+___dp___Titanuser *--  _Blank2 : AND
 ___dp___User <|-- ___dp___Titanuser
-_Blank3 *--  _Blank4 : Shape
 class ___anga___Product___angc___ {
 nodeKind: BNode 
 }
-___anga___Product___angc___ *--  _Blank5 : AND
-_Blank5 *--  _Blank6 : Shape
+___anga___Product___angc___ *--  _Blank3 : AND
 class ___anga___AThing___angc___ {
 nodeKind: IRI 
 }
@@ -453,13 +448,12 @@ class ___dp___User CLOSED {
 nodeKind: IRI 
 }
 ___dp___User CLOSED *--  _Blank1 : AND
-_Blank1 *--  _Blank2 : Shape
-class _Blank2 {
-_Blank2 : ___dp___name "xsd___dp___string\\ \\MaxLength \\3" 
-_Blank2 : ___dp___age "xsd___dp___int\\ ?" 
-_Blank2 : ___dp___gender "___dp___gender\\" 
+class _Blank1 {
+_Blank1 : ___dp___name "xsd___dp___string\\ \\MaxLength \\3" 
+_Blank1 : ___dp___age "xsd___dp___int\\ ?" 
+_Blank1 : ___dp___gender "___dp___gender\\" 
 }
-_Blank2 -->  ___dp___User CLOSED : ___dp___knows
+_Blank1 -->  ___dp___User CLOSED : ___dp___knows
 class ___dp___Company CLOSED {
 ___dp___Company : ___dp___name "xsd___dp___string\\" 
 }
@@ -693,6 +687,26 @@ ___dp___Product : ___dp___productId "xsd___dp___string\\ \\OR \\MinLength \\5 \\
 }
 `;
     }
+	
+	static getMUML17() {
+		return `classDiagram
+class Prefixes {
+<<enumeration>>
+prefix \\: <https://schema.org/>
+prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+}
+class ___dp___User {
+___dp___User : ___dp___name "xsd___dp___string\\" 
+___dp___User : ___dp___birthDate "xsd___dp___date\\ ?" 
+}
+___dp___User <|-- ___dp___NoUser : NOT
+___dp___NoName *--  _Blank1 : NOT
+class _Blank1 {
+_Blank1 : ___dp___name "xsd___dp___string\\" 
+}
+`;
+	}
 
 }
 module.exports = MUMLRepository;

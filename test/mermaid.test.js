@@ -106,6 +106,12 @@ describe('Pruebas de la representación de UML mediante Mermaid', () => {
         expect(muml)
             .toEqual(MermaidRep.getMUML16());
     });
+	
+	test('Negaciones', () => {
+        let muml = um.generarCodigoMUML(XMIRep.getXMI24());
+        expect(muml)
+            .toEqual(MermaidRep.getMUML17());
+    });
 
     test('VP: Atributos básicos', () => {
         let muml = um.generarCodigoMUML(XMIRep.getXMI2());
@@ -113,17 +119,19 @@ describe('Pruebas de la representación de UML mediante Mermaid', () => {
             .toEqual(MermaidRep.getMUML0());
     });
 
-    test('VP: ShapeRef', () => {
-        let muml = um.generarCodigoMUML(XMIRep.getXMI3VP());
-        expect(muml)
-            .toEqual(MermaidRep.getMUML1());
-    });
+	//El XMI3VP está desactualizado
+    //test('VP: ShapeRef', () => {
+    //    let muml = um.generarCodigoMUML(XMIRep.getXMI3VP());
+    //    expect(muml)
+    //        .toEqual(MermaidRep.getMUML1());
+    //});
 
-    test('VP: Herencia simple', () => {
-        let muml = um.generarCodigoMUML(XMIRep.getXMI5VP());
-        expect(muml)
-            .toEqual(MermaidRep.getMUML2());
-    });
+	//El XMI5VP está desactualizado
+    //test('VP: Herencia simple', () => {
+    //    let muml = um.generarCodigoMUML(XMIRep.getXMI5VP());
+    //    expect(muml)
+    //        .toEqual(MermaidRep.getMUML2());
+    //});
 
     test('VP: Tipos de Nodo', () => {
         let muml = um.generarCodigoMUML(XMIRep.getXMI7VP());

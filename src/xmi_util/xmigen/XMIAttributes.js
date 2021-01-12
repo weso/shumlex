@@ -58,8 +58,12 @@ class XMIAttributes {
         else if (expr.type === "EachOf") {
             attrs = this.createEachOf(expr, className);
         }
+		//AND, OR con un elemento, o NOT
+		else if(expr.length === 1) {	
+            return this.createXMIAttributes(expr[0].expression, className);
+        }
         //ShapeExprs: atributos de una clase que representa un AND
-        else if(expr.length > 0) {
+        else if(expr.length > 1) {
             for(let i = 0; i < expr.length; i++) {
                 attrs += this.createComponent("Shape", this.xmisub.getComponentNumber(),
                     expr[i].expression, expr[i].min,expr[i].max);

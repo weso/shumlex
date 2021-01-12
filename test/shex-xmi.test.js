@@ -108,5 +108,9 @@ describe('Pruebas de la transformación ShEx-XMI', () => {
     test('Disyunciones', () => {
         checkGen(ShExRep.getShex23(), XMIRep.getXMI23());
     });
+	
+	test('Negaciones', () => {
+        checkGen(ShExRep.getShex24(), XMIRep.getXMI24());
+    });
 
 });

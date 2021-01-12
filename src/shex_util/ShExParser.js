@@ -29,7 +29,6 @@ class ShExParser {
     let xmiEquivalent = "";
 
     let source = this.parseShEx(shex);
-	console.log(source);
 
     xmiEquivalent += XMIGenerator.createXMIHeader();
 

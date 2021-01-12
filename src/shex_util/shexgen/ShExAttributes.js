@@ -303,10 +303,17 @@ class ShExAttributes {
         if(subSet.attributes) {
             //Primera Shape
             conj += this.attributeToShEx(subSet.attributes[0]).content;
+			for(let i = 1; i < subSet.attributes.length; i++) {
+                if(subSet.attributes[i].$.name !== "Shape") {	//Atributos de la propia Shape (probablemente un AND de única shape)
+					conj += this.attributeToShEx(subSet.attributes[i]).content;
+				}   
+            }
             //El resto son precedidas por la OPLog
             for(let i = 1; i < subSet.attributes.length; i++) {
-                conj += " }\n" + lop + " {";
-                conj += this.attributeToShEx(subSet.attributes[i]).content;
+				if(subSet.attributes[i].$.name === "Shape") {	//Otras Shapes del AND/OR
+					conj += " }\n" + lop + " {";
+					conj += this.attributeToShEx(subSet.attributes[i]).content;
+				}
             }
         }
         return conj;

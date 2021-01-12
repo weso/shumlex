@@ -99,44 +99,45 @@ base <http://example.org/>
      * @returns {string}
      */
     static getShex3() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:age xsd:int;\n" +
-            "\t:knows @:User;\n" +
-            "\t:worksFor @:Company;\n" +
-            "\t:buys @<Product> {1,10};\n" +
-            "}\n" +
-            "\n" +
-            ":Ultrauser {\n" +
-            "\ta [:User];\n" +
-            "}\n" +
-            "\n" +
-            ":Titanuser @:User AND {\n" +
-            "\t:titancode xsd:string;\n" +
-            "}\n" +
-            "\n" +
-            ":Company {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:hasEmployee @:User *;\n" +
-            "\t:possess @<Product> {5,};\n" +
-            "}\n" +
-            "\n" +
-            "<Product> {\n" +
-            "\t:name .;\n" +
-            "\t:sku xsd:boolean;\n" +
-            "\t:manufacturer @<Organization> +;\n" +
-            "}\n" +
-            "\n" +
-            "<Organization> {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:isPartOf @<Organization> ?;\n" +
-            "\t:hasDirectives @:User {5};\n" +
-            "}\n" +
-            "\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+	:name xsd:string;
+	:age xsd:int;
+	:knows @:User;
+	:worksFor @:Company;
+	:buys @<Product> {1,10};
+}
+
+:Ultrauser {
+	a [:User];
+}
+
+:Titanuser @:User AND {
+	:titancode xsd:string;
+}
+
+:Company {
+	:name xsd:string;
+	:hasEmployee @:User *;
+	:possess @<Product> {5,};
+}
+
+<Product> {
+	:name .;
+	:sku xsd:boolean;
+	:manufacturer @<Organization> +;
+}
+
+<Organization> {
+	:name xsd:string;
+	:isPartOf @<Organization> ?;
+	:hasDirectives @:User {5};
+}
+
+`;
     }
 
     /**
@@ -144,27 +145,28 @@ base <http://example.org/>
      * @returns {string}
      */
     static getShex5() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:age xsd:int ?;\n" +
-            "}\n" +
-            "\n" +
-            ":Ultrauser {\n" +
-            "\ta [:User];\n" +
-            "}\n" +
-            "\n" +
-            ":Titanuser @:User AND {\n" +
-            "\t:titancode xsd:string;\n" +
-            "}\n" +
-            "\n" +
-            ":VIPUser EXTRA a { \n" +
-            "\ta @:User; \n" +
-            "}\n" +
-            "\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+	:name xsd:string;
+	:age xsd:int ?;
+}
+
+:Ultrauser {
+	a [:User];
+}
+
+:Titanuser @:User AND {
+	:titancode xsd:string;
+}
+
+:VIPUser EXTRA a { 
+	a @:User; 
+}
+
+`;
     }
 
     /**
@@ -200,33 +202,34 @@ base <http://example.org/>
      * @returns {string}
      */
     static getShex6() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:age xsd:int ?;\n" +
-            "}\n" +
-            "\n" +
-            "<Citizen> {\n" +
-            "\t:id .;\n" +
-            "}\n" +
-            "\n" +
-            ":Ultrauser {\n" +
-            "\ta [:User];\n" +
-            "\ta [<Citizen>];\n" +
-            "}\n" +
-            "\n" +
-            ":Titanuser @:User AND @<Citizen> AND {\n" +
-            "    :titancode xsd:string;\n" +
-            "}\n" +
-            "\n" +
-            ":VIPUser EXTRA a {\n" +
-            "  a @:User;\n" +
-            "  a @<Citizen>;\n" +
-            "}\n" +
-            "\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+	:name xsd:string;
+	:age xsd:int ?;
+}
+
+<Citizen> {
+	:id .;
+}
+
+:Ultrauser {
+	a [:User];
+	a [<Citizen>];
+}
+
+:Titanuser @:User AND @<Citizen> AND {
+	:titancode xsd:string;
+}
+
+:VIPUser EXTRA a { 
+	a @:User; 
+	a @<Citizen>;
+}
+
+`;
     }
 
     /**
@@ -268,25 +271,27 @@ base <http://example.org/>
      * @returns {string}
      */
     static getShex7() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User IRI {\n" +
-            "\t:name xsd:string;\n" +
-            "}\n" +
-            "\n" +
-            ":Ultrauser Literal AND {\n" +
-            "\ta [:User];\n" +
-            "}\n" +
-            "\n" +
-            ":Titanuser @:User AND NonLiteral AND {\n" +
-            "}\n" +
-            "\n" +
-            "<Product> BNode AND {\n" +
-            "}\n" +
-            "\n" +
-            "<AThing> IRI\n\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User IRI {
+	:name xsd:string;
+}
+
+:Ultrauser Literal AND {
+	a [:User];
+}
+
+:Titanuser @:User AND NonLiteral AND {
+}
+
+<Product> BNode AND {
+}
+
+<AThing> IRI
+
+`;
     }
 
     /**
@@ -528,21 +533,22 @@ base <http://example.org/>
      * @returns {string}
      */
     static getShex17() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User IRI CLOSED {\n" +
-            "\t:name xsd:string MaxLength 3;\n" +
-            "\t:age xsd:int ?;\n" +
-            "\t:gender [:Male :Female ];\n" +
-            "\t:knows @:User;\n" +
-            "}\n" +
-            "\n" +
-            ":Company CLOSED {\n" +
-            "\t:name xsd:string;\n" +
-            "}\n" +
-            "\n";
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User IRI CLOSED {
+	:name xsd:string MaxLength 3;
+	:age xsd:int ?;
+	:gender [:Male :Female ];
+	:knows @:User;
+}
+
+:Company CLOSED {
+	:name xsd:string;
+}
+
+`;
     }
 
     /**
@@ -713,6 +719,23 @@ base <http://example.org/>
             "}\n" +
             "\n";
     }
+	
+	static getShex24() {
+		return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+:name xsd:string ;
+:birthDate xsd:date ? ;
+}
+
+:NoUser Not @:User
+
+:NoName Not {
+:name xsd:string
+}`;
+	}
 
 }
 module.exports = ShExRepository;

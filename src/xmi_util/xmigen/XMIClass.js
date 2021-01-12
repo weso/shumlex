@@ -158,7 +158,7 @@ class XMIClass {
 			exprsForGen.push(shape.shapeExpr.expression.valueExpr.values);
 			generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id, "NOT");
        }
-		else {
+		else {	
 			exprsForComp.push(shape.shapeExpr);
 			if(shape.shapeExpr.closed === true) {
 				this.xmicon.markAsClosed(sh.id);
