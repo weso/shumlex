@@ -3055,6 +3055,93 @@ class GrafoRepository {
             }
         ];
     }
+	
+	static getGrafo17() {
+		return [
+  {
+    "data": {
+      "id": 1,
+      "name": ":User"
+    }
+  },
+  {
+    "data": {
+      "id": 4,
+      "name": "xsd:string"
+    }
+  },
+  {
+    "data": {
+      "id": 6,
+      "name": ":name",
+      "source": 1,
+      "target": 4
+    }
+  },
+  {
+    "data": {
+      "id": 7,
+      "name": "xsd:date"
+    }
+  },
+  {
+    "data": {
+      "id": 9,
+      "name": ":birthDate ?",
+      "source": 1,
+      "target": 7
+    }
+  },
+  {
+    "data": {
+      "id": 2,
+      "name": ":NoUser"
+    }
+  },
+  {
+    "data": {
+      "id": 10,
+      "name": "NOT",
+      "source": 2,
+      "target": 1
+    }
+  },
+  {
+    "data": {
+      "id": 3,
+      "name": ":NoName"
+    }
+  },
+  {
+    "data": {
+      "id": 11,
+      "name": ""
+    }
+  },
+  {
+    "data": {
+      "id": 12,
+      "name": "NOT",
+      "source": 3,
+      "target": 11
+    }
+  },
+  {
+    "data": {
+      "id": 13,
+      "name": "xsd:string"
+    }
+  },
+  {
+    "data": {
+      "id": 15,
+      "name": ":name",
+      "source": 11,
+      "target": 13
+    }
+  }
+];
+	}
 
 
 

@@ -113,6 +113,18 @@ class GrafoGen {
                         }
                     }
                 }
+				else if(sh.type === "ShapeNot") {
+					if (sh.shapeExpr.type === "ShapeRef") {
+                            elements = elements.concat(this.createInheritance(sh.shapeExpr, id, "NOT"));
+                   }
+				   else {
+					   console.log(sh);
+					   let notAtr = this.getID();
+					   elements = elements.concat(this.createToNode(notAtr, "", "NOT", id));
+					   let ats = this.checkExpression(sh.shapeExpr.expression, notAtr);
+                       elements = elements.concat(ats);
+				   }
+				}
                 //No es ShapeAnd/ShapeOr, sino Shape
                 else {
                     let ats = this.checkExpression(sh.expression, id);

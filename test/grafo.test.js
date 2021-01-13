@@ -341,5 +341,26 @@ describe('Pruebas de la representación de ShEx como grafo', () => {
             }
         }
     });
+	
+	test('Negaciones', () => {
+        let grafo = gr.shExAGrafo(ShExRep.getShex24());
+        let grafoObj = GrafoRep.getGrafo17();
+        expect(grafo.length)
+            .toEqual(grafoObj.length);
+        for(let i= 0; i< grafo.length; i++) {
+            expect(grafo[i].data.id)
+                .toEqual(parseInt(grafoObj[i].data.id));
+            expect(grafo[i].data.name)
+                .toEqual(grafoObj[i].data.name);
+            if(grafo[i].data.source) {
+                expect(grafo[i].data.source)
+                    .toEqual(parseInt(grafoObj[i].data.source));
+            }
+            if(grafo[i].data.target) {
+                expect(grafo[i].data.target)
+                    .toEqual(parseInt(grafoObj[i].data.target));
+            }
+        }
+    });
 
 });
