@@ -19,6 +19,10 @@ class UMLGen {
         this.types = new Map();
         this.enums = new Map();
         this.constraints = new Map();
+		
+		this.noSymbolNames = new Map(); //dado que la librería no se digna a aceptar apenas ningún símbolo, y resulta que se emplean muchos más de los que cabría esperar,
+										//voy a emplear un Map que guarde el nombre sanitizado y el original para recuperarlo al instante. Mejor que andar sustituyendo in situ
+										//ya que se alargan mucho los términos y me joden la anchura de los recuadros.
     }
 	
 	crearSVG(id, umlcr, ops) {
@@ -32,42 +36,40 @@ class UMLGen {
 		$("#" + id).text(umlcr);
 		mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
 		
+		let self = this;
 		//Borrar caracteres empleados para la generación
 		$( "#" + id + " tspan" ).each(function( index ) {
-			let contenido = $(this).text();
-			$(this).text(contenido.replace(/\\/g, "")
+			
+			let contenido = $(this).text().replace(/\\/g, "")
 									.replace(/\"/g, "")
-									.replace(/___inverse___/g, "^")
-									.replace(/___anga___/g, "<")
-									.replace(/___angc___/g, ">")
-									.replace(/___dp___/g, ":")
-									.replace(/___gual___/g, "-")
-									.replace(/:Blank/g, "_Blank")
 									.replace(/\*(<|>)/g, "~")
 									.replace(/CLOSED/g, " CLOSED")
 									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "")
 									.replace(/«/g, "<<")
-									.replace(/»/g, ">>")
-									)
+									.replace(/»/g, ">>");
+									
+			$(this).text(contenido);
+			
+			let elements = contenido.split(" ");
+			for(let i = 0; i < elements.length; i++) {
+				let originalName = self.noSymbolNames.get(elements[i]);	
+				if(originalName) {
+					let newText = $(this).text().replace(elements[i], originalName);
+					$(this).text(newText);
+				}
+			}
+			
+			
+			
+			
 		});
 		
 		$( "#" + id + " .label" ).each(function( index ) {
 			let contenido = $(this).text();
-			$(this).text(contenido.replace(/___dp___/g, ":")
-									.replace(/___gual___/g, "-"))
-		});
-		
-		//Ajustar título
-		$( "#" + id + " .title:contains(':')").each(function( index ) {
-			$(this).attr("x", 20 + parseInt($(this).attr("x")));
-		});
-		
-		$( "#" + id + " .title:contains('<')" ).each(function( index ) {
-			$(this).attr("x", 40 + parseInt($(this).attr("x")));
-		});
-		
-		$( "#" + id + " .title:contains('^')" ).each(function( index ) {
-			$(this).attr("x", 20 + parseInt($(this).attr("x")));
+			let originalName = self.noSymbolNames.get(contenido);
+			if(originalName) {
+				$(this).text($(this).text().replace(contenido, originalName));
+			}
 		});
 		
 		//Añadir <> a los que carezcan de prefijo
@@ -214,7 +216,9 @@ class UMLGen {
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
                     this.enums.set(id, name);
-                    mumlEquivalent += "class " + this.adaptPref(name) + " {\n<<enumeration>>\n";
+					let sanitizedName = this.adaptPref(name);
+					this.noSymbolNames.set(sanitizedName, name);
+                    mumlEquivalent += "class " + sanitizedName + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
                         mumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
                     }
@@ -242,7 +246,7 @@ class UMLGen {
 		}
 		
 		mumlEquivalent = mumlEquivalent
-							.replace(/[\r\n]+(___dp___|___anga___)[A-Za-z0-9]+(___angc___)? CLOSED :/g, removeClosed);
+							.replace(/[\r\n]+(_)?[A-Za-z0-9_]+(_)? CLOSED :/g, removeClosed);
 
         return mumlEquivalent;
     }
@@ -261,7 +265,9 @@ class UMLGen {
 
         //Extraemos las restricciones y se las asignamos al nombre, si existen
         let cn = this.constraints.get(element.$["xmi:id"]);
-        let name = this.adaptPref(element.$.name) + (cn === undefined ? "" : " " + cn);
+		let sanitizedName = this.adaptPref(element.$.name);
+		this.noSymbolNames.set(sanitizedName, element.$.name);
+        let name = sanitizedName + (cn === undefined ? "" : " " + cn);
         let clase = "class " + name + " {\n";
 
         let attributes = element.ownedAttribute;
@@ -283,7 +289,10 @@ class UMLGen {
             for(let i = 0; i < element.generalization.length; i++) {
                 let hename = element.generalization[i].$.name ?
                     (" : " + element.generalization[i].$.name) : "";
-                clase += this.adaptPref(this.classes.get(element.generalization[i].$.general)) + " <|-- " + this.adaptPref(name)
+				let gname = this.classes.get(element.generalization[i].$.general);
+				let gsanitizedName = this.adaptPref(gname);
+				this.noSymbolNames.set(gsanitizedName, gname);
+                clase += gsanitizedName + " <|-- " + name
                     + hename + "\n";
             }
         }
@@ -340,8 +349,14 @@ class UMLGen {
 
         //at.$.type indica el nombre de la clase
         //at.$.name indica el nombre de la relación
+		let tyName = this.classes.get(at.$.type);
+		let relName = at.$.name;
+		let tysanitizedName = this.adaptPref(tyName);
+		this.noSymbolNames.set(tysanitizedName, tyName);
+		let relsanitizedName = this.adaptPref(relName);
+		this.noSymbolNames.set(relsanitizedName, relName);
         return name + relation + ccard + " "
-            + this.adaptPref(this.classes.get(at.$.type)) + " : " + this.adaptPref(at.$.name) + "\n";
+            + tysanitizedName + " : " + relsanitizedName + "\n";
     }
 
     /**
@@ -359,7 +374,13 @@ class UMLGen {
 			cn = cn.split(" ").join(" \\");
 		}
 
-        return name + " : " + this.adaptPref(at.$.name) + " \"" + this.adaptPref(this.getType(at)) + "\\" + card
+		let tyName = this.getType(at);
+		let atName = at.$.name;
+		let tysanitizedName = this.adaptPref(tyName);
+		this.noSymbolNames.set(tysanitizedName, tyName);
+		let atsanitizedName = this.adaptPref(atName);
+		this.noSymbolNames.set(atsanitizedName, atName);
+        return atsanitizedName + " \"" + tysanitizedName + "\\" + card
             + (cn === undefined ? "" : " \\" +  cn) + "\" \n";
     }
 
@@ -398,11 +419,7 @@ class UMLGen {
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(":", "___dp___")
-						.replace("<", "___anga___")
-						.replace(">", "___angc___")
-						.replace("^", "___inverse___")
-						.replace("-", "___gual___");
+		return prefix.replace(/[\:<>\^\-\/\.]/g, "_");
 	}
 
 }

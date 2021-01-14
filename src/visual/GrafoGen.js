@@ -118,7 +118,6 @@ class GrafoGen {
                             elements = elements.concat(this.createInheritance(sh.shapeExpr, id, "NOT"));
                    }
 				   else {
-					   console.log(sh);
 					   let notAtr = this.getID();
 					   elements = elements.concat(this.createToNode(notAtr, "", "NOT", id));
 					   let ats = this.checkExpression(sh.shapeExpr.expression, notAtr);
