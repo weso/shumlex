@@ -188,7 +188,7 @@ class XMIAttributes {
             //Relación de tipo "a" ( a [:User]) -> generalización XMI
             if(expr.predicate === "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") {
                 let list = [{reference: expr.valueExpr.values[0]}];
-                return this.createXMIGeneralization(list, expr.inverse);
+                return this.createXMIGeneralization(list, expr.inverse, null, "a");
             }
             return this.xmienum.createXMIEnumAttribute(name, expr.valueExpr.values, expr.min, expr.max, id, "");
         }
@@ -216,7 +216,7 @@ class XMIAttributes {
         //Generalización
         if(expr.predicate === "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") {
             let list = [{reference: expr.valueExpr.reference}];
-            return this.createXMIGeneralization(list, expr.inverse);
+            return this.createXMIGeneralization(list, expr.inverse, null, "a");
         }
         //Asociación
         return this.xmiasoc.createXMIAsocAttribute(name, expr.valueExpr.reference, expr.min, expr.max);

@@ -155,11 +155,11 @@ class Xmirepository {
 	<ownedEnd xmi:id="kjsgcuok" visibility="public" type="kjsgcuo3" association="kjsgcuog"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo4" name=":Ultrauser">
-	<generalization xmi:id="kjsgcuol" general="kjsgcuo3" name=""/>
+	<generalization xmi:id="kjsgcuol" general="kjsgcuo3" name="a"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo5" name=":Titanuser">
 	<ownedAttribute xmi:id="kjsgcuom" name="AND" visibility="public" type="kjsgcuon" association="kjsgcuoo" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsgcuop" general="kjsgcuo3" name=""/>
+	<generalization xmi:id="kjsgcuop" general="kjsgcuo3" name="AND"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Association" xmi:id="kjsgcuoo" memberEnd="kjsgcuom kjsgcuoq">
 	<ownedEnd xmi:id="kjsgcuoq" visibility="public" type="kjsgcuo5" association="kjsgcuoo"/>
@@ -505,11 +505,11 @@ class Xmirepository {
 	</ownedAttribute>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfr894" name=":Ultrauser">
-	<generalization xmi:id="kjsfr89a" general="kjsfr893" name=""/>
+	<generalization xmi:id="kjsfr89a" general="kjsfr893" name="a"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfr895" name=":Titanuser">
 	<ownedAttribute xmi:id="kjsfr89b" name="AND" visibility="public" type="kjsfr89c" association="kjsfr89d" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfr89e" general="kjsfr893" name=""/>
+	<generalization xmi:id="kjsfr89e" general="kjsfr893" name="AND"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Association" xmi:id="kjsfr89d" memberEnd="kjsfr89b kjsfr89f">
 	<ownedEnd xmi:id="kjsfr89f" visibility="public" type="kjsfr895" association="kjsfr89d"/>
@@ -521,7 +521,7 @@ class Xmirepository {
 	</ownedAttribute>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfr896" name=":VIPUser">
-	<generalization xmi:id="kjsfr89h" general="kjsfr893" name=""/>
+	<generalization xmi:id="kjsfr89h" general="kjsfr893" name="a"/>
 	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfr89j" name="Extra" visibility="public" type="kjsfr89i" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
@@ -764,13 +764,13 @@ class Xmirepository {
 	</ownedAttribute>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfvim1" name=":Ultrauser">
-	<generalization xmi:id="kjsfvim9" general="kjsfvilz" name=""/>
-	<generalization xmi:id="kjsfvima" general="kjsfvim0" name=""/>
+	<generalization xmi:id="kjsfvim9" general="kjsfvilz" name="a"/>
+	<generalization xmi:id="kjsfvima" general="kjsfvim0" name="a"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfvim2" name=":Titanuser">
 	<ownedAttribute xmi:id="kjsfvimb" name="AND" visibility="public" type="kjsfvimc" association="kjsfvimd" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfvime" general="kjsfvilz" name=""/>
-	<generalization xmi:id="kjsfvimf" general="kjsfvim0" name=""/>
+	<generalization xmi:id="kjsfvime" general="kjsfvilz" name="AND"/>
+	<generalization xmi:id="kjsfvimf" general="kjsfvim0" name="AND"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Association" xmi:id="kjsfvimd" memberEnd="kjsfvimb kjsfvimg">
 	<ownedEnd xmi:id="kjsfvimg" visibility="public" type="kjsfvim2" association="kjsfvimd"/>
@@ -782,8 +782,8 @@ class Xmirepository {
 	</ownedAttribute>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfvim3" name=":VIPUser">
-	<generalization xmi:id="kjsfvimi" general="kjsfvilz" name=""/>
-	<generalization xmi:id="kjsfvimj" general="kjsfvim0" name=""/>
+	<generalization xmi:id="kjsfvimi" general="kjsfvilz" name="a"/>
+	<generalization xmi:id="kjsfvimj" general="kjsfvim0" name="a"/>
 	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfviml" name="Extra" visibility="public" type="kjsfvimk" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
@@ -824,11 +824,11 @@ class Xmirepository {
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfxwij" name=":Ultrauser">
 	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwiv" name="nodeKind" visibility="public" type="kjsfxwiu" isUnique="true">
 	</ownedAttribute>
-	<generalization xmi:id="kjsfxwiw" general="kjsfxwii" name=""/>
+	<generalization xmi:id="kjsfxwiw" general="kjsfxwii" name="AND"/>
 </packagedElement>
 <packagedElement xmi:type="uml:Class" xmi:id="kjsfxwik" name=":Titanuser">
 	<ownedAttribute xmi:id="kjsfxwix" name="AND" visibility="public" type="kjsfxwiy" association="kjsfxwiz" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfxwj0" general="kjsfxwii" name=""/>
+	<generalization xmi:id="kjsfxwj0" general="kjsfxwii" name="AND"/>
 	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwj2" name="nodeKind" visibility="public" type="kjsfxwj1" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
@@ -2252,7 +2252,7 @@ class Xmirepository {
             "\t<ownedEnd xmi:id=\"kbam4jqs\" visibility=\"public\" type=\"kbam4jqg\" association=\"kbam4jqr\"/>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqq\" name=\"_:2\">\n" +
-            "\t<generalization xmi:id=\"kbam4jqt\" general=\"kbam4jqh\" name=\"\"/>\n" +
+            "\t<generalization xmi:id=\"kbam4jqt\" general=\"kbam4jqh\" name=\"a\"/>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqh\" name=\":Company\"/>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqi\" name=\":GreatGrandson\">\n" +
@@ -2273,7 +2273,7 @@ class Xmirepository {
             "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kbam4jr2\" value=\"*\"/>\t</ownedAttribute>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqj\" name=\"_:1\">\n" +
-            "\t<generalization xmi:id=\"kbam4jr5\" general=\"kbam4jqf\" name=\"\"/>\n" +
+            "\t<generalization xmi:id=\"kbam4jr5\" general=\"kbam4jqf\" name=\"a\"/>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbam4jqd\" name=\"Prefixes\">\n" +
             "\t<ownedLiteral xmi:id=\"kbam4jqa\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
@@ -2333,7 +2333,7 @@ class Xmirepository {
             "\t\t</packagedElement>\n" +
             "\t\t<packagedElement isAbstract=\"false\" isActive=\"false\" isLeaf=\"false\" name=\"_:2\" visibility=\"public\" xmi:id=\"kbgzmktl\" xmi:type=\"uml:Class\">\n" +
             "\t\t\t\n" +
-            "\t\t\t<generalization general=\"kbgzmktc\" name=\"\" xmi:id=\"kbgzmkto\" xmi:type=\"uml:Generalization\">\n" +
+            "\t\t\t<generalization general=\"kbgzmktc\" name=\"a\" xmi:id=\"kbgzmkto\" xmi:type=\"uml:Generalization\">\n" +
             "\t\t\t\t\n" +
             "\t\t\t</generalization>\n" +
             "\t\t</packagedElement>\n" +
@@ -2368,7 +2368,7 @@ class Xmirepository {
             "\t\t</packagedElement>\n" +
             "\t\t<packagedElement isAbstract=\"false\" isActive=\"false\" isLeaf=\"false\" name=\"_:1\" visibility=\"public\" xmi:id=\"kbgzmkte\" xmi:type=\"uml:Class\">\n" +
             "\t\t\t\n" +
-            "\t\t\t<generalization general=\"kbgzmkta\" name=\"\" xmi:id=\"kbgzmku0\" xmi:type=\"uml:Generalization\">\n" +
+            "\t\t\t<generalization general=\"kbgzmkta\" name=\"a\" xmi:id=\"kbgzmku0\" xmi:type=\"uml:Generalization\">\n" +
             "\t\t\t\t\n" +
             "\t\t\t</generalization>\n" +
             "\t\t</packagedElement>\n" +
@@ -2710,7 +2710,7 @@ class Xmirepository {
             " xmi:id=\"kbamltd5\" name=\"ShExGeneratedXMI\">\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamltda\" name=\":Person\"/>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamltdb\" name=\":User\">\n" +
-            "\t<generalization xmi:id=\"kbamltdd\" general=\"kbamltda\" name=\"^\"/>\n" +
+            "\t<generalization xmi:id=\"kbamltdd\" general=\"kbamltda\" name=\"^a\"/>\n" +
             "\t<ownedAttribute xmi:id=\"kbamltde\" name=\"^:name\" visibility=\"public\" isUnique=\"false\">\n" +
             "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
             "\t\t</type>\n" +
@@ -2767,7 +2767,7 @@ class Xmirepository {
             "\t\t\t\t<lowerValue value=\"1\" xmi:id=\"NolLnU6GAqACHS.F_multiplicity_lowerValue\" xmi:type=\"uml:LiteralString\"/>\n" +
             "\t\t\t\t<upperValue value=\"1\" xmi:id=\"NolLnU6GAqACHS.F_multiplicity_upperValue\" xmi:type=\"uml:LiteralString\"/>\n" +
             "\t\t\t</ownedAttribute>\n" +
-            "\t\t\t<generalization general=\"kbgzs92g\" name=\"^\" xmi:id=\"kbgzs92j\" xmi:type=\"uml:Generalization\">\n" +
+            "\t\t\t<generalization general=\"kbgzs92g\" name=\"^a\" xmi:id=\"kbgzs92j\" xmi:type=\"uml:Generalization\">\n" +
             "\t\t\t\t\n" +
             "\t\t\t</generalization>\n" +
             "\t\t</packagedElement>\n" +
@@ -3160,7 +3160,7 @@ class Xmirepository {
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyg\" name=\":Titanuser\">\n" +
             "\t<ownedAttribute xmi:id=\"kbea7kz1\" name=\"AND\" visibility=\"public\" type=\"kbea7kz2\" association=\"kbea7kz3\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<generalization xmi:id=\"kbea7kz4\" general=\"kbea7kyf\" name=\"\"/>\n" +
+            "\t<generalization xmi:id=\"kbea7kz4\" general=\"kbea7kyf\" name=\"AND\"/>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kz3\" memberEnd=\"kbea7kz1 kbea7kz5\">\n" +
             "\t<ownedEnd xmi:id=\"kbea7kz5\" visibility=\"public\" type=\"kbea7kyg\" association=\"kbea7kz3\"/>\n" +
@@ -3188,7 +3188,7 @@ class Xmirepository {
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyh\" name=\":Ultrauser\">\n" +
             "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbea7kzh\" name=\"nodeKind\" visibility=\"public\" type=\"kbea7kzf\" isUnique=\"true\">\n" +
             "\t</ownedAttribute>\n" +
-            "\t<generalization xmi:id=\"kbea7kzi\" general=\"kbea7kyf\" name=\"\"/>\n" +
+            "\t<generalization xmi:id=\"kbea7kzi\" general=\"kbea7kyf\" name=\"AND\"/>\n" +
             "</packagedElement>\n" +
             "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyi\" name=\":Product\">\n" +
             "\t<ownedAttribute xmi:id=\"kbea7kzj\" name=\":productId\" visibility=\"public\" isUnique=\"false\">\n" +
@@ -3283,7 +3283,7 @@ class Xmirepository {
             "\t\t</packagedElement>\n" +
             "\t\t<packagedElement isAbstract=\"false\" isActive=\"false\" isLeaf=\"false\" name=\":Titanuser\" visibility=\"public\" xmi:id=\"kbh02f1o\" xmi:type=\"uml:Class\">\n" +
             "\t\t\t\n" +
-            "\t\t\t<generalization general=\"kbh02f1n\" name=\"\" xmi:id=\"kbh02f2c\" xmi:type=\"uml:Generalization\">\n" +
+            "\t\t\t<generalization general=\"kbh02f1n\" name=\"AND\" xmi:id=\"kbh02f2c\" xmi:type=\"uml:Generalization\">\n" +
             "\t\t\t\t\n" +
             "\t\t\t</generalization>\n" +
             "\t\t\t<ownedAttribute aggregation=\"composite\" isDerived=\"false\" isDerivedUnion=\"false\" isLeaf=\"false\" isNavigable=\"true\" isReadOnly=\"false\" isStatic=\"false\" name=\"AND\" type=\"kbh02f2a\" visibility=\"public\" xmi:id=\"kbh02f29\" xmi:type=\"uml:Property\">\n" +
@@ -3332,7 +3332,7 @@ class Xmirepository {
             "\t\t\t\t<lowerValue value=\"1\" xmi:id=\"jQebnU6GAqACHTrI_multiplicity_lowerValue\" xmi:type=\"uml:LiteralString\"/>\n" +
             "\t\t\t\t<upperValue value=\"1\" xmi:id=\"jQebnU6GAqACHTrI_multiplicity_upperValue\" xmi:type=\"uml:LiteralString\"/>\n" +
             "\t\t\t</ownedAttribute>\n" +
-            "\t\t\t<generalization general=\"kbh02f1n\" name=\"\" xmi:id=\"kbh02f2q\" xmi:type=\"uml:Generalization\">\n" +
+            "\t\t\t<generalization general=\"kbh02f1n\" name=\"AND\" xmi:id=\"kbh02f2q\" xmi:type=\"uml:Generalization\">\n" +
             "\t\t\t\t\n" +
             "\t\t\t</generalization>\n" +
             "\t\t</packagedElement>\n" +

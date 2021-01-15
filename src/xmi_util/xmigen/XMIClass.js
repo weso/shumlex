@@ -131,7 +131,7 @@ class XMIClass {
         }
         switch(lop) {
             case "AND":
-                generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id);
+                generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id, "AND");
                 break;
             case "OR":
                 generalizations = this.xmiatt.createXMIGeneralization(exprsForGen, false, sh.id, "OR");
