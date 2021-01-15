@@ -20,9 +20,9 @@ class UMLGen {
         this.enums = new Map();
         this.constraints = new Map();
 		
-		this.noSymbolNames = new Map(); //dado que la librería no se digna a aceptar apenas ningún símbolo, y resulta que se emplean muchos más de los que cabría esperar,
-										//voy a emplear un Map que guarde el nombre sanitizado y el original para recuperarlo al instante. Mejor que andar sustituyendo in situ
-										//ya que se alargan mucho los términos y me joden la anchura de los recuadros.
+		this.noSymbolNames = new Map(); 
+										
+		this.relationships = new Map();
     }
 	
 	crearSVG(id, umlcr, ops) {
@@ -70,14 +70,16 @@ class UMLGen {
 			if(originalName) {
 				$(this).text($(this).text().replace(contenido, originalName));
 			}
+			$(this).parent().attr("id", $(this).text() + "-label");
+			$(this).parent().prev().attr("id", $(this).text() + "-edge");
 		});
 		
 		//Añadir <> a los que carezcan de prefijo
 		$( "#" + id + " .title" ).each(function( index ) {
 			let contenido = $(this).text();
-			if(contenido === "Prefixes" || contenido.includes(":") || contenido.includes("<") || contenido.includes("_Blank"))
-				return;
-			$(this).text("<" + contenido + ">")
+			if(!(contenido === "Prefixes" || contenido.includes(":") || contenido.includes("<") || contenido.includes("_Blank")))
+				$(this).text("<" + contenido + ">");	
+			$(this).parent().parent().attr("id", $(this).text()); //El nombre de la clase como ID del elemento
 		});
 		
 		//Eliminar repeticiones de enumeraciones
@@ -101,6 +103,8 @@ class UMLGen {
 		$("#" + id + " svg").removeAttr("width");
 		
 		$(".cardinality text").attr("font-size", "12");	
+		
+		console.log(this.relationships);
 	}
 
     /**
@@ -294,6 +298,14 @@ class UMLGen {
 				this.noSymbolNames.set(gsanitizedName, gname);
                 clase += gsanitizedName + " <|-- " + name
                     + hename + "\n";
+				let orName = this.noSymbolNames.get(name);
+				if(!this.relationships.get(orName)) {
+					this.relationships.set(orName, []);
+				}
+				let rList = this.relationships.get(orName);
+				rList.push(gname);
+				//rList.push(relName);
+				this.relationships.set(orName, rList);
             }
         }
 
@@ -355,6 +367,15 @@ class UMLGen {
 		this.noSymbolNames.set(tysanitizedName, tyName);
 		let relsanitizedName = this.adaptPref(relName);
 		this.noSymbolNames.set(relsanitizedName, relName);
+		//Guardar las relaciones
+		let orName = this.noSymbolNames.get(name);
+		if(!this.relationships.get(orName)) {
+			this.relationships.set(orName, []);
+		}
+		let rList = this.relationships.get(orName);
+		rList.push(tyName);
+		rList.push(relName);
+		this.relationships.set(orName, rList);
         return name + relation + ccard + " "
             + tysanitizedName + " : " + relsanitizedName + "\n";
     }
