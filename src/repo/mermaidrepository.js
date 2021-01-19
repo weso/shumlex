@@ -55,7 +55,7 @@ _User -->  _Company : _worksFor
 _User --> " {1,10}" _Product_ : _buys
 _User <|-- _Ultrauser : a
 _Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser : AND
+_User <|-- _Titanuser : AND0
 class _Blank1 {
 _titancode "xsd_string\\" 
 }
@@ -95,14 +95,14 @@ _age "xsd_int\\ ?"
 }
 _User <|-- _Ultrauser : a
 _Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser : AND
+_User <|-- _Titanuser : AND0
 class _Blank1 {
 _titancode "xsd_string\\" 
 }
 class _VIPUser {
 Extra "Extra__VIPUser\\" 
 }
-_User <|-- _VIPUser : a
+_User <|-- _VIPUser : a1
 `;
     }
 
@@ -124,16 +124,16 @@ _name "xsd_string\\"
 class _Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser : AND
+_User <|-- _Ultrauser : AND0
 class _Titanuser {
 nodeKind: NonLiteral 
 }
-_Titanuser *--  _Blank2 : AND
-_User <|-- _Titanuser : AND
+_Titanuser *--  _Blank2 : AND1
+_User <|-- _Titanuser : AND2
 class _Product_ {
 nodeKind: BNode 
 }
-_Product_ *--  _Blank3 : AND
+_Product_ *--  _Blank3 : AND3
 class _AThing_ {
 nodeKind: IRI 
 }
@@ -273,7 +273,7 @@ class _User {
 _name "xsd_string\\" 
 }
 _User *-- " ?" _Blank1 : EachOf
-_User *-- " *" _Blank2 : EachOf
+_User *-- " *" _Blank2 : EachOf0
 _User -->  _Garage : _owns
 class _Blank1 {
 _givenName "xsd_string\\" 
@@ -283,12 +283,12 @@ class _Blank2 {
 _c "xsd_string\\" 
 }
 _Blank2 --> " {2,}" _Something_ : _has
-_Garage *-- " +" _Blank3 : EachOf
+_Garage *-- " +" _Blank3 : EachOf1
 class _Blank3 {
 _AE86_ "xsd_string\\" 
 }
-_Blank3 *-- " ?" _Blank4 : EachOf
-_Blank3 *-- " ?" _Blank5 : EachOf
+_Blank3 *-- " ?" _Blank4 : EachOf2
+_Blank3 *-- " ?" _Blank5 : EachOf3
 class _Blank4 {
 _Levin_ "xsd_string\\" 
 _Cilinders_ "xsd_int\\" 
@@ -320,7 +320,7 @@ _familyName "xsd_string\\"
 class _Car {
 _model "xsd_string\\" 
 }
-_Car *-- " {1,2}" _Blank3 : OneOf
+_Car *-- " {1,2}" _Blank3 : OneOf0
 class _Blank3 {
 _turbo "xsd_string\\" 
 _misfiring "xsd_string\\" 
@@ -347,11 +347,11 @@ _name "xsd_string\\"
 _User *--  __2 : _worksFor
 _Company <|-- __2 : a
 _GreatGrandson *--  __3 : _parent
-__3 *--  __4 : _parent
+__3 *--  __4 : _parent0
 class __4 {
 _parent "Any\\ +" 
 }
-_Garage <|-- __1 : a
+_Garage <|-- __1 : a1
 `;
     }
 
@@ -470,16 +470,16 @@ base <http://example.org/>
 }
 _User *--  _Blank1 : AND
 _Blank1 *--  _Blank2 : Shape
-_Blank1 *--  _Blank3 : Shape
+_Blank1 *--  _Blank3 : Shape0
 class _Blank2 {
 _name "xsd_string\\" 
 _owns "IRI\\" 
 }
 _Blank3 -->  _Product : _owns
-_Titanuser *--  _Blank4 : AND
-_User <|-- _Titanuser : AND
-_Blank4 *--  _Blank5 : Shape
-_Blank4 *--  _Blank6 : Shape
+_Titanuser *--  _Blank4 : AND1
+_User <|-- _Titanuser : AND2
+_Blank4 *--  _Blank5 : Shape3
+_Blank4 *--  _Blank6 : Shape4
 class _Blank5 {
 _titancode "xsd_string\\" 
 }
@@ -489,7 +489,7 @@ _owns "Literal\\"
 class _Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser : AND
+_User <|-- _Ultrauser : AND5
 class _Product {
 _productId "xsd_string\\ \\MinLength \\5 \\MaxLength \\10" 
 }
@@ -506,16 +506,16 @@ base <http://example.org/>
 }
 _User *--  _Blank1 : OR
 _Blank1 *--  _Blank2 : Shape
-_Blank1 *--  _Blank3 : Shape
+_Blank1 *--  _Blank3 : Shape0
 class _Blank2 {
 _name "xsd_string\\" 
 _owns "IRI\\" 
 }
 _Blank3 -->  _Product : _owns
-_Titanuser *--  _Blank4 : OR
-_User <|-- _Titanuser : OR
-_Blank4 *--  _Blank5 : Shape
-_Blank4 *--  _Blank6 : Shape
+_Titanuser *--  _Blank4 : OR1
+_User <|-- _Titanuser : OR2
+_Blank4 *--  _Blank5 : Shape3
+_Blank4 *--  _Blank6 : Shape4
 class _Blank5 {
 _titancode "xsd_string\\" 
 }
@@ -541,7 +541,7 @@ _name "xsd_string\\"
 _birthDate "xsd_date\\ ?" 
 }
 _User <|-- _NoUser : NOT
-_NoName *--  _Blank1 : NOT
+_NoName *--  _Blank1 : NOT0
 class _Blank1 {
 _name "xsd_string\\" 
 }

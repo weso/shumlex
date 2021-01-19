@@ -23,6 +23,9 @@ class UMLGen {
 		this.noSymbolNames = new Map(); 
 										
 		this.relationships = new Map();
+		this.terms = [];
+		this.rpTerms = new Map();	//Termino repetido y el ID que lo unifica
+		this.rpNumber = 0;
     }
 	
 	crearSVG(id, umlcr, ops) {
@@ -70,8 +73,13 @@ class UMLGen {
 			if(originalName) {
 				$(this).text($(this).text().replace(contenido, originalName));
 			}
-			$(this).parent().attr("id", $(this).text() + "-label");
-			$(this).parent().prev().attr("id", $(this).text() + "-edge");
+			let repeatedId = self.rpTerms.get(contenido);
+			let id = $(this).text();
+			if(repeatedId) {
+				id = repeatedId;
+			}
+			$(this).parent().attr("id", id + "-label");
+			$(this).parent().prev().attr("id", id + "-edge");
 		});
 		
 		//Añadir <> a los que carezcan de prefijo
@@ -104,7 +112,42 @@ class UMLGen {
 		
 		$(".cardinality text").attr("font-size", "12");	
 		
-		console.log(this.relationships);
+		// Evento de ocultar todos los elementos y mostrar las relaciones vinculadas a un ID
+		function resaltar(event) {
+			
+			//Ocultar todo
+			$( "#" + id + " g" ).each(function( index ) {
+				$(this).css("opacity", "0.1");
+			});
+			
+			$( "#" + id + " path" ).each(function( index ) {
+				$(this).css("opacity", "0.1");
+			});
+			
+			//A cada una de las relaciones les quitamos la opacidad
+			let relationships = self.relationships.get(event.data.idB);
+			
+			$( "#" + $.escapeSelector(event.data.idB) ).css("opacity", "1"); //Él mismo
+			if(!relationships) {
+				return;
+			}
+			for(let i = 0; i < relationships.length; i++) {
+				$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
+				$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
+				$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "1");
+			}
+		}
+		
+		// Vincular a cada clase el evento de mostrar las relaciones
+		$( "#" + id + " .classGroup" ).each(function( index ) {
+			$(this).css("cursor", "pointer");
+			let idBase = $(this).attr("id");
+			$(this).click({idB: idBase}, resaltar);
+		});
+		
+		//console.log(this.relationships);
+		
+		
 	}
 
     /**
@@ -113,6 +156,7 @@ class UMLGen {
      * @returns {string}    En formato MUML
      */
     generarCodigoMUML(xmi) {
+		this.clear();
         let muml = "classDiagram\n";
         muml += this.parseXMIToMUML(xmi);
         return muml;
@@ -291,21 +335,38 @@ class UMLGen {
 		//Relaciones de herencia
         if(element.generalization) {
             for(let i = 0; i < element.generalization.length; i++) {
-                let hename = element.generalization[i].$.name ?
-                    (" : " + element.generalization[i].$.name) : "";
+				let relName = element.generalization[i].$.name;
+                let hename = relName ? (" : " + relName) : "";
 				let gname = this.classes.get(element.generalization[i].$.general);
 				let gsanitizedName = this.adaptPref(gname);
 				this.noSymbolNames.set(gsanitizedName, gname);
-                clase += gsanitizedName + " <|-- " + name
-                    + hename + "\n";
+                
 				let orName = this.noSymbolNames.get(name);
 				if(!this.relationships.get(orName)) {
 					this.relationships.set(orName, []);
 				}
 				let rList = this.relationships.get(orName);
 				rList.push(gname);
-				//rList.push(relName);
-				this.relationships.set(orName, rList);
+				this.saveTerm(orName);
+				this.saveTerm(gname);
+				let unique = this.saveTerm(relName);
+				//Procurar que no se repitan nombres de relaciones para hacer el mapeado de relaciones
+				if(!unique) {
+					rList = this.relationships.get(orName);
+					let relNameRP = relName + this.rpNumber;
+					rList.push(relNameRP);
+					this.relationships.set(orName, rList);
+					this.rpTerms.set(relNameRP, relNameRP);
+					this.rpNumber++;
+					hename = " : " + relNameRP;
+					this.noSymbolNames.set(relNameRP, relName);
+				}
+				else {
+					rList.push(relName);
+					this.relationships.set(orName, rList);
+				}
+				clase += gsanitizedName + " <|-- " + name
+                    + hename + "\n";
             }
         }
 
@@ -374,8 +435,22 @@ class UMLGen {
 		}
 		let rList = this.relationships.get(orName);
 		rList.push(tyName);
-		rList.push(relName);
-		this.relationships.set(orName, rList);
+		this.saveTerm(tyName);
+		let unique = this.saveTerm(relName);
+		//Procurar que no se repitan nombres de relaciones para hacer el mapeado de relaciones
+		if(!unique) {
+			relsanitizedName = relsanitizedName + this.rpNumber;
+			this.noSymbolNames.set(relsanitizedName, relName);
+			relName = relName + this.rpNumber;	
+			rList.push(relName);
+			this.relationships.set(orName, rList);
+			this.rpTerms.set(relsanitizedName, relName);
+			this.rpNumber++;
+		}
+		else {
+			rList.push(relName);
+			this.relationships.set(orName, rList);
+		}
         return name + relation + ccard + " "
             + tysanitizedName + " : " + relsanitizedName + "\n";
     }
@@ -442,6 +517,30 @@ class UMLGen {
 	adaptPref(prefix) {
 		return prefix.replace(/[\:<>\^\-\/\.]/g, "_");
 	}
+	
+	saveTerm(term) {
+		for (let i = 0; i < this.terms.length; i++) {
+			if(this.terms[i] === term) {
+				return false;
+			}
+		}
+		this.terms.push(term);
+		return true;
+	}
+	
+	clear() {
+		this.classes = new Map();
+        this.types = new Map();
+        this.enums = new Map();
+        this.constraints = new Map();
+		
+		this.noSymbolNames = new Map(); 
+										
+		this.relationships = new Map();
+		this.terms = [];
+		this.rpTerms = new Map();	//Termino repetido y el ID que lo unifica
+		this.rpNumber = 0;
+	}	
 
 }
 module.exports = UMLGen;
