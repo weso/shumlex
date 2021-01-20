@@ -121,14 +121,17 @@ class UMLGen {
 			let element = $( "#" + $.escapeSelector(event.data.idB) );
 			
 			if(!element.hasClass("highlighted")) {
-				//Ocultar todo
-				$( "#" + id + " g" ).each(function( index ) {
-					$(this).css("opacity", "0.1");
-				});
 				
-				$( "#" + id + " svg > path" ).each(function( index ) {
-					$(this).css("opacity", "0.1");
-				});
+				if($(".highlighted").length === 0) {
+					//Ocultar todo
+					$( "#" + id + " g" ).each(function( index ) {
+						$(this).css("opacity", "0.1");
+					});
+					
+					$( "#" + id + " svg > path" ).each(function( index ) {
+						$(this).css("opacity", "0.1");
+					});
+				}
 				
 				element.css("opacity", "1"); //Él mismo
 				element.addClass("highlighted");  //Lo marcamos
