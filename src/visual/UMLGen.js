@@ -142,10 +142,10 @@ class UMLGen {
 				for(let j = 0; j < resaltados.length; j++) {
 					let idResaltado = resaltados[j].id;
 					$("#" + $.escapeSelector(idResaltado)).css("opacity", "1");
-					let relationships = self.relationships.get(idResaltado);
 					
+					let relationships = self.relationships.get(idResaltado);
 					if(!relationships) {
-						return;
+						continue;
 					}
 					for(let i = 0; i < relationships.length; i++) {
 						$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
