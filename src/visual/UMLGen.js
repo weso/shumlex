@@ -80,6 +80,9 @@ class UMLGen {
 			}
 			$(this).parent().attr("id", id + "-label");
 			$(this).parent().prev().attr("id", id + "-edge");
+			if($(this).parent().next() && $(this).parent().next().attr("class") === "cardinality") {
+				$(this).parent().next().attr("id", id + "-card");
+			}
 		});
 		
 		//Añadir <> a los que carezcan de prefijo
@@ -120,7 +123,7 @@ class UMLGen {
 				$(this).css("opacity", "0.1");
 			});
 			
-			$( "#" + id + " path" ).each(function( index ) {
+			$( "#" + id + " svg > path" ).each(function( index ) {
 				$(this).css("opacity", "0.1");
 			});
 			
@@ -135,6 +138,7 @@ class UMLGen {
 				$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
 				$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
 				$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "1");
+				$( "#" + $.escapeSelector(relationships[i]) + "-card" ).css("opacity", "1");
 			}
 		}
 		
