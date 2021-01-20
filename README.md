@@ -1,5 +1,5 @@
 # Shumlex
-[![Version Status](https://img.shields.io/badge/version-0.3.7-green.svg)](https://github.com/weso/shumlex)
+[![Version Status](https://img.shields.io/badge/version-0.4.0-green.svg)](https://github.com/weso/shumlex)
 
 ## Introduction
 Welcome to Shumlex. 
