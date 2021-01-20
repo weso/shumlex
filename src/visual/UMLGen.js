@@ -118,28 +118,74 @@ class UMLGen {
 		// Evento de ocultar todos los elementos y mostrar las relaciones vinculadas a un ID
 		function resaltar(event) {
 			
-			//Ocultar todo
-			$( "#" + id + " g" ).each(function( index ) {
-				$(this).css("opacity", "0.1");
-			});
+			let element = $( "#" + $.escapeSelector(event.data.idB) );
 			
-			$( "#" + id + " svg > path" ).each(function( index ) {
-				$(this).css("opacity", "0.1");
-			});
-			
-			//A cada una de las relaciones les quitamos la opacidad
-			let relationships = self.relationships.get(event.data.idB);
-			
-			$( "#" + $.escapeSelector(event.data.idB) ).css("opacity", "1"); //Él mismo
-			if(!relationships) {
-				return;
+			if(!element.hasClass("highlighted")) {
+				//Ocultar todo
+				$( "#" + id + " g" ).each(function( index ) {
+					$(this).css("opacity", "0.1");
+				});
+				
+				$( "#" + id + " svg > path" ).each(function( index ) {
+					$(this).css("opacity", "0.1");
+				});
+				
+				element.css("opacity", "1"); //Él mismo
+				element.addClass("highlighted");  //Lo marcamos
+				
+				//A cada una de las relaciones les quitamos la opacidad
+				let resaltados = $(".highlighted");
+				//Para cada uno de los resaltados, mostrar sus relaciones
+				for(let j = 0; j < resaltados.length; j++) {
+					let idResaltado = resaltados[j].id;
+					$("#" + $.escapeSelector(idResaltado)).css("opacity", "1");
+					let relationships = self.relationships.get(idResaltado);
+					
+					if(!relationships) {
+						return;
+					}
+					for(let i = 0; i < relationships.length; i++) {
+						$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
+						$( "#" + $.escapeSelector(relationships[i]) ).addClass("highlightOf-" + idResaltado);
+						$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
+						$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "1");
+						$( "#" + $.escapeSelector(relationships[i]) + "-card" ).css("opacity", "1");
+					}
+				}
 			}
-			for(let i = 0; i < relationships.length; i++) {
-				$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
-				$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
-				$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "1");
-				$( "#" + $.escapeSelector(relationships[i]) + "-card" ).css("opacity", "1");
+			else {
+				element.removeClass("highlighted");
+				if($(".highlighted").length === 0) {	//Si no quedan elementos resaltados regresamos al estado primigenio
+					$( "#" + id + " g" ).each(function( index ) {
+						$(this).css("opacity", "1");
+					});
+					
+					$( "#" + id + " svg > path" ).each(function( index ) {
+						$(this).css("opacity", "1");
+					});
+				}
+				else {	//Si no, únicamente los tapamos de nuevo
+					if(!$(this).is('[class*="highlightOf"]')) {	//Si no está ya resaltado por otra clase
+						element.css("opacity", "0.1"); 
+					}
+					let relationships = self.relationships.get(event.data.idB);
+					if(!relationships) {
+						return;
+					}
+					for(let i = 0; i < relationships.length; i++) {
+						$( "#" + $.escapeSelector(relationships[i]) ).removeClass("highlightOf-" + event.data.idB);
+						if(!$( "#" + $.escapeSelector(relationships[i])).hasClass("highlighted")
+								&& !$( "#" + $.escapeSelector(relationships[i])).is('[class*="highlightOf"]')) {
+							$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "0.1");
+						}
+						$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "0.1");
+						$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "0.1");
+						$( "#" + $.escapeSelector(relationships[i]) + "-card" ).css("opacity", "0.1");
+					}
+				}
+				
 			}
+			
 		}
 		
 		// Vincular a cada clase el evento de mostrar las relaciones
