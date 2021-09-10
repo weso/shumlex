@@ -33,23 +33,22 @@ class UMLGen {
 		let maxheight = ops.max_height ? ops.max_height : "500px";
 		let maxwidth = ops.max_width ? ops.max_width : "100vw";
 		$("#output").text(umlcr);
-		$("#" + id).removeAttr("data-processed");
 		$("#" + id).css("max-height", maxheight);
 		$("#" + id).css("max-width", maxwidth);
 		$("#" + id).text(umlcr);
 		mermaid.init({flowchart: { useMaxWidth: false }}, "#" + id);
+
+		$("#" + id).removeAttr("data-processed");
 		
 		let self = this;
 		//Borrar caracteres empleados para la generación
-		$( "#" + id + " tspan" ).each(function( index ) {
+		$( "#" + id + " .nodeLabel" ).each(function( index ) {
 			
 			let contenido = $(this).text().replace(/\\/g, "")
 									.replace(/\"/g, "")
 									.replace(/\*(<|>)/g, "~")
 									.replace(/CLOSED/g, " CLOSED")
-									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "")
-									.replace(/«/g, "<<")
-									.replace(/»/g, ">>");
+									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "");
 									
 			$(this).text(contenido);
 			
@@ -60,30 +59,46 @@ class UMLGen {
 					let newText = $(this).text().replace(elements[i], originalName);
 					$(this).text(newText);
 				}
-			}
-			
-			
-			
+			}		
 			
 		});
+
+		//ID adecuado
+		$( "#" + id + " .classTitle .nodeLabel" ).each(function( index ) {
+			
+			let id = $(this).text();
+									
+			$(this).parent().parent().parent().parent().attr("id", id);
+							
+		});
+
+		let edgeID = 1;
 		
-		$( "#" + id + " .label" ).each(function( index ) {
+		 
+		$( "#" + id + " span span.edgeLabel" ).each(function( index ) {
 			let contenido = $(this).text();
 			let originalName = self.noSymbolNames.get(contenido);
 			if(originalName) {
 				$(this).text($(this).text().replace(contenido, originalName));
 			}
+
 			let repeatedId = self.rpTerms.get(contenido);
 			let id = $(this).text();
 			if(repeatedId) {
 				id = repeatedId;
 			}
-			$(this).parent().attr("id", id + "-label");
-			$(this).parent().prev().attr("id", id + "-edge");
-			if($(this).parent().next() && $(this).parent().next().attr("class") === "cardinality") {
-				$(this).parent().next().attr("id", id + "-card");
+
+			let lroot = $(this).parent().parent().parent().parent().parent();
+
+			lroot.attr("id", id + "-label");
+			$("#id" + edgeID).attr("id", id + "-edge");
+			edgeID++;
+			if(lroot.next() 
+				&& lroot.next().attr("class") === "edgeTerminals") {
+				lroot.next().attr("id", id + "-card");
 			}
 		});
+		
 		
 		//Añadir <> a los que carezcan de prefijo
 		$( "#" + id + " .title" ).each(function( index ) {
@@ -94,6 +109,7 @@ class UMLGen {
 		});
 		
 		//Eliminar repeticiones de enumeraciones
+		/** 
 		$( "#" + id + " tspan[dy]:contains('<<enumeration>>')" ).each(function( index ) {
 			let height = 10;
 			let line = $(this).parent().next();
@@ -110,10 +126,11 @@ class UMLGen {
 			rect.height(rect.height() - height);
 			$(this).remove();	
 		});
+		*/
 		
 		$("#" + id + " svg").removeAttr("width");
 		
-		$(".cardinality text").attr("font-size", "12");	
+		$(".edgeTerminals span").attr("font-size", "12");	
 		
 		// Evento de ocultar todos los elementos y mostrar las relaciones vinculadas a un ID
 		function resaltar(event) {
@@ -124,11 +141,19 @@ class UMLGen {
 				
 				if($(".highlighted").length === 0) {
 					//Ocultar todo
-					$( "#" + id + " g" ).each(function( index ) {
+					$( "#" + id + " .node" ).each(function( index ) {
+						$(this).css("opacity", "0.1");
+					});
+
+					$( "#" + id + " g.edgeLabel" ).each(function( index ) {
+						$(this).css("opacity", "0.1");
+					});
+
+					$( "#" + id + " .edgeTerminals" ).each(function( index ) {
 						$(this).css("opacity", "0.1");
 					});
 					
-					$( "#" + id + " svg > path" ).each(function( index ) {
+					$( "#" + id + " .edgePaths > path" ).each(function( index ) {
 						$(this).css("opacity", "0.1");
 					});
 				}
@@ -143,11 +168,13 @@ class UMLGen {
 					let idResaltado = resaltados[j].id;
 					$("#" + $.escapeSelector(idResaltado)).css("opacity", "1");
 					
+					console.log(self.relationships)
 					let relationships = self.relationships.get(idResaltado);
 					if(!relationships) {
 						continue;
 					}
 					for(let i = 0; i < relationships.length; i++) {
+						console.log(relationships[i])
 						$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
 						$( "#" + $.escapeSelector(relationships[i]) ).addClass("highlightOf-" + idResaltado);
 						$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
@@ -163,7 +190,7 @@ class UMLGen {
 						$(this).css("opacity", "1");
 					});
 					
-					$( "#" + id + " svg > path" ).each(function( index ) {
+					$( "#" + id + " path" ).each(function( index ) {
 						$(this).css("opacity", "1");
 					});
 				}
@@ -192,7 +219,7 @@ class UMLGen {
 		}
 		
 		// Vincular a cada clase el evento de mostrar las relaciones
-		$( "#" + id + " .classGroup" ).each(function( index ) {
+		$( "#" + id + " .node" ).each(function( index ) {
 			$(this).css("cursor", "pointer");
 			let idBase = $(this).attr("id");
 			$(this).click({idB: idBase}, resaltar);
