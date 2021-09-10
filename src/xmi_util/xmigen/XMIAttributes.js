@@ -48,7 +48,7 @@ class XMIAttributes {
         }
         //Una TripleConstraint alberga múltiples alternativas. Redirigimos a un método especializado.
         else if(expr.type === "TripleConstraint") {
-            attrs = this.determineTypeOfExpression(expr, undefined);
+            attrs = this.determineTypeOfExpression(expr, undefined, undefined, className);
         }
         //Expresión OneOf.
         else if(expr.type === "OneOf") {
@@ -148,7 +148,7 @@ class XMIAttributes {
      * @param lop   Si se aplica operación lógica (OR...)
      * @returns {*}
      */
-    determineTypeOfExpression(expr, id, lop) {
+    determineTypeOfExpression(expr, id, lop, cn) {
         //Si tiene predicado, lo prefijamos, añadimos inverso -si existe- y cardinalidad
         let inverse = (expr.inverse === true ? "^" : "");
         let name = inverse + this.IRIManager.getShexTerm(this.irim.getPrefixedTermOfIRI(expr.predicate));
@@ -158,7 +158,7 @@ class XMIAttributes {
             return this.createXMIPrimAttribute(name, "Any", expr.min, expr.max);
         }
         else if(expr.valueExpr.type === "NodeConstraint") {
-            return this.checkNCValueExpr(expr, name, id, lop);
+            return this.checkNCValueExpr(expr, name, id, lop, cn);
         }
         //Referencia a otra Shape
         else if (expr.valueExpr.type === "ShapeRef") {
@@ -182,7 +182,7 @@ class XMIAttributes {
      * @param lop   Operación logica (AND, OR)
      * @returns {*} Equivalente XMI
      */
-    checkNCValueExpr(expr, name, id, lop) {
+    checkNCValueExpr(expr, name, id, lop, cn) {
         //Conjunto de valores -> enumeración
         if(expr.valueExpr.values) {
             //Relación de tipo "a" ( a [:User]) -> generalización XMI
@@ -190,7 +190,7 @@ class XMIAttributes {
                 let list = [{reference: expr.valueExpr.values[0]}];
                 return this.createXMIGeneralization(list, expr.inverse, null, "a");
             }
-            return this.xmienum.createXMIEnumAttribute(name, expr.valueExpr.values, expr.min, expr.max, id, "");
+            return this.xmienum.createXMIEnumAttribute(name, expr.valueExpr.values, expr.min, expr.max, id, cn);
         }
         //Tipo de nodo (Literal, IRI...) -> Atributo con tal tipo
         if(expr.valueExpr.nodeKind) {

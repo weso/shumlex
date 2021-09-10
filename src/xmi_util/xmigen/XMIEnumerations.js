@@ -26,7 +26,7 @@ class XMIEnumerations {
      */
     createXMIEnumAttribute(name, values, min, max, id, clase) {
         let card = this.xmicard.createXMICardinality(min, max);
-        let nom = name === "Extra" ? name + "_" + clase : name;
+        let nom = name + "-" + clase;
         let enumer = { id: this.unid(), name: nom, values: values};
         this.saveEnum(enumer);
         let atId = this.unid();
