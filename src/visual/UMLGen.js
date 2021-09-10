@@ -249,6 +249,7 @@ class UMLGen {
      */
     parseXMIToMUML(xmi) {
         let mumlEquivalent = "";
+		let mumlEnums = "";
 
         let source = xmiparser.parseXMI(xmi);
 
@@ -346,11 +347,11 @@ class UMLGen {
                     this.enums.set(id, name);
 					let sanitizedName = this.adaptPref(name);
 					this.noSymbolNames.set(sanitizedName, name);
-                    mumlEquivalent += "class " + sanitizedName + " {\n<<enumeration>>\n";
+                    mumlEnums += "class " + sanitizedName + " {\n<<enumeration>>\n";
                     for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        mumlEquivalent += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
+                        mumlEnums += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
                     }
-                    mumlEquivalent += "}\n";
+                    mumlEnums += "}\n";
                 }
             }
 
@@ -360,6 +361,8 @@ class UMLGen {
                     mumlEquivalent += this.createUMLClass(packagedElements[i])
                 }
             }
+
+			mumlEquivalent += mumlEnums;
 
         } catch (ex) {
             console.log("Se ha producido un error durante la generación de UML.\n" +
