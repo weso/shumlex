@@ -168,13 +168,11 @@ class UMLGen {
 					let idResaltado = resaltados[j].id;
 					$("#" + $.escapeSelector(idResaltado)).css("opacity", "1");
 					
-					console.log(self.relationships)
 					let relationships = self.relationships.get(idResaltado);
 					if(!relationships) {
 						continue;
 					}
 					for(let i = 0; i < relationships.length; i++) {
-						console.log(relationships[i])
 						$( "#" + $.escapeSelector(relationships[i]) ).css("opacity", "1");
 						$( "#" + $.escapeSelector(relationships[i]) ).addClass("highlightOf-" + idResaltado);
 						$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
@@ -225,8 +223,164 @@ class UMLGen {
 			$(this).click({idB: idBase}, resaltar);
 		});
 		
-		//console.log(this.relationships);
+		// Vincular el evento de mostrar el tooltip
+		let checkEntity = function (entity,endPoint){
+			return $.get(
+			  {
+			
+				url: endPoint+'api.php?action=wbgetentities&format=json&ids='+ entity,
+				dataType: 'jsonp',
+			
+			  })
+			   
+		}
+
+		let loadTooltip = function(data,wikiElement,posX,posY){
+			if(!data.error){
+		  
+				var userLang;
+				var entity = '';
+				var description=''
+				var theme;
+				//Gets the preference language from the navigator
+				userLang = (navigator.language || navigator.userLanguage).split("-")[0]
+		  
+		  
+				var content = data.entities[wikiElement.toUpperCase()]
+		  
+				//Check if the property/entity exist
+				if(!content.labels)return;
+		  
+				//Some properties and entities are only avalible in English
+				//So if they do not exist we take it in English
+				if(content.labels[userLang] && content.descriptions[userLang]){
+				   
+					entity = content.labels[userLang].value +' ('+wikiElement+')'
+					description = content.descriptions[userLang].value
+		  
+				}else{
+		  
+					let lb = content.labels['en'];
+					let desc = content.descriptions['en'];
+					if(lb){
+					  entity = lb.value +' ('+wikiElement+')';
+					}
+					if(desc){
+					   description = desc.value
+					}
+					
+				}
+
+				const themeStyles ={
+					default:{
+					  'display': 'inline-block',
+					  'justify-content': 'center',
+					  'padding': '10px',
+					  'border-radius': '8px',
+					  'border': '1px solid #B8F5F3',
+					  'background':'white',
+					  'color':'#222',
+					  'z-index':'1200'
+					},
+					dark:{
+					  'display': 'inline-block',
+					  'justify-content': 'center',
+					  'padding': '5px',
+					  'border-radius': '10px',
+					  'border': '1px solid #70dbe9',
+					  'background':'#222',
+					  'color':'white',
+					  'z-index':'1200'
+					}
+				  }
+
+				  const styles ={
+					title:{
+					  'text-align': 'left',
+					  'font-size':17,
+					  'font-family': 'Arial, Helvetica, sans-serif'
+					},
+					description:{
+					  'display': 'inline-block',
+					  'line-height': '23px',
+					  'text-align': 'left',
+					  'margin-top': '3px',
+					  'font-size':14,
+					  'font-family': 'Arial, Helvetica, sans-serif'
+					}   
+				  }
+		  
+				let cssStyle = themeStyles['default'];
+		  
+				//Jquery in 2021 ahora mejor todavía
+				$('<div class="CodeMirror cm-s-default CodeMirror-wrap">')
+					.css( 'position', 'absolute' )
+					.css( 'z-index', '1200' )
+					.css( 'max-width', '200px' ).css( { 
+					top: posY + 2,
+					left: posX + 2
+					} )
+				  .addClass('wikidataTooltip').css('height','auto')
+				  .append(
+					$('<div class="wikidata_tooltip">').css(cssStyle)
+					.append(
+					  $('<div>').html(entity).css(styles.title))
+					.append(
+					  $('<div>').html(description).css(styles.description)))
+				  .appendTo('body').fadeIn( 'slow' );
+			  }
+		  }
+
+		$( "#" + id + " span span.edgeLabel" ).each(function() {
+
+			$(this).on( "mouseover", function(e) {
+				let label = e.target.innerText;
+
+				let posX = e.clientX,
+  					posY = e.clientY + $( window ).scrollTop();
+
+				let prefixName = label.split(':')[0];
+				let wikiElement = label.split(':')[1];
+
+				if(wikiElement!== undefined  && wikiElement!== ''){
+					let endpoint = "https://www.wikidata.org/w/"
+					checkEntity(wikiElement,endpoint)
+						.done((data)=>{loadTooltip(data,wikiElement,posX,posY)}) 
+				  }
+			});
+
+			$(this).on( "mouseleave", function(e) {
+				$(".wikidataTooltip").remove();
+			});
+		});
+
+		$( "#" + id + " .nodeLabel" ).each(function() {
+
+			$(this).on( "mouseover", function(e) {
+				let label = e.target.innerText;
+
+				let posX = e.clientX,
+  					posY = e.clientY + $( window ).scrollTop();
+
+				let members = label.split(" ");
+
+				for(let i = 0; i < members.length; i++) {
+					let prefixName = members[i].split(':')[0];
+					let wikiElement = members[i].split(':')[1];
+	
+					if(wikiElement!== undefined  && wikiElement!== ''){
+						let endpoint = "https://www.wikidata.org/w/"
+						checkEntity(wikiElement,endpoint)
+							.done((data)=>{loadTooltip(data,wikiElement,(posX + i*205),posY)}) 
+					  }
+				}
 		
+			});
+
+			$(this).on( "mouseleave", function(e) {
+				$(".wikidataTooltip").remove();
+			});
+		});
 		
 	}
 
