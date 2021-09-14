@@ -331,10 +331,18 @@ class UMLGen {
 			  }
 		  }
 
+		let mouseOvers = new Map();
+		let mouseActive = -1;
+		let mouseOverId = 0;
+
 		$( "#" + id + " span span.edgeLabel" ).each(function() {
 
-			$(this).on( "mouseover", function(e) {
+			let targetId = mouseOverId;
+			mouseOverId++;
+
+			$(this).on( "mouseover", function(e) {		
 				let label = e.target.innerText;
+				mouseOvers.set(targetId, true);
 
 				let posX = e.clientX,
   					posY = e.clientY + $( window ).scrollTop();
@@ -345,18 +353,29 @@ class UMLGen {
 				if(wikiElement!== undefined  && wikiElement!== ''){
 					let endpoint = "https://www.wikidata.org/w/"
 					checkEntity(wikiElement,endpoint)
-						.done((data)=>{loadTooltip(data,wikiElement,posX,posY)}) 
+						.done((data)=>{
+							if(mouseOvers.get(targetId) && mouseActive != targetId) {
+								loadTooltip(data,wikiElement,posX,posY);
+								mouseActive = targetId;
+							}			
+						}) 
 				  }
 			});
 
 			$(this).on( "mouseleave", function(e) {
 				$(".wikidataTooltip").remove();
+				mouseOvers.set(targetId, false);
+				mouseActive = -1;
 			});
 		});
 
 		$( "#" + id + " .nodeLabel" ).each(function() {
 
+			let targetId = mouseOverId;
+			mouseOverId++;
+
 			$(this).on( "mouseover", function(e) {
+				mouseOvers.set(targetId, true);
 				let label = e.target.innerText;
 
 				let posX = e.clientX,
@@ -371,7 +390,11 @@ class UMLGen {
 					if(wikiElement!== undefined  && wikiElement!== ''){
 						let endpoint = "https://www.wikidata.org/w/"
 						checkEntity(wikiElement,endpoint)
-							.done((data)=>{loadTooltip(data,wikiElement,(posX + i*205),posY)}) 
+							.done((data)=>{
+								if(mouseOvers.get(targetId)) {
+									loadTooltip(data,wikiElement,(posX + i*205),posY)
+								}
+							}) 
 					  }
 				}
 		
@@ -379,6 +402,7 @@ class UMLGen {
 
 			$(this).on( "mouseleave", function(e) {
 				$(".wikidataTooltip").remove();
+				mouseOvers.set(targetId, false);
 			});
 		});
 		
