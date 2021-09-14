@@ -391,8 +391,9 @@ class UMLGen {
 						let endpoint = "https://www.wikidata.org/w/"
 						checkEntity(wikiElement,endpoint)
 							.done((data)=>{
-								if(mouseOvers.get(targetId)) {
-									loadTooltip(data,wikiElement,(posX + i*205),posY)
+								if(mouseOvers.get(targetId) && mouseActive != targetId) {
+									loadTooltip(data,wikiElement,(posX + i*205),posY);
+									mouseActive = targetId;
 								}
 							}) 
 					  }
@@ -403,6 +404,7 @@ class UMLGen {
 			$(this).on( "mouseleave", function(e) {
 				$(".wikidataTooltip").remove();
 				mouseOvers.set(targetId, false);
+				mouseActive = -1;
 			});
 		});
 		
