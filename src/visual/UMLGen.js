@@ -224,7 +224,7 @@ class UMLGen {
 		});
 		
 		// Vincular el evento de mostrar el tooltip
-		let checkEntity = function (entity,endPoint){
+		let checkEntity = async function (entity,endPoint){
 			return $.get(
 			  {
 			
@@ -340,7 +340,7 @@ class UMLGen {
 			let targetId = mouseOverId;
 			mouseOverId++;
 
-			$(this).on( "mouseover", function(e) {		
+			$(this).on( "mouseover", async function(e) {		
 				let label = e.target.innerText;
 				mouseOvers.set(targetId, true);
 
@@ -352,13 +352,11 @@ class UMLGen {
 
 				if(wikiElement!== undefined  && wikiElement!== ''){
 					let endpoint = "https://www.wikidata.org/w/"
-					checkEntity(wikiElement,endpoint)
-						.done((data)=>{
-							if(mouseOvers.get(targetId) && mouseActive != targetId) {
-								loadTooltip(data,wikiElement,posX,posY);
-								mouseActive = targetId;
-							}			
-						}) 
+					let data = await checkEntity(wikiElement,endpoint)
+					if(mouseOvers.get(targetId) && mouseActive != targetId) {
+						loadTooltip(data,wikiElement,posX,posY);
+						mouseActive = targetId;
+					}			
 				  }
 			});
 
@@ -374,7 +372,7 @@ class UMLGen {
 			let targetId = mouseOverId;
 			mouseOverId++;
 
-			$(this).on( "mouseover", function(e) {
+			$(this).on( "mouseover", async function(e) {
 				mouseOvers.set(targetId, true);
 				let label = e.target.innerText;
 
@@ -385,18 +383,18 @@ class UMLGen {
 
 				for(let i = 0; i < members.length; i++) {
 					let prefixName = members[i].split(':')[0];
-					let wikiElement = members[i].split(':')[1];
+					let wikiElement = members[i].split(':')[1];		
 	
 					if(wikiElement!== undefined  && wikiElement!== ''){
 						let endpoint = "https://www.wikidata.org/w/"
-						checkEntity(wikiElement,endpoint)
-							.done((data)=>{
-								if(mouseOvers.get(targetId) && mouseActive != targetId) {
-									loadTooltip(data,wikiElement,(posX + i*205),posY);
-									mouseActive = targetId;
-								}
-							}) 
-					  }
+						let data = await checkEntity(wikiElement,endpoint);
+						if(mouseOvers.get(targetId) && mouseActive != targetId) {
+							loadTooltip(data,wikiElement,(posX + i*205),posY);
+							if(i === members.length - 1) {
+								mouseActive = targetId;
+							}			
+						}
+					}
 				}
 		
 			});
