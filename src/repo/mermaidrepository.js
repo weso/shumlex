@@ -8,15 +8,10 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _gender {
-<<enumeration>>
-:Male
-:Female
-}
 class _User {
 _name "xsd_string\\" 
 _age "xsd_int\\ ?" 
-_gender "_gender\\" 
+_gender "_gender__User\\" 
 }
 class _TypeTest_ {
 _z "xsd_string\\" 
@@ -34,6 +29,11 @@ _l "xsd_boolean\\"
 _m "xsd_double\\" 
 _n "xsd_float\\" 
 _xyz "xsd_invent\\" 
+}
+class _gender__User {
+<<enumeration>>
+:Male
+:Female
 }
 `
     }
@@ -85,10 +85,6 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class Extra__VIPUser {
-<<enumeration>>
-a
-}
 class _User {
 _name "xsd_string\\" 
 _age "xsd_int\\ ?" 
@@ -103,6 +99,10 @@ class _VIPUser {
 Extra "Extra__VIPUser\\" 
 }
 _User <|-- _VIPUser : a1
+class Extra__VIPUser {
+<<enumeration>>
+a
+}
 `;
     }
 
@@ -168,28 +168,28 @@ prefix \\: <https://schema.org/>
 prefix \\codes: <http://example.codes/>
 base <http://example.org/>
 }
-class _status {
+class _Product {
+_status "_status__Product\\" 
+_phone "_phone__Product\\" 
+_quantity "_quantity__Product\\" 
+_url "_url__Product\\" 
+}
+class _status__Product {
 <<enumeration>>
 codes:*~ - codes:unknown - codes:bad.*~ 
 "111"
 }
-class _phone {
+class _phone__Product {
 <<enumeration>>
 "+34"*~ - "+3468031" - "+3467182"*~ 
 }
-class _quantity {
+class _quantity__Product {
 <<enumeration>>
 99*~ - 9987 - 991*~ 
 }
-class _url {
+class _url__Product {
 <<enumeration>>
 codes:Personal*~
-}
-class _Product {
-_status "_status\\" 
-_phone "_phone\\" 
-_quantity "_quantity\\" 
-_url "_url\\" 
 }
 `;
     }
@@ -202,22 +202,22 @@ prefix \\codes: <http://example.codes/>
 prefix \\: <http://schema.org/>
 base <http://example.org/>
 }
-class _status {
+class _Product {
+_status "_status__Product\\" 
+_name "_name__Product\\" 
+_price "_price__Product\\" 
+}
+class _status__Product {
 <<enumeration>>
 . - codes:bad 
 }
-class _name {
+class _name__Product {
 <<enumeration>>
 . - "Trademark" 
 }
-class _price {
+class _price__Product {
 <<enumeration>>
 . - 66 
-}
-class _Product {
-_status "_status\\" 
-_name "_name\\" 
-_price "_price\\" 
 }
 `;
     }
@@ -230,33 +230,33 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _frlabel {
+class _FrenchProduct {
+_frlabel "_frlabel__FrenchProduct\\" 
+}
+class _EnglishProduct {
+_enlabel "_enlabel__EnglishProduct\\" 
+}
+class _SpanishProduct {
+_splabel "_splabel__SpanishProduct\\" 
+}
+class _AnyProduct {
+_label "_label__AnyProduct\\" 
+}
+class _frlabel__FrenchProduct {
 <<enumeration>>
 @fr 
 }
-class _enlabel {
+class _enlabel__EnglishProduct {
 <<enumeration>>
 @en*~ 
 }
-class _splabel {
+class _splabel__SpanishProduct {
 <<enumeration>>
 @es*~ - @es-AR - @es-ES 
 }
-class _label {
+class _label__AnyProduct {
 <<enumeration>>
 . - @kz 
-}
-class _FrenchProduct {
-_frlabel "_frlabel\\" 
-}
-class _EnglishProduct {
-_enlabel "_enlabel\\" 
-}
-class _SpanishProduct {
-_splabel "_splabel\\" 
-}
-class _AnyProduct {
-_label "_label\\" 
 }
 `;
     }
@@ -363,11 +363,6 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _gender {
-<<enumeration>>
-:Male
-:Female
-}
 class _User CLOSED {
 nodeKind: IRI 
 }
@@ -375,11 +370,16 @@ _User CLOSED *--  _Blank1 : AND
 class _Blank1 {
 _name "xsd_string\\ \\MaxLength \\3" 
 _age "xsd_int\\ ?" 
-_gender "_gender\\" 
+_gender "_gender__Blank1\\" 
 }
 _Blank1 -->  _User CLOSED : _knows
 class _Company CLOSED {
 _name "xsd_string\\" 
+}
+class _gender__Blank1 {
+<<enumeration>>
+:Male
+:Female
 }
 `;
     }
@@ -392,17 +392,17 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class __gender {
+class _User {
+__name "xsd_string\\" 
+__gender "__gender__User\\" 
+}
+_Person <|-- _User : ^a
+_Company --> " +" _User : __worksFor
+class __gender__User {
 <<enumeration>>
 :Male
 :Female
 }
-class _User {
-__name "xsd_string\\" 
-__gender "__gender\\" 
-}
-_Person <|-- _User : ^a
-_Company --> " +" _User : __worksFor
 `;
     }
 
@@ -414,20 +414,20 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class Extra__FollowSpaniards {
-<<enumeration>>
-:follows
-}
-class _nationality {
-<<enumeration>>
-:Spain
-}
 class _FollowSpaniards {
 Extra "Extra__FollowSpaniards\\" 
 }
 _FollowSpaniards *-- " +" __1 : _follows
 class __1 {
-_nationality "_nationality\\" 
+_nationality "_nationality___1\\" 
+}
+class Extra__FollowSpaniards {
+<<enumeration>>
+:follows
+}
+class _nationality___1 {
+<<enumeration>>
+:Spain
 }
 `;
     }
