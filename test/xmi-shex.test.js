@@ -96,11 +96,15 @@ describe('Pruebas de la transformación XMI-ShEx', () => {
     });
 
     test('Disyunciones', () => {
-        checkGen(XMIRep.getXMI23(), ShExRep.getShex23());
+        checkGen(XMIRep.getXMI23(), ShExRep.getGenShex23());
     });
 	
 	test('Negaciones', () => {
         checkGen(XMIRep.getXMI24(), ShExRep.getShex24());
+    });
+	
+	test('Suzaku', () => {
+        checkGen(XMIRep.getXMI25(), ShExRep.getGenShex25());
     });
 
 });

@@ -47,6 +47,8 @@ class UMLGen {
 			let contenido = $(this).text().replace(/\\/g, "")
 									.replace(/\"/g, "")
 									.replace(/\*(<|>)/g, "~")
+									.replace(/-\/\//g, "{")
+									.replace(/\/\/-/g, "}")
 									.replace(/CLOSED/g, " CLOSED")
 									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "");
 									
@@ -97,6 +99,12 @@ class UMLGen {
 				&& lroot.next().attr("class") === "edgeTerminals") {
 				lroot.next().attr("id", id + "-card");
 			}
+		});
+		
+		$( "#" + id + " div span.edgeLabel" ).each(function( index ) {
+			let contenido = $(this).text();
+			$(this).text(contenido.replace(/-\/\//g, "{")
+								  .replace(/\/\/-/g, "}"));
 		});
 		
 		
@@ -449,7 +457,7 @@ class UMLGen {
             for (let i = 0; i < ownedRules.length; i++) {
                 let idInComment = null;
                 let consElement = ownedRules[i].$.constrainedElement;
-                let oName = ownedRules[i].$.name;
+                let oName = ownedRules[i].$.name.replace(/{/g, "-//").replace(/}/g, "//-");
                 //Si hay comentario, buscamos el ID que guardamos
                 if(ownedRules[i].ownedComment) {
                     idInComment = ownedRules[i].ownedComment[0].body[0];
@@ -496,6 +504,9 @@ class UMLGen {
                 //Guardamos las clases para futuras referencias
                 if (type === "uml:Class") {
                     let cn = this.constraints.get(id);
+					if(cn && cn.charAt(0) === '/') {
+						cn = undefined;
+					}
                     name = name + (cn === undefined ? "" : " " + cn) ;
                     this.classes.set(id, name);
                 }
@@ -557,6 +568,7 @@ class UMLGen {
 		mumlEquivalent = mumlEquivalent
 							.replace(/[\r\n]+(_)?[A-Za-z0-9_]+(_)? CLOSED :/g, removeClosed);
 
+		console.log(mumlEquivalent);
         return mumlEquivalent;
     }
 	
@@ -571,25 +583,29 @@ class UMLGen {
      * @returns {string}
      */
     createUMLClass(element) {
-
         //Extraemos las restricciones y se las asignamos al nombre, si existen
         let cn = this.constraints.get(element.$["xmi:id"]);
 		let sanitizedName = this.adaptPref(element.$.name);
 		this.noSymbolNames.set(sanitizedName, element.$.name);
-        let name = sanitizedName + (cn === undefined ? "" : " " + cn);
-        let clase = "class " + name + " {\n";
-
-        let attributes = element.ownedAttribute;
+		let attributes = element.ownedAttribute;
         if(!attributes) {
             attributes = [];
         }
+		if(cn && cn.charAt(0) === '/') {
+			attributes.push({"$": {"name": ":pattern", "type": "any", "xmi:id": element.$["xmi:id"]}});
+			cn = undefined;
+		}
+        let name = sanitizedName + (cn === undefined ? "" : " " + cn);
+        let clase = "class " + name + " {\n";
+
+        
 
         //Generamos los atributos de la clase
         let ats = this.createUMLAttributes(attributes, name);
 		ats.ins.forEach(el => clase += el);
 		clase += "}\n";
 		if(ats.ins.length === 0) {
-			clase = "";
+			clase = "class " + name + "\n";
 		}
 		ats.out.forEach(el => clase += el);
 		
@@ -630,7 +646,6 @@ class UMLGen {
                     + hename + "\n";
             }
         }
-
         return clase;
     }
 
@@ -712,7 +727,7 @@ class UMLGen {
 			rList.push(relName);
 			this.relationships.set(orName, rList);
 		}
-        return name + relation + ccard + " "
+        return name + relation + ccard.replace(/{/g, "-//").replace(/}/g, "//-") + " "
             + tysanitizedName + " : " + relsanitizedName + "\n";
     }
 
@@ -724,7 +739,6 @@ class UMLGen {
      * @returns {string}    Atributo en PUML
      */
     createUMLBasicAt(at, name) {
-
         let card = ShExCardinality.cardinalityOf(at);
         let cn = this.constraints.get(at.$["xmi:id"]);
 		if (cn !== undefined) {
@@ -737,7 +751,7 @@ class UMLGen {
 		this.noSymbolNames.set(tysanitizedName, tyName);
 		let atsanitizedName = this.adaptPref(atName);
 		this.noSymbolNames.set(atsanitizedName, atName);
-        return atsanitizedName + " \"" + tysanitizedName + "\\" + card
+        return atsanitizedName + " \"" + tysanitizedName + "\\" + card.replace(/{/g, "-//").replace(/}/g, "//-")
             + (cn === undefined ? "" : " \\" +  cn) + "\" \n";
     }
 

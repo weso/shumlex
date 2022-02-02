@@ -739,6 +739,33 @@ OR {
 `;
     }
 	
+    static getGenShex23() {
+        return `prefix : <https://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:User {
+	:name xsd:string;
+	:owns IRI; }
+OR {
+	:owns @:Product;
+}
+
+:Titanuser @:User OR {
+	:titancode xsd:string; }
+OR {
+	:owns Literal;
+}
+
+:Product {
+	:productId xsd:string ?;
+	:productId . MinLength 5 ?;
+	:productId . MaxLength 10 ?;
+}
+
+`;
+    }
+	
 	static getShex24() {
 		return `prefix : <https://schema.org/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -753,6 +780,80 @@ base <http://example.org/>
 
 :NoName Not {
 	:name xsd:string;
+}
+
+`;
+	}
+	
+	static getShex25() {
+		return `prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix : <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @:AdultPerson
+
+:AdultPerson EXTRA rdf:type {
+	rdf:type [ schema:Person ] ;
+	:name xsd:string ;
+	:age MinInclusive 18 ;
+	:gender [:Male :Female] OR xsd:string ;
+	:address @:Address ? ;
+	:worksFor @:Company + ;
+}
+
+:Address CLOSED {
+	:addressLine xsd:string {1,3};
+	:postalCode /[0-9]{5}/;
+	:state @:State;
+	:city xsd:string;
+}
+
+:Company {
+	:name xsd:string ;
+	:state @:State ;
+	:employee @:AdultPerson * ;
+}
+
+:State /[A-Z]{2}/
+
+`;
+	}
+	
+		static getGenShex25() {
+		return `prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix : <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+base <http://example.org/>
+
+:AdultPerson EXTRA rdf:type  {
+	a [schema:Person];
+	:name xsd:string;
+	:age . MinInclusive 18;
+	:gender [:Male :Female ] ?;
+	:gender xsd:string ?;
+	:address @:Address ?;
+	:worksFor @:Company +;
+}
+
+schema:Person {
+}
+
+:Address CLOSED {
+	:addressLine xsd:string {1,3};
+	:postalCode . /[0-9]{5}/;
+	:state @:State;
+	:city xsd:string;
+}
+
+:Company {
+	:name xsd:string;
+	:state @:State;
+	:employee @:AdultPerson *;
+}
+
+:State /[A-Z]{2}/ {
 }
 
 `;

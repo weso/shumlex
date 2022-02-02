@@ -27,7 +27,7 @@ class ShExConstraints {
             this.constraints.set(consElement, cst.$.name);
         }
         else {
-            let op = cst.$.name.toLowerCase().includes("or ") ? " " : " AND ";
+            let op = (cst.$.name.toLowerCase().includes("or ") || cst.$.name.toLowerCase().includes("and ")) ? " " : " AND ";
             this.constraints.set(consElement, this.constraints.get(consElement) + op
                 + cst.$.name);
         }

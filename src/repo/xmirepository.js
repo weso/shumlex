@@ -1216,8 +1216,8 @@ class Xmirepository {
             "</ownedComment>\n" +
             "\n" +
             "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbea7kzp\" name=\"MaxLength 10\" constrainedElement=\"kbea7kzj\">\n" +
-            "<specification body=\"MaxLength 10\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
+            "<ownedRule xmi:id=\"kbea7kzp\" name=\"AND MaxLength 10\" constrainedElement=\"kbea7kzj\">\n" +
+            "<specification body=\"AND MaxLength 10\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
             "<ownedComment annotatedElement=\"kbea7kzo\" xmi:id=\"kbea7kzq\" xmi:type=\"uml:Comment\">\n" +
             "<body>kbea7kzj</body>\n" +
             "</ownedComment>\n" +
@@ -1238,94 +1238,102 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI23() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbeacolp\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacolu\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacolx\" name=\"OR\" visibility=\"public\" type=\"kbeacoly\" association=\"kbeacolz\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacolz\" memberEnd=\"kbeacolx kbeacom0\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacom0\" visibility=\"public\" type=\"kbeacolu\" association=\"kbeacolz\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacoly\" name=\"_Blank1\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacom1\" name=\"Shape\" visibility=\"public\" type=\"kbeacom2\" association=\"kbeacom3\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacom4\" name=\"Shape\" visibility=\"public\" type=\"kbeacom5\" association=\"kbeacom6\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacom3\" memberEnd=\"kbeacom1 kbeacom7\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacom7\" visibility=\"public\" type=\"kbeacoly\" association=\"kbeacom3\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacom6\" memberEnd=\"kbeacom4 kbeacom8\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacom8\" visibility=\"public\" type=\"kbeacoly\" association=\"kbeacom6\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacom2\" name=\"_Blank2\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacom9\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbeacomb\" name=\":owns\" visibility=\"public\" type=\"kbeacoma\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacom5\" name=\"_Blank3\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacomc\" name=\":owns\" visibility=\"public\" type=\"kbeacolw\" association=\"kbeacomd\" ></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacomd\" memberEnd=\"kbeacomc kbeacome\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacome\" visibility=\"public\" type=\"kbeacom5\" association=\"kbeacomd\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacolv\" name=\":Titanuser\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacomf\" name=\"OR\" visibility=\"public\" type=\"kbeacomg\" association=\"kbeacomh\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<generalization xmi:id=\"kbeacomi\" general=\"kbeacolu\" name=\"OR\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacomh\" memberEnd=\"kbeacomf kbeacomj\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacomj\" visibility=\"public\" type=\"kbeacolv\" association=\"kbeacomh\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacomg\" name=\"_Blank4\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacomk\" name=\"Shape\" visibility=\"public\" type=\"kbeacoml\" association=\"kbeacomm\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacomn\" name=\"Shape\" visibility=\"public\" type=\"kbeacomo\" association=\"kbeacomp\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacomm\" memberEnd=\"kbeacomk kbeacomq\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacomq\" visibility=\"public\" type=\"kbeacomg\" association=\"kbeacomm\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbeacomp\" memberEnd=\"kbeacomn kbeacomr\">\n" +
-            "\t<ownedEnd xmi:id=\"kbeacomr\" visibility=\"public\" type=\"kbeacomg\" association=\"kbeacomp\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacoml\" name=\"_Blank5\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacoms\" name=\":titancode\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacomo\" name=\"_Blank6\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbeacomu\" name=\":owns\" visibility=\"public\" type=\"kbeacomt\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeacolw\" name=\":Product\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeacomv\" name=\":productId\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<ownedRule xmi:id=\"kbeacomy\" name=\"OR MinLength 5\" constrainedElement=\"kbeacomv\">\n" +
-            "<specification body=\"OR MinLength 5\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeacomx\" xmi:id=\"kbeacomz\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeacomv</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeacon1\" name=\"OR MaxLength 10\" constrainedElement=\"kbeacomv\">\n" +
-            "<specification body=\"OR MaxLength 10\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeacon0\" xmi:id=\"kbeacon2\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeacomv</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbeacolt\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbeacolq\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbeacolr\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbeacols\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbeacoma\" name=\"IRI\"/>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbeacomt\" name=\"Literal\"/>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="kz4axwxb" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxg" name=":User">
+	<ownedAttribute xmi:id="kz4axwxj" name="OR" visibility="public" type="kz4axwxk" association="kz4axwxl" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxl" memberEnd="kz4axwxj kz4axwxm">
+	<ownedEnd xmi:id="kz4axwxm" visibility="public" type="kz4axwxg" association="kz4axwxl"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxk" name="_Blank1">
+	<ownedAttribute xmi:id="kz4axwxn" name="Shape" visibility="public" type="kz4axwxo" association="kz4axwxp" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="kz4axwxq" name="Shape" visibility="public" type="kz4axwxr" association="kz4axwxs" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxp" memberEnd="kz4axwxn kz4axwxt">
+	<ownedEnd xmi:id="kz4axwxt" visibility="public" type="kz4axwxk" association="kz4axwxp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxs" memberEnd="kz4axwxq kz4axwxu">
+	<ownedEnd xmi:id="kz4axwxu" visibility="public" type="kz4axwxk" association="kz4axwxs"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxo" name="_Blank2">
+	<ownedAttribute xmi:id="kz4axwxv" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwxx" name=":owns" visibility="public" type="kz4axwxw" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxr" name="_Blank3">
+	<ownedAttribute xmi:id="kz4axwxy" name=":owns" visibility="public" type="kz4axwxi" association="kz4axwxz" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxz" memberEnd="kz4axwxy kz4axwy0">
+	<ownedEnd xmi:id="kz4axwy0" visibility="public" type="kz4axwxr" association="kz4axwxz"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxh" name=":Titanuser">
+	<ownedAttribute xmi:id="kz4axwy1" name="OR" visibility="public" type="kz4axwy2" association="kz4axwy3" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="kz4axwy4" general="kz4axwxg" name="OR"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwy3" memberEnd="kz4axwy1 kz4axwy5">
+	<ownedEnd xmi:id="kz4axwy5" visibility="public" type="kz4axwxh" association="kz4axwy3"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwy2" name="_Blank4">
+	<ownedAttribute xmi:id="kz4axwy6" name="Shape" visibility="public" type="kz4axwy7" association="kz4axwy8" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="kz4axwy9" name="Shape" visibility="public" type="kz4axwya" association="kz4axwyb" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwy8" memberEnd="kz4axwy6 kz4axwyc">
+	<ownedEnd xmi:id="kz4axwyc" visibility="public" type="kz4axwy2" association="kz4axwy8"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4axwyb" memberEnd="kz4axwy9 kz4axwyd">
+	<ownedEnd xmi:id="kz4axwyd" visibility="public" type="kz4axwy2" association="kz4axwyb"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwy7" name="_Blank5">
+	<ownedAttribute xmi:id="kz4axwye" name=":titancode" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwya" name="_Blank6">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyg" name=":owns" visibility="public" type="kz4axwyf" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxi" name=":Product">
+	<ownedAttribute xmi:id="kz4axwyh" name=":productId" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyi" />
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyk" name=":productId" visibility="public" type="kz4axwyp" isUnique="true">
+
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyl" />	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyq" name=":productId" visibility="public" type="kz4axwyp" isUnique="true">
+
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyr" />	</ownedAttribute>
+</packagedElement>
+<ownedRule xmi:id="kz4axwyn" name="MinLength 5" constrainedElement="kz4axwyk">
+<specification body="MinLength 5" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4axwyn" xmi:id="kz4axwyo" xmi:type="uml:Comment">
+<body>kz4axwyk</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="kz4axwyt" name="MaxLength 10" constrainedElement="kz4axwyq">
+<specification body="MaxLength 10" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4axwyt" xmi:id="kz4axwyu" xmi:type="uml:Comment">
+<body>kz4axwyq</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4axwxf" name="Prefixes">
+	<ownedLiteral xmi:id="kz4axwxc" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="kz4axwxd" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="kz4axwxe" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwyp" name="Any"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwxw" name="IRI"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwyf" name="Literal"/>
+</uml:Model>`;
     }
 	
 	static getXMI24() {
@@ -1362,6 +1370,120 @@ class Xmirepository {
 	<ownedLiteral xmi:id="kjsf4gwk" name="prefix : &lt;https://schema.org/>"/>
 	<ownedLiteral xmi:id="kjsf4gwl" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
 	<ownedLiteral xmi:id="kjsf4gwm" name="base &lt;http://example.org/>"/>
+</packagedElement>
+</uml:Model>`;
+	}
+	
+	static getXMI25() {
+		return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="kz4b0mvr" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="kz4b0mvy" name=":AdultPerson">
+	<generalization xmi:id="kz4b0mw3" general="kz4b0mw2" name="a"/>
+	<ownedAttribute xmi:id="kz4b0mw4" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4b0mw7" name=":age" visibility="public" type="kz4b0mwa" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4b0mwb" name=":gender" visibility="public" type="kz4b0mwd" isUnique="true">
+
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4b0mwc" />	</ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mwf" name=":gender" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4b0mwg" />
+	</ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mwi" name=":address" visibility="public" type="kz4b0mvz" association="kz4b0mwj" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4b0mwk" /></ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mwl" name=":worksFor" visibility="public" type="kz4b0mw0" association="kz4b0mwm" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kz4b0mwn" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4b0mwp" name="Extra" visibility="public" type="kz4b0mwo" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<ownedRule xmi:id="kz4b0mw8" name="MinInclusive 18" constrainedElement="kz4b0mw7">
+<specification body="MinInclusive 18" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4b0mw8" xmi:id="kz4b0mw9" xmi:type="uml:Comment">
+<body>kz4b0mw7</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4b0mwj" memberEnd="kz4b0mwi kz4b0mwq">
+	<ownedEnd xmi:id="kz4b0mwq" visibility="public" type="kz4b0mvy" association="kz4b0mwj"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4b0mwm" memberEnd="kz4b0mwl kz4b0mwr">
+	<ownedEnd xmi:id="kz4b0mwr" visibility="public" type="kz4b0mvy" association="kz4b0mwm"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4b0mw2" name="schema:Person"/>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4b0mvz" name=":Address">
+	<ownedAttribute xmi:id="kz4b0mwt" name=":addressLine" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kz4b0mws" value="3"/>
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4b0mwu" name=":postalCode" visibility="public" type="kz4b0mwa" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mwx" name=":state" visibility="public" type="kz4b0mw1" association="kz4b0mwy" ></ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mwz" name=":city" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<ownedRule xmi:id="kz4b0mwv" name="/[0-9]{5}/" constrainedElement="kz4b0mwu">
+<specification body="/[0-9]{5}/" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4b0mwv" xmi:id="kz4b0mww" xmi:type="uml:Comment">
+<body>kz4b0mwu</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="kz4b0mx0" name="CLOSED" constrainedElement="kz4b0mvz">
+<specification body="CLOSED" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4b0mx0" xmi:id="kz4b0mx1" xmi:type="uml:Comment">
+<body>kz4b0mvz</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4b0mwy" memberEnd="kz4b0mwx kz4b0mx2">
+	<ownedEnd xmi:id="kz4b0mx2" visibility="public" type="kz4b0mvz" association="kz4b0mwy"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4b0mw0" name=":Company">
+	<ownedAttribute xmi:id="kz4b0mx3" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mx4" name=":state" visibility="public" type="kz4b0mw1" association="kz4b0mx5" ></ownedAttribute>
+	<ownedAttribute xmi:id="kz4b0mx6" name=":employee" visibility="public" type="kz4b0mvy" association="kz4b0mx7" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4b0mx8" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kz4b0mx9" value="*"/></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4b0mx5" memberEnd="kz4b0mx4 kz4b0mxa">
+	<ownedEnd xmi:id="kz4b0mxa" visibility="public" type="kz4b0mw0" association="kz4b0mx5"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="kz4b0mx7" memberEnd="kz4b0mx6 kz4b0mxb">
+	<ownedEnd xmi:id="kz4b0mxb" visibility="public" type="kz4b0mw0" association="kz4b0mx7"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="kz4b0mw1" name=":State"/>
+<ownedRule xmi:id="kz4b0mxc" name="/[A-Z]{2}/" constrainedElement="kz4b0mw1">
+<specification body="/[A-Z]{2}/" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="kz4b0mxc" xmi:id="kz4b0mxd" xmi:type="uml:Comment">
+<body>kz4b0mw1</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mvx" name="Prefixes">
+	<ownedLiteral xmi:id="kz4b0mvs" name="prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>"/>
+	<ownedLiteral xmi:id="kz4b0mvt" name="prefix : &lt;http://example.org/>"/>
+	<ownedLiteral xmi:id="kz4b0mvu" name="prefix schema: &lt;http://schema.org/>"/>
+	<ownedLiteral xmi:id="kz4b0mvv" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="kz4b0mvw" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4b0mwa" name="Any"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mwd" name=":gender-:AdultPerson">
+	<ownedLiteral xmi:id="kz4b0mxe" name=":Male"/>
+	<ownedLiteral xmi:id="kz4b0mxf" name=":Female"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mwo" name="Extra-:AdultPerson">
+	<ownedLiteral xmi:id="kz4b0mxg" name="rdf:type"/>
 </packagedElement>
 </uml:Model>`;
 	}

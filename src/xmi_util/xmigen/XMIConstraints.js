@@ -16,7 +16,9 @@ class XMIConstraints {
     }
 
     createConstraint(name, id) {
-        this.ownedRules.push(this.XMIAux.createXMIOwnedRule(name, id));
+		if(id) {
+			this.ownedRules.push(this.XMIAux.createXMIOwnedRule(name, id));
+		}
     }
 
     /**

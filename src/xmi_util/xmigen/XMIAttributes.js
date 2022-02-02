@@ -170,7 +170,7 @@ class XMIAttributes {
         }
         //ShapeAnd anidada
         else if (expr.valueExpr.type === "ShapeAnd" || expr.valueExpr.type === "ShapeOr") {
-            return this.checkNSValueExpr(expr);
+            return this.checkNSValueExpr(expr, cn);
         }
     }
 
@@ -183,6 +183,9 @@ class XMIAttributes {
      * @returns {*} Equivalente XMI
      */
     checkNCValueExpr(expr, name, id, lop, cn) {
+		if(lop === "OR") {
+			expr.min = 0; //El atributo sera opcional si formaba parte de una ShapeOR
+		}
         //Conjunto de valores -> enumeración
         if(expr.valueExpr.values) {
             //Relación de tipo "a" ( a [:User]) -> generalización XMI
@@ -201,9 +204,20 @@ class XMIAttributes {
             return this.createXMIPrimAttribute(name, expr.valueExpr.datatype, expr.min, expr.max,
                 expr.valueExpr, id);
         }
+		if(expr.valueExpr.pattern) {
+			return this.createXMIPrimAttribute(name, "any", expr.min, expr.max,
+                expr.valueExpr, id);
+		}
         //Comprobamos las facetas, que generan restricciones
-        this.xmicon.checkFacets(expr.valueExpr, id, lop);
-        return "";
+        if(lop !== "OR") { //Si es una operacion lógica, se generará un atributo aparte, asi que hemos de evitar que se replique innecesariamente
+			this.xmicon.checkFacets(expr.valueExpr, id, lop);
+		}
+		
+		if(lop === "AND") {
+			return "";
+		}
+        return this.createXMIPrimAttribute(name, "any", expr.min, expr.max,
+                expr.valueExpr, id);;
     }
 
     /**
@@ -237,21 +251,23 @@ class XMIAttributes {
     /**
      * Genera el XMI correspondiente a una Vexpr de tipo ShapeAnd o ShapeOr
      * @param expr  Expresión
+	 * @param cn  Nombre de la clase
      * @returns {*} Equivalente XMI
      */
-    checkNSValueExpr(expr) {
+    checkNSValueExpr(expr,cn) {
         let and = "";
-        let id = this.unid();
+		let id = this.unid();
         for(let i = 0; i < expr.valueExpr.shapeExprs.length; i++) {
             let xp = {
                 predicate: expr.predicate,
                 valueExpr: expr.valueExpr.shapeExprs[i]
             };
             if(expr.valueExpr.type === "ShapeOr") {
-                and += this.determineTypeOfExpression(xp, id, "OR");
+				id = this.unid();
+                and += this.determineTypeOfExpression(xp, id, "OR", cn);
             }
             else {
-                and += this.determineTypeOfExpression(xp, id);
+                and += this.determineTypeOfExpression(xp, id, "AND");
             }
         }
         return and;

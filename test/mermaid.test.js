@@ -131,6 +131,13 @@ describe('Pruebas de la representación de UML mediante Mermaid', () => {
         expect(muml)
             .toEqual(MermaidRep.getMUML17());
     });
+	
+	test('Suzaku', () => {
+		um.clear();
+        let muml = um.generarCodigoMUML(XMIRep.getXMI25());
+        expect(muml)
+            .toEqual(MermaidRep.getMUML18());
+    });
 
 
 });

@@ -113,11 +113,15 @@ describe('Pruebas de la transformación conjunta', () => {
     });
 
     test('Disyunciones', () => {
-        checkGen(ShExRep.getShex23(), XMIRep.getXMI23(), ShExRep.getShex23());
+        checkGen(ShExRep.getShex23(), XMIRep.getXMI23(), ShExRep.getGenShex23());
     });
 	
 	test('Negaciones', () => {
         checkGen(ShExRep.getShex24(), XMIRep.getXMI24(), ShExRep.getShex24());
+    });
+	
+	test('Suzaku', () => {
+        checkGen(ShExRep.getShex25(), XMIRep.getXMI25(), ShExRep.getGenShex25());
     });
 
 
