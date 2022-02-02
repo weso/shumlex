@@ -52,6 +52,8 @@ class UMLGen {
 									.replace(/CLOSED/g, " CLOSED")
 									.replace(/_?:?<?[^prefix][A-Za-z0-9_]+>? : /g, "");
 									
+			if(contenido.match(/_Blank[0-9]+/)) contenido = "";
+									
 			$(this).text(contenido);
 			
 			let elements = contenido.split(" ");
