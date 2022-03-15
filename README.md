@@ -62,32 +62,6 @@ let shex = shumlex.XMIToShEx(xmi)
 
 In this example, we are passing as a parameter a String variable (_xmi_) which contains a XMI schema and we save the ShEx in a String variable named _shex_.
 
-### ShEx to Cytoscape Graph: _crearGrafo(shexValue):_
-
-This method provides a JSON value which may be used to represent the ShEx value passed as a String parameter in a Cytoscape graph of Dagre layout.
-
-```
- let grf = shumlex.crearGrafo(shex)
- ```
-
-In this example, we are passing as a parameter a String variable (_shex_) which contains a ShEx-compliant value and we save the JSON in a variable named _grf_.
-
-With such JSON value we can easily create a Cytoscape graph, just like this:
-
-```
- let cy = cyto({
-    container: document.getElementById('graph'), // Container
-    elements: grf,  // JSON created by crearGrafo()
-    style: style,
-    layout: {
-      name: 'dagre',
-      nodeSep: 60,
-      edgeSep: 40,
-      rankSep: 80
-    }
- });
-```
-
 ### XMI to SVG Class Diagram: _crearDiagramaUML(containerId, xmiValue, options)_
 
 This method creates in the given container, using SVG, a UML Class Diagram corresponding to the XMI value passed as a String parameter.
@@ -117,31 +91,6 @@ Returns the encoded base64 value for the given SVG located in the document ID pa
 let svg64 = shumlex.base64SVG("svg");
 $("#download_button").attr("href", svg64);
 $("#download_button").attr("download", `shumlex-class-diagram.svg`);
-```
-
-## Downloading Graph as SVG
-If you are using Cytoscape to visualize the graph provided by _crearGrafo()_, a download implementation can be added by using [cytoscape-svg](https://github.com/kinimesi/cytoscape-svg). The following are the key code fragments by which we achieve a download of the current graph state in [Fidalgo's Shumlex](https://jorgealvarezfidalgo.github.io/Shumlex/web/html/grafo.html).
-
-Importing and registering the Cytoscape extension.
-```
-const cyto = require('cytoscape');
-let svg = require('cytoscape-svg');
-cyto.use( svg );
-```
-Creating the graph and setting the _download_ attribute to the link, so it'll download said file instead of relocating the page.
-```
-cy = cyto({...});
-	$("#dwnsvg-btn").attr("download", `shumlex-graph.svg`);
-```
-Anytime the link is clicked, we produce the SVG of the current graph and set the corresponding base64 value as _href_. 
-```
-function grafoASVG() {
-  var svgContent = cy.svg({scale: 1, full: true});
-  let bs = btoa(svgContent);
-  $("#dwnsvg-btn").attr("href", `data:image/svg+xml;base64,${bs}`);
-}
-...
-$("#dwnsvg-btn").click(grafo.grafoASVG);
 ```
 
 ## Importing and exporting our XMI in Visual Paradigm
