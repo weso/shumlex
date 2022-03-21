@@ -7,6 +7,7 @@ class XMIComposition {
     constructor (shm, irim, xmiasoc) {
         this.componentsCounter = 1;
         this.components = [];
+		this.asocs = new Map();
         this.labels = new Map();
         this.xmiats = null;
         this.shm = shm;
@@ -23,8 +24,10 @@ class XMIComposition {
         let classXMI = "";
         for(let i = 0; i < this.components.length; i++) {
             let shape = this.shm.findShape(this.components[i].name);
+			let lopAsoc = this.asocs.get(this.components[i].name);
+			let lopAsocXMI = lopAsoc ? this.xmiasoc.createXMIAsocAttribute(lopAsoc.lope, lopAsoc.target, 1, 1) : "";
             classXMI += this.XMIAux.createPackEl("uml:Class", shape.id, 'name="' + this.components[i].name + '"',
-                this.xmiats.createXMIAttributes(this.components[i].expr, shape.name));
+                this.xmiats.createXMIAttributes(this.components[i].expr, shape.name) + lopAsocXMI);
             classXMI += this.xmiasoc.createDependentAssociations(shape.id);
         }
         //Crear shapes pendientes de realización
@@ -66,7 +69,7 @@ class XMIComposition {
      * @param max   Cardinalidad máxima
      * @returns {*} Subclase XMI
      */
-    createComponent(asocName, subClassName, expr, min, max) {
+    createComponent(asocName, subClassName, expr, min, max, lopAsoc) {
         let subClass = {
             name: subClassName,
             expr: expr
@@ -77,6 +80,7 @@ class XMIComposition {
         }
 
         this.saveComponent(subClass);
+		if(lopAsoc) this.asocs.set(subClassName, lopAsoc);
         return this.xmiasoc.createXMICompAsocAttribute(asocName, subClassName, min, max);
     }
 
@@ -105,6 +109,7 @@ class XMIComposition {
         this.componentsCounter = 1;
         this.components = [];
         this.labels = new Map();
+		this.asocs = new Map();
     }
 
 }

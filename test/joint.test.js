@@ -45,7 +45,7 @@ describe('Pruebas de la transformación conjunta', () => {
     });
 
     test('Herencia simple', () => {
-        checkGen(ShExRep.getShex5(), XMIRep.getXMI5(), ShExRep.getGenShex5());
+        checkGen(ShExRep.getShex5(), XMIRep.getXMI5(), ShExRep.getShex5());
     });
 
     test('Herencia múltiple', () => {

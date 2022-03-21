@@ -26,6 +26,7 @@ class UMLGen {
 		this.terms = [];
 		this.rpTerms = new Map();	//Termino repetido y el ID que lo unifica
 		this.rpNumber = 0;
+		this.blankCount = 1;
     }
 	
 	crearSVG(id, umlcr, ops) {
@@ -71,6 +72,7 @@ class UMLGen {
 		$( "#" + id + " .classTitle .nodeLabel" ).each(function( index ) {
 			
 			let id = $(this).text();
+			if(id === "") id = "_Blank" + self.blankCount++;
 									
 			$(this).parent().parent().parent().parent().attr("id", id);
 							
@@ -117,26 +119,6 @@ class UMLGen {
 				$(this).text("<" + contenido + ">");	
 			$(this).parent().parent().attr("id", $(this).text()); //El nombre de la clase como ID del elemento
 		});
-		
-		//Eliminar repeticiones de enumeraciones
-		/** 
-		$( "#" + id + " tspan[dy]:contains('<<enumeration>>')" ).each(function( index ) {
-			let height = 10;
-			let line = $(this).parent().next();
-			let liney = line.attr("y1");
-			line.attr("y1", liney - height);
-			line.attr("y2", liney - height);
-			let text = line.next();
-			text.attr("y", text.attr("y") - height);
-			let line2 = text.next();
-			let liney2 = line2.attr("y1");
-			line2.attr("y1", liney2 - height);
-			line2.attr("y2", liney2 - height);
-			let rect = $(this).parent().prev();
-			rect.height(rect.height() - height);
-			$(this).remove();	
-		});
-		*/
 		
 		$("#" + id + " svg").removeAttr("width");
 		
@@ -188,6 +170,16 @@ class UMLGen {
 						$( "#" + $.escapeSelector(relationships[i]) + "-label" ).css("opacity", "1");
 						$( "#" + $.escapeSelector(relationships[i]) + "-edge" ).css("opacity", "1");
 						$( "#" + $.escapeSelector(relationships[i]) + "-card" ).css("opacity", "1");
+						let lv2relationships = self.relationships.get(relationships[i]);
+						if(!lv2relationships) {
+							continue;
+						}
+						for(let j = 0; j < lv2relationships.length; j++) {
+							if(lv2relationships[j].match(/AND[0-9]*/) || lv2relationships[j].match(/OR[0-9]*/) || lv2relationships[j].match(/OneOf[0-9]*/)) {
+								$( "#" + $.escapeSelector(lv2relationships[j]) + "-label" ).css("opacity", "1");
+								$( "#" + $.escapeSelector(lv2relationships[j]) + "-edge" ).css("opacity", "1");
+							}
+						}
 					}
 				}
 			}
@@ -535,14 +527,14 @@ class UMLGen {
                 }
                 //Generamos las enumeraciones corrientes
                 else if (type === "uml:Enumeration") {
-                    this.enums.set(id, name);
+					this.enums.set(id, name);
 					let sanitizedName = this.adaptPref(name);
 					this.noSymbolNames.set(sanitizedName, name);
-                    mumlEnums += "class " + sanitizedName + " {\n<<enumeration>>\n";
-                    for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
-                        mumlEnums += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
-                    }
-                    mumlEnums += "}\n";
+					mumlEnums += "class " + sanitizedName + " {\n<<enumeration>>\n";
+					for (let j = 0; j < packagedElements[i].ownedLiteral.length; j++) {
+						mumlEnums += packagedElements[i].ownedLiteral[j].$.name.replace(/~/g, "*~") + "\n";
+					}
+					mumlEnums += "}\n";                   
                 }
             }
 
@@ -697,6 +689,9 @@ class UMLGen {
         if(at.$.aggregation === "composite") {
             relation = " *-- ";
         }
+		if(at.$.name === "OR" || at.$.name === "OneOf" || at.$.name === "AND") {
+			relation = " .. ";
+		}
 
         //at.$.type indica el nombre de la clase
         //at.$.name indica el nombre de la relación

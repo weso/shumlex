@@ -116,5 +116,6 @@ describe('Pruebas de la transformación ShEx-XMI', () => {
 	test('Suzaku', () => {
         checkGen(ShExRep.getShex25(), XMIRep.getXMI25());
     });
-
+	/**
+**/
 });

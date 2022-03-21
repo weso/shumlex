@@ -3,6 +3,7 @@ const IRIManager = require("../../managers/IRIManager");
 const XMIClass = require("./XMIClass.js");
 const XMIConstraints = require("./XMIConstraints.js");
 const XMIEnumerations = require("./XMIEnumerations.js");
+const XMIPrimitiveAttributes = require("./XMIPrimitiveAttributes.js");
 const XMITypes = require("./XMITypes.js");
 const XMIAux = require("./XMIAux.js");
 
@@ -16,8 +17,9 @@ class XMIGenerator {
         this.irim = new IRIManager();
 
         this.xmienum = new XMIEnumerations(this.irim);
-        this.xmicon = new XMIConstraints(this.irim, this.xmienum);
+        this.xmicon = new XMIConstraints(this.irim, this.xmienum);	
         this.xmitype = new XMITypes(this.irim);
+		this.xmicon.xmiprim = new XMIPrimitiveAttributes(this.xmitype, this.irim, this.xmicon);
 
         this.xmicl = new XMIClass(this.shm, this.xmitype, this.irim, this.xmicon, this.xmienum);
 

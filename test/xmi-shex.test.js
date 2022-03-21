@@ -28,7 +28,7 @@ describe('Pruebas de la transformación XMI-ShEx', () => {
     });
 
     test('Herencia simple', () => {
-        checkGen(XMIRep.getXMI5(), ShExRep.getGenShex5());
+        checkGen(XMIRep.getXMI5(), ShExRep.getShex5());
     });
 
     test('Herencia múltiple', () => {

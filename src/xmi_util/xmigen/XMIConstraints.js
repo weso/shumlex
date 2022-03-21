@@ -96,6 +96,9 @@ class XMIConstraints {
                 vals.push(value);
             }
         }
+		if(vals.length === 1) {
+			return this.xmiprim.createXMIPrimAttribute("Extra", vals[0], undefined, undefined, undefined, name);
+		}
         return this.xmienum.createXMIEnumAttribute("Extra", vals, undefined, undefined, undefined, name);
     }
 

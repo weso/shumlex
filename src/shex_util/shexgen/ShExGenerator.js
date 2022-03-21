@@ -100,6 +100,7 @@ class ShExGenerator {
         this.shm.clear();
         this.shexco.clear();
         this.shext.clear();
+		this.shexcl.clear();
     }
 
 }

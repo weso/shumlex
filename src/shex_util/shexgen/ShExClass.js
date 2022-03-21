@@ -33,12 +33,12 @@ class ShExClass {
             let created = false;
             if(element.ownedAttribute) {
                 for(let i = 0; i < element.ownedAttribute.length; i++) {
-                    if(element.ownedAttribute[i].$.name === "AND") {
+                    if(element.ownedAttribute[i].$.name === "Shape" && element.generalization[0].$.name === "AND") {
                         header += this.shexat.generalizationToShEx(element.generalization, "AND");
                         created = true;
                         break;
                     }
-                    else if(element.ownedAttribute[i].$.name === "OR") {
+                    else if(element.ownedAttribute[i].$.name === "Shape"  && element.generalization[0].$.name === "OR") {
                         header += this.shexat.generalizationToShEx(element.generalization, "OR");
                         created = true;
                         break;
@@ -78,6 +78,10 @@ class ShExClass {
             return header + content + "\n\n"
         }
     }
+	
+	clear() {
+		this.shexat.clear();
+	}
 
 }
 module.exports = ShExClass;

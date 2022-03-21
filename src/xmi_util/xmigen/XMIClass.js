@@ -1,6 +1,8 @@
 const XMIAux = require("./XMIAux.js");
 const XMITypes = require("./XMITypes.js");
 const XMIAttributes = require("./XMIAttributes.js");
+const XMIAssociations = require("./XMIAssociations.js");
+const XMIComposition = require("./XMIComposition.js");
 const IRIManager = require("../../managers/IRIManager");
 /**
  * Genera el XMI correspondiente a una clase UML
@@ -10,12 +12,15 @@ class XMIClass {
     constructor (shm, xmitype, irim, xmicon, xmienum) {
         this.shm = shm;
         this.XMITypes = XMITypes;
-        this.irim = irim;
-        this.xmiatt = new XMIAttributes(xmienum, xmitype,
-            this.irim, xmicon, this.shm);
+        this.irim = irim;    
         this.xmicon = xmicon;
         this.XMIAux = XMIAux;
         this.IRIManager = IRIManager;
+		this.xmiasoc = new XMIAssociations(this.shm, this.irim);
+		this.xmisub = new XMIComposition(this.shm, this.irim, this.xmiasoc);
+		this.xmiatt = new XMIAttributes(xmienum, xmitype,
+            this.irim, xmicon, this.shm, this.xmisub);
+        this.xmisub.xmiats = this.xmiatt;
     }
 
     /**
@@ -126,8 +131,17 @@ class XMIClass {
             }
         }
         if(nOfShapes > 0) {
-            let subClassName = this.xmiatt.getComponentNumber();
-            ats = this.xmiatt.createComponent(lop, subClassName, exprsForComp);
+            for(let i = 0; i < nOfShapes; i++) {
+				let componentName = this.xmisub.getComponentNumber();
+				let next;
+				let lopAsoc;
+				if(i < nOfShapes - 1) {
+					next = "_Blank" + (parseInt(componentName.replace("_Blank", "")) + 1);
+					lopAsoc = { lope: lop, target: next};
+				}
+                ats += this.xmiatt.createComponent("Shape", componentName,
+                    exprsForComp[i].expression, exprsForComp[i].min,exprsForComp[i].max, lopAsoc);
+            }
         }
         switch(lop) {
             case "AND":

@@ -166,39 +166,11 @@ base <http://example.org/>
 	:titancode xsd:string;
 }
 
-:VIPUser EXTRA a { 
-	a @:User; 
+:VIPUser EXTRA a {
+	a [:User];
 }
 
 `;
-    }
-
-    /**
-     * Herencia simple, ShEx generado
-     * @returns {string}
-     */
-    static getGenShex5() {
-        return "prefix : <https://schema.org/>\n" +
-            "prefix xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
-            "base <http://example.org/>\n" +
-            "\n" +
-            ":User {\n" +
-            "\t:name xsd:string;\n" +
-            "\t:age xsd:int ?;\n" +
-            "}\n" +
-            "\n" +
-            ":Ultrauser {\n" +
-            "\ta [:User];\n" +
-            "}\n" +
-            "\n" +
-            ":Titanuser @:User AND {\n" +
-            "\t:titancode xsd:string;\n" +
-            "}\n" +
-            "\n" +
-            ":VIPUser EXTRA a  {\n" +
-            "\ta [:User];\n" +
-            "}\n" +
-            "\n";
     }
 
     /**
@@ -263,7 +235,7 @@ base <http://example.org/>
             "\t:titancode xsd:string;\n" +
             "}\n" +
             "\n" +
-            ":VIPUser EXTRA a  {\n" +
+            ":VIPUser EXTRA a {\n" +
             "\ta [:User];\n" +
             "\ta [<Citizen>];\n" +
             "}\n" +
@@ -481,10 +453,11 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 
 :User {
+ (
 	:name xsd:string; |
 (
 	:givenName xsd:string +;
-	:familyName xsd:string; );
+	:familyName xsd:string; );) ;
 }
 
 :Car {
@@ -575,10 +548,10 @@ base <http://example.org/>
 :User {
 	:name xsd:string;
 	:parent {
-	:gender [:Male ];
+	:gender :Male;
 };
 	:parent {
-	:gender [:Female ];
+	:gender :Female;
 };
 }
 
@@ -619,9 +592,9 @@ base <http://example.org/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 
-:FollowSpaniards EXTRA :follows  {
+:FollowSpaniards EXTRA :follows {
 	:follows {
-	:nationality [:Spain ];
+	:nationality :Spain;
 } +;
 }
 
@@ -640,11 +613,9 @@ base <http://example.org/>
 
 :User {
 	$:name (
-	:name .; |
-(
 	:givenName .;
-	:familyName .; );) ;
-	:email IRI;
+	:familyName .;
+	:email IRI;) ;
 }
 
 :Employee {
@@ -793,7 +764,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 start = @:AdultPerson
 
-:AdultPerson EXTRA rdf:type {
+:AdultPerson EXTRA rdf:type  {
 	rdf:type [ schema:Person ] ;
 	:name xsd:string ;
 	:age MinInclusive 18 ;
@@ -827,7 +798,7 @@ prefix schema: <http://schema.org/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 
-:AdultPerson EXTRA rdf:type  {
+:AdultPerson EXTRA rdf:type {
 	a [schema:Person];
 	:name xsd:string;
 	:age . MinInclusive 18;

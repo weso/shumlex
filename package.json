@@ -1,11 +1,11 @@
 {
   "name": "shumlex",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "ShEx - Uml integration",
   "main": "main.js",
   "scripts": {
     "build": "browserify index.js > bmain.js",
-    "test": "jest --coverage --collectCoverageFrom=src/** test/shex-xmi.test.js test/xmi-shex.test.js test/mermaid.test.js test/joint.test.js"
+    "test": "jest --coverage --collectCoverageFrom=src/** test/shex-xmi.test.js test/xmi-shex.test.js test/joint.test.js test/mermaid.test.js"
   },
   "bin": {},
   "repository": {

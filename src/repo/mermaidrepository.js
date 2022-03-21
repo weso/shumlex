@@ -11,7 +11,7 @@ base <http://example.org/>
 class _User {
 _name "xsd_string\\" 
 _age "xsd_int\\ ?" 
-_gender "_gender__User\\" 
+_gender "Enum0\\" 
 }
 class _TypeTest_ {
 _z "xsd_string\\" 
@@ -30,7 +30,7 @@ _m "xsd_double\\"
 _n "xsd_float\\" 
 _xyz "xsd_invent\\" 
 }
-class _gender__User {
+class Enum0 {
 <<enumeration>>
 :Male
 :Female
@@ -56,8 +56,8 @@ _User --> " -//1,10//-" _Product_ : _buys
 class _Ultrauser
 _User <|-- _Ultrauser : a
 class _Titanuser
-_Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser : AND0
+_Titanuser *--  _Blank1 : Shape
+_User <|-- _Titanuser : AND
 class _Blank1 {
 _titancode "xsd_string\\" 
 }
@@ -94,19 +94,15 @@ _age "xsd_int\\ ?"
 class _Ultrauser
 _User <|-- _Ultrauser : a
 class _Titanuser
-_Titanuser *--  _Blank1 : AND
-_User <|-- _Titanuser : AND0
+_Titanuser *--  _Blank1 : Shape
+_User <|-- _Titanuser : AND
 class _Blank1 {
 _titancode "xsd_string\\" 
 }
 class _VIPUser {
-Extra "Extra__VIPUser\\" 
+Extra "a\\" 
 }
-_User <|-- _VIPUser : a1
-class Extra__VIPUser {
-<<enumeration>>
-a
-}
+_User <|-- _VIPUser : a0
 `;
     }
 
@@ -121,24 +117,24 @@ base <http://example.org/>
 class _User {
 nodeKind: IRI 
 }
-_User *--  _Blank1 : AND
+_User *--  _Blank1 : Shape
 class _Blank1 {
 _name "xsd_string\\" 
 }
 class _Ultrauser {
 nodeKind: Literal 
 }
-_User <|-- _Ultrauser : AND0
+_User <|-- _Ultrauser : AND
 class _Titanuser {
 nodeKind: NonLiteral 
 }
-_Titanuser *--  _Blank2 : AND1
-_User <|-- _Titanuser : AND2
+_Titanuser *--  _Blank2 : Shape0
+_User <|-- _Titanuser : AND1
 class _Blank2
 class _Product_ {
 nodeKind: BNode 
 }
-_Product_ *--  _Blank3 : AND3
+_Product_ *--  _Blank3 : Shape2
 class _Blank3
 class _AThing_ {
 nodeKind: IRI 
@@ -175,25 +171,25 @@ prefix \\codes: <http://example.codes/>
 base <http://example.org/>
 }
 class _Product {
-_status "_status__Product\\" 
-_phone "_phone__Product\\" 
-_quantity "_quantity__Product\\" 
-_url "_url__Product\\" 
+_status "Enum0\\" 
+_phone "Enum1\\" 
+_quantity "Enum2\\" 
+_url "Enum3\\" 
 }
-class _status__Product {
+class Enum0 {
 <<enumeration>>
 codes:*~ - codes:unknown - codes:bad.*~ 
 "111"
 }
-class _phone__Product {
+class Enum1 {
 <<enumeration>>
 "+34"*~ - "+3468031" - "+3467182"*~ 
 }
-class _quantity__Product {
+class Enum2 {
 <<enumeration>>
 99*~ - 9987 - 991*~ 
 }
-class _url__Product {
+class Enum3 {
 <<enumeration>>
 codes:Personal*~
 }
@@ -209,19 +205,19 @@ prefix \\: <http://schema.org/>
 base <http://example.org/>
 }
 class _Product {
-_status "_status__Product\\" 
-_name "_name__Product\\" 
-_price "_price__Product\\" 
+_status "Enum0\\" 
+_name "Enum1\\" 
+_price "Enum2\\" 
 }
-class _status__Product {
+class Enum0 {
 <<enumeration>>
 . - codes:bad 
 }
-class _name__Product {
+class Enum1 {
 <<enumeration>>
 . - "Trademark" 
 }
-class _price__Product {
+class Enum2 {
 <<enumeration>>
 . - 66 
 }
@@ -237,30 +233,30 @@ prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
 class _FrenchProduct {
-_frlabel "_frlabel__FrenchProduct\\" 
+_frlabel "Enum0\\" 
 }
 class _EnglishProduct {
-_enlabel "_enlabel__EnglishProduct\\" 
+_enlabel "Enum1\\" 
 }
 class _SpanishProduct {
-_splabel "_splabel__SpanishProduct\\" 
+_splabel "Enum2\\" 
 }
 class _AnyProduct {
-_label "_label__AnyProduct\\" 
+_label "Enum3\\" 
 }
-class _frlabel__FrenchProduct {
+class Enum0 {
 <<enumeration>>
 @fr 
 }
-class _enlabel__EnglishProduct {
+class Enum1 {
 <<enumeration>>
 @en*~ 
 }
-class _splabel__SpanishProduct {
+class Enum2 {
 <<enumeration>>
 @es*~ - @es-AR - @es-ES 
 }
-class _label__AnyProduct {
+class Enum3 {
 <<enumeration>>
 . - @kz 
 }
@@ -317,11 +313,12 @@ prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
 class _User
-_User *--  _Blank1 : OneOf
+_User *--  _Blank1 : Shape
+_User *--  _Blank2 : Shape0
 class _Blank1 {
 _name "xsd_string\\" 
 }
-_Blank1 *--  _Blank2 : EachOf
+_Blank1 ..  _Blank2 : OneOf
 class _Blank2 {
 _givenName "xsd_string\\ +" 
 _familyName "xsd_string\\" 
@@ -329,10 +326,18 @@ _familyName "xsd_string\\"
 class _Car {
 _model "xsd_string\\" 
 }
-_Car *-- " -//1,2//-" _Blank3 : OneOf0
+_Car *-- " -//1,2//-" _Blank3 : Shape1
+_Car *-- " -//1,2//-" _Blank4 : Shape2
+_Car *-- " -//1,2//-" _Blank5 : Shape3
 class _Blank3 {
 _turbo "xsd_string\\" 
+}
+_Blank3 ..  _Blank4 : OneOf4
+class _Blank4 {
 _misfiring "xsd_string\\" 
+}
+_Blank4 ..  _Blank5 : OneOf5
+class _Blank5 {
 _atm "xsd_string\\" 
 }
 `;
@@ -381,17 +386,17 @@ base <http://example.org/>
 class _User CLOSED {
 nodeKind: IRI 
 }
-_User CLOSED *--  _Blank1 : AND
+_User CLOSED *--  _Blank1 : Shape
 class _Blank1 {
 _name "xsd_string\\ \\MaxLength \\3" 
 _age "xsd_int\\ ?" 
-_gender "_gender__Blank1\\" 
+_gender "Enum0\\" 
 }
 _Blank1 -->  _User CLOSED : _knows
 class _Company CLOSED {
 _name "xsd_string\\" 
 }
-class _gender__Blank1 {
+class Enum0 {
 <<enumeration>>
 :Male
 :Female
@@ -410,12 +415,12 @@ base <http://example.org/>
 class _Person
 class _User {
 __name "xsd_string\\" 
-__gender "__gender__User\\" 
+__gender "Enum0\\" 
 }
 _Person <|-- _User : ^a
 class _Company
 _Company --> " +" _User : __worksFor
-class __gender__User {
+class Enum0 {
 <<enumeration>>
 :Male
 :Female
@@ -432,19 +437,11 @@ prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
 class _FollowSpaniards {
-Extra "Extra__FollowSpaniards\\" 
+Extra "_follows\\" 
 }
 _FollowSpaniards *-- " +" __1 : _follows
 class __1 {
-_nationality "_nationality___1\\" 
-}
-class Extra__FollowSpaniards {
-<<enumeration>>
-:follows
-}
-class _nationality___1 {
-<<enumeration>>
-:Spain
+_nationality "_Spain\\" 
 }
 `;
     }
@@ -457,19 +454,12 @@ prefix \\: <https://schema.org/>
 prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
-class _User {
-_email "IRI\\" 
-}
+class _User
 _User *--  _Blank1 : $_name
-class _Blank1
-_Blank1 *--  _Blank2 : OneOf
-class _Blank2 {
-_name "Any\\" 
-}
-_Blank2 *--  _Blank3 : EachOf
-class _Blank3 {
+class _Blank1 {
 _givenName "Any\\" 
 _familyName "Any\\" 
+_email "IRI\\" 
 }
 class _Employee {
 _employeeId "Any\\" 
@@ -487,26 +477,24 @@ prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
 class _User
-_User *--  _Blank1 : AND
-class _Blank1
-_Blank1 *--  _Blank2 : Shape
-_Blank1 *--  _Blank3 : Shape0
-class _Blank2 {
+_User *--  _Blank1 : Shape
+_User *--  _Blank2 : Shape0
+class _Blank1 {
 _name "xsd_string\\" 
 _owns "IRI\\" 
 }
-class _Blank3
-_Blank3 -->  _Product : _owns
+_Blank1 ..  _Blank2 : AND
+class _Blank2
+_Blank2 -->  _Product : _owns
 class _Titanuser
-_Titanuser *--  _Blank4 : AND1
-_User <|-- _Titanuser : AND2
-class _Blank4
-_Blank4 *--  _Blank5 : Shape3
-_Blank4 *--  _Blank6 : Shape4
-class _Blank5 {
+_Titanuser *--  _Blank3 : Shape1
+_Titanuser *--  _Blank4 : Shape2
+_User <|-- _Titanuser : AND3
+class _Blank3 {
 _titancode "xsd_string\\" 
 }
-class _Blank6 {
+_Blank3 ..  _Blank4 : AND4
+class _Blank4 {
 _owns "Literal\\" 
 }
 class _Ultrauser {
@@ -528,26 +516,24 @@ prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
 base <http://example.org/>
 }
 class _User
-_User *--  _Blank1 : OR
-class _Blank1
-_Blank1 *--  _Blank2 : Shape
-_Blank1 *--  _Blank3 : Shape0
-class _Blank2 {
+_User *--  _Blank1 : Shape
+_User *--  _Blank2 : Shape0
+class _Blank1 {
 _name "xsd_string\\" 
 _owns "IRI\\" 
 }
-class _Blank3
-_Blank3 -->  _Product : _owns
+_Blank1 ..  _Blank2 : OR
+class _Blank2
+_Blank2 -->  _Product : _owns
 class _Titanuser
-_Titanuser *--  _Blank4 : OR1
-_User <|-- _Titanuser : OR2
-class _Blank4
-_Blank4 *--  _Blank5 : Shape3
-_Blank4 *--  _Blank6 : Shape4
-class _Blank5 {
+_Titanuser *--  _Blank3 : Shape1
+_Titanuser *--  _Blank4 : Shape2
+_User <|-- _Titanuser : OR3
+class _Blank3 {
 _titancode "xsd_string\\" 
 }
-class _Blank6 {
+_Blank3 ..  _Blank4 : OR4
+class _Blank4 {
 _owns "Literal\\" 
 }
 class _Product {
@@ -593,9 +579,9 @@ base <http://example.org/>
 class _AdultPerson {
 _name "xsd_string\\" 
 _age "Any\\ \\MinInclusive \\18" 
-_gender "_gender__AdultPerson\\ ?" 
+_gender "Enum0\\ ?" 
 _gender "xsd_string\\ ?" 
-Extra "Extra__AdultPerson\\" 
+Extra "rdf_type\\" 
 }
 _AdultPerson --> " ?" _Address CLOSED : _address
 _AdultPerson --> " +" _Company : _worksFor
@@ -615,14 +601,10 @@ _Company --> " *" _AdultPerson : _employee
 class _State {
 _pattern "_\\ \\/[A-Z]-//2//-/" 
 }
-class _gender__AdultPerson {
+class Enum0 {
 <<enumeration>>
 :Male
 :Female
-}
-class Extra__AdultPerson {
-<<enumeration>>
-rdf:type
 }
 `;
 	}

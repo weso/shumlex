@@ -111,7 +111,7 @@ class Xmirepository {
             "\t<ownedLiteral xmi:id=\"k8ftbvor\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
             "\t<ownedLiteral xmi:id=\"k8ftbvos\" name=\"base &lt;http://example.org/>\"/>\n" +
             "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kb9qewr2\" name=\":gender-:User\">\n" +
+            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kb9qewr2\" name=\"Enum0\">\n" +
             "\t<ownedLiteral xmi:id=\"kb9qewsm\" name=\":Male\"/>\n" +
             "\t<ownedLiteral xmi:id=\"kb9qewsn\" name=\":Female\"/>\n" +
             "</packagedElement>\n" +
@@ -130,100 +130,100 @@ class Xmirepository {
     static getXMI3() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsgcuny" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo3" name=":User">
-	<ownedAttribute xmi:id="kjsgcuo9" name=":name" visibility="public" isUnique="false">
+ xmi:id="l10k9ev1" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9ev6" name=":User">
+	<ownedAttribute xmi:id="l10k9evc" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuoa" name=":age" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10k9eve" name=":age" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuob" name=":knows" visibility="public" type="kjsgcuo3" association="kjsgcuoc" ></ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuod" name=":worksFor" visibility="public" type="kjsgcuo6" association="kjsgcuoe" ></ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuof" name=":buys" visibility="public" type="kjsgcuo7" association="kjsgcuog" >
-		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcuoh" value="10"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9evh" name=":knows" visibility="public" type="l10k9ev6" association="l10k9evi" ></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9evj" name=":worksFor" visibility="public" type="l10k9ev9" association="l10k9evk" ></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9evl" name=":buys" visibility="public" type="l10k9eva" association="l10k9evm" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9evn" value="10"/></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuoc" memberEnd="kjsgcuob kjsgcuoi">
-	<ownedEnd xmi:id="kjsgcuoi" visibility="public" type="kjsgcuo3" association="kjsgcuoc"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9evi" memberEnd="l10k9evh l10k9evo">
+	<ownedEnd xmi:id="l10k9evo" visibility="public" type="l10k9ev6" association="l10k9evi"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuoe" memberEnd="kjsgcuod kjsgcuoj">
-	<ownedEnd xmi:id="kjsgcuoj" visibility="public" type="kjsgcuo3" association="kjsgcuoe"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9evk" memberEnd="l10k9evj l10k9evp">
+	<ownedEnd xmi:id="l10k9evp" visibility="public" type="l10k9ev6" association="l10k9evk"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuog" memberEnd="kjsgcuof kjsgcuok">
-	<ownedEnd xmi:id="kjsgcuok" visibility="public" type="kjsgcuo3" association="kjsgcuog"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9evm" memberEnd="l10k9evl l10k9evq">
+	<ownedEnd xmi:id="l10k9evq" visibility="public" type="l10k9ev6" association="l10k9evm"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo4" name=":Ultrauser">
-	<generalization xmi:id="kjsgcuol" general="kjsgcuo3" name="a"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9ev7" name=":Ultrauser">
+	<generalization xmi:id="l10k9evr" general="l10k9ev6" name="a"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo5" name=":Titanuser">
-	<ownedAttribute xmi:id="kjsgcuom" name="AND" visibility="public" type="kjsgcuon" association="kjsgcuoo" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsgcuop" general="kjsgcuo3" name="AND"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9ev8" name=":Titanuser">
+	<ownedAttribute xmi:id="l10k9evs" name="Shape" visibility="public" type="l10k9evt" association="l10k9evu" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10k9evv" general="l10k9ev6" name="AND"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuoo" memberEnd="kjsgcuom kjsgcuoq">
-	<ownedEnd xmi:id="kjsgcuoq" visibility="public" type="kjsgcuo5" association="kjsgcuoo"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuon" name="_Blank1">
-	<ownedAttribute xmi:id="kjsgcuor" name=":titancode" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9evt" name="_Blank1">
+	<ownedAttribute xmi:id="l10k9evw" name=":titancode" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo6" name=":Company">
-	<ownedAttribute xmi:id="kjsgcuos" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9evu" memberEnd="l10k9evs l10k9evx">
+	<ownedEnd xmi:id="l10k9evx" visibility="public" type="l10k9evt" association="l10k9evu"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9ev9" name=":Company">
+	<ownedAttribute xmi:id="l10k9evy" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuot" name=":hasEmployee" visibility="public" type="kjsgcuo3" association="kjsgcuou" >
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsgcuov" />
-		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcuow" value="*"/></ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcuox" name=":possess" visibility="public" type="kjsgcuo7" association="kjsgcuoy" >
-		<lowerValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcuoz" value="5"/>
-		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcup0" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9evz" name=":hasEmployee" visibility="public" type="l10k9ev6" association="l10k9ew0" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10k9ew1" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ew2" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9ew3" name=":possess" visibility="public" type="l10k9eva" association="l10k9ew4" >
+		<lowerValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ew5" value="5"/>
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ew6" value="*"/></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuou" memberEnd="kjsgcuot kjsgcup1">
-	<ownedEnd xmi:id="kjsgcup1" visibility="public" type="kjsgcuo6" association="kjsgcuou"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9ew0" memberEnd="l10k9evz l10k9ew7">
+	<ownedEnd xmi:id="l10k9ew7" visibility="public" type="l10k9ev9" association="l10k9ew0"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcuoy" memberEnd="kjsgcuox kjsgcup2">
-	<ownedEnd xmi:id="kjsgcup2" visibility="public" type="kjsgcuo6" association="kjsgcuoy"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9ew4" memberEnd="l10k9ew3 l10k9ew8">
+	<ownedEnd xmi:id="l10k9ew8" visibility="public" type="l10k9ev9" association="l10k9ew4"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo7" name="&lt;Product&gt;">
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsgcup3" name=":name" visibility="public" type="kjsgcup4" isUnique="true">
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9eva" name="&lt;Product&gt;">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10k9ew9" name=":name" visibility="public" type="l10k9ewa" isUnique="true">
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcup5" name=":sku" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10k9ewb" name=":sku" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcup6" name=":manufacturer" visibility="public" type="kjsgcuo8" association="kjsgcup7" >
-		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcup8" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9ewc" name=":manufacturer" visibility="public" type="l10k9evb" association="l10k9ewd" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ewe" value="*"/></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcup7" memberEnd="kjsgcup6 kjsgcup9">
-	<ownedEnd xmi:id="kjsgcup9" visibility="public" type="kjsgcuo7" association="kjsgcup7"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9ewd" memberEnd="l10k9ewc l10k9ewf">
+	<ownedEnd xmi:id="l10k9ewf" visibility="public" type="l10k9eva" association="l10k9ewd"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsgcuo8" name="&lt;Organization&gt;">
-	<ownedAttribute xmi:id="kjsgcupa" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10k9evb" name="&lt;Organization&gt;">
+	<ownedAttribute xmi:id="l10k9ewg" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcupb" name=":isPartOf" visibility="public" type="kjsgcuo8" association="kjsgcupc" >
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsgcupd" /></ownedAttribute>
-	<ownedAttribute xmi:id="kjsgcupe" name=":hasDirectives" visibility="public" type="kjsgcuo3" association="kjsgcupf" >
-		<lowerValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcupg" value="5"/>
-		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kjsgcuph" value="5"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9ewh" name=":isPartOf" visibility="public" type="l10k9evb" association="l10k9ewi" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10k9ewj" /></ownedAttribute>
+	<ownedAttribute xmi:id="l10k9ewk" name=":hasDirectives" visibility="public" type="l10k9ev6" association="l10k9ewl" >
+		<lowerValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ewm" value="5"/>
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10k9ewn" value="5"/></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcupc" memberEnd="kjsgcupb kjsgcupi">
-	<ownedEnd xmi:id="kjsgcupi" visibility="public" type="kjsgcuo8" association="kjsgcupc"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9ewi" memberEnd="l10k9ewh l10k9ewo">
+	<ownedEnd xmi:id="l10k9ewo" visibility="public" type="l10k9evb" association="l10k9ewi"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsgcupf" memberEnd="kjsgcupe kjsgcupj">
-	<ownedEnd xmi:id="kjsgcupj" visibility="public" type="kjsgcuo8" association="kjsgcupf"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10k9ewl" memberEnd="l10k9ewk l10k9ewp">
+	<ownedEnd xmi:id="l10k9ewp" visibility="public" type="l10k9evb" association="l10k9ewl"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsgcuo2" name="Prefixes">
-	<ownedLiteral xmi:id="kjsgcunz" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsgcuo0" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsgcuo1" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10k9ev5" name="Prefixes">
+	<ownedLiteral xmi:id="l10k9ev2" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10k9ev3" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10k9ev4" name="base &lt;http://example.org/>"/>
 </packagedElement>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsgcup4" name="Any"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10k9ewa" name="Any"/>
 </uml:Model>`;
     }
 
@@ -234,47 +234,45 @@ class Xmirepository {
     static getXMI5() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsfr88y" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfr893" name=":User">
-	<ownedAttribute xmi:id="kjsfr897" name=":name" visibility="public" isUnique="false">
+ xmi:id="l10kag64" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kag69" name=":User">
+	<ownedAttribute xmi:id="l10kag6d" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsfr899" name=":age" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10kag6f" name=":age" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
 		</type>
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsfr898" />
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kag6e" />
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfr894" name=":Ultrauser">
-	<generalization xmi:id="kjsfr89a" general="kjsfr893" name="a"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kag6a" name=":Ultrauser">
+	<generalization xmi:id="l10kag6g" general="l10kag69" name="a"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfr895" name=":Titanuser">
-	<ownedAttribute xmi:id="kjsfr89b" name="AND" visibility="public" type="kjsfr89c" association="kjsfr89d" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfr89e" general="kjsfr893" name="AND"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kag6b" name=":Titanuser">
+	<ownedAttribute xmi:id="l10kag6h" name="Shape" visibility="public" type="l10kag6i" association="l10kag6j" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10kag6k" general="l10kag69" name="AND"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsfr89d" memberEnd="kjsfr89b kjsfr89f">
-	<ownedEnd xmi:id="kjsfr89f" visibility="public" type="kjsfr895" association="kjsfr89d"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfr89c" name="_Blank1">
-	<ownedAttribute xmi:id="kjsfr89g" name=":titancode" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kag6i" name="_Blank1">
+	<ownedAttribute xmi:id="l10kag6l" name=":titancode" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfr896" name=":VIPUser">
-	<generalization xmi:id="kjsfr89h" general="kjsfr893" name="a"/>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfr89j" name="Extra" visibility="public" type="kjsfr89i" isUnique="true">
+<packagedElement xmi:type="uml:Association" xmi:id="l10kag6j" memberEnd="l10kag6h l10kag6m">
+	<ownedEnd xmi:id="l10kag6m" visibility="public" type="l10kag6i" association="l10kag6j"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kag6c" name=":VIPUser">
+	<generalization xmi:id="l10kag6n" general="l10kag69" name="a"/>
+	<ownedAttribute xmi:type="uml:Property" xmi:id=":VIPUser" name="Extra" visibility="public" type="l10kag6p" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsfr892" name="Prefixes">
-	<ownedLiteral xmi:id="kjsfr88z" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsfr890" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsfr891" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kag68" name="Prefixes">
+	<ownedLiteral xmi:id="l10kag65" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kag66" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kag67" name="base &lt;http://example.org/>"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsfr89i" name="Extra-:VIPUser">
-	<ownedLiteral xmi:id="kjsfr89k" name="a"/>
-</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kag6p" name="a"/>
 </uml:Model>`;
     }
 
@@ -285,55 +283,53 @@ class Xmirepository {
     static getXMI6() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsfvilu" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvilz" name=":User">
-	<ownedAttribute xmi:id="kjsfvim4" name=":name" visibility="public" isUnique="false">
+ xmi:id="l10lm9q6" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qb" name=":User">
+	<ownedAttribute xmi:id="l10lm9qg" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsfvim6" name=":age" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10lm9qi" name=":age" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
 		</type>
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsfvim5" />
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10lm9qh" />
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvim0" name="&lt;Citizen&gt;">
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfvim7" name=":id" visibility="public" type="kjsfvim8" isUnique="true">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qc" name="&lt;Citizen&gt;">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10lm9qj" name=":id" visibility="public" type="l10lm9qk" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvim1" name=":Ultrauser">
-	<generalization xmi:id="kjsfvim9" general="kjsfvilz" name="a"/>
-	<generalization xmi:id="kjsfvima" general="kjsfvim0" name="a"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qd" name=":Ultrauser">
+	<generalization xmi:id="l10lm9ql" general="l10lm9qb" name="a"/>
+	<generalization xmi:id="l10lm9qm" general="l10lm9qc" name="a"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvim2" name=":Titanuser">
-	<ownedAttribute xmi:id="kjsfvimb" name="AND" visibility="public" type="kjsfvimc" association="kjsfvimd" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfvime" general="kjsfvilz" name="AND"/>
-	<generalization xmi:id="kjsfvimf" general="kjsfvim0" name="AND"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qe" name=":Titanuser">
+	<ownedAttribute xmi:id="l10lm9qn" name="Shape" visibility="public" type="l10lm9qo" association="l10lm9qp" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10lm9qq" general="l10lm9qb" name="AND"/>
+	<generalization xmi:id="l10lm9qr" general="l10lm9qc" name="AND"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsfvimd" memberEnd="kjsfvimb kjsfvimg">
-	<ownedEnd xmi:id="kjsfvimg" visibility="public" type="kjsfvim2" association="kjsfvimd"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvimc" name="_Blank1">
-	<ownedAttribute xmi:id="kjsfvimh" name=":titancode" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qo" name="_Blank1">
+	<ownedAttribute xmi:id="l10lm9qs" name=":titancode" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfvim3" name=":VIPUser">
-	<generalization xmi:id="kjsfvimi" general="kjsfvilz" name="a"/>
-	<generalization xmi:id="kjsfvimj" general="kjsfvim0" name="a"/>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfviml" name="Extra" visibility="public" type="kjsfvimk" isUnique="true">
+<packagedElement xmi:type="uml:Association" xmi:id="l10lm9qp" memberEnd="l10lm9qn l10lm9qt">
+	<ownedEnd xmi:id="l10lm9qt" visibility="public" type="l10lm9qo" association="l10lm9qp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10lm9qf" name=":VIPUser">
+	<generalization xmi:id="l10lm9qu" general="l10lm9qb" name="a"/>
+	<generalization xmi:id="l10lm9qv" general="l10lm9qc" name="a"/>
+	<ownedAttribute xmi:type="uml:Property" xmi:id=":VIPUser" name="Extra" visibility="public" type="l10lm9qx" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsfvily" name="Prefixes">
-	<ownedLiteral xmi:id="kjsfvilv" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsfvilw" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsfvilx" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10lm9qa" name="Prefixes">
+	<ownedLiteral xmi:id="l10lm9q7" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10lm9q8" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10lm9q9" name="base &lt;http://example.org/>"/>
 </packagedElement>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsfvim8" name="Any"/>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsfvimk" name="Extra-:VIPUser">
-	<ownedLiteral xmi:id="kjsfvimm" name="a"/>
-</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10lm9qk" name="Any"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10lm9qx" name="a"/>
 </uml:Model>`;
     }
 
@@ -344,58 +340,58 @@ class Xmirepository {
     static getXMI7() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsfxwid" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwii" name=":User">
-	<ownedAttribute xmi:id="kjsfxwin" name="AND" visibility="public" type="kjsfxwio" association="kjsfxwip" aggregation="composite"></ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwir" name="nodeKind" visibility="public" type="kjsfxwiq" isUnique="true">
+ xmi:id="l10kau2b" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2g" name=":User">
+	<ownedAttribute xmi:id="l10kau2l" name="Shape" visibility="public" type="l10kau2m" association="l10kau2n" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kau2p" name="nodeKind" visibility="public" type="l10kau2o" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsfxwip" memberEnd="kjsfxwin kjsfxwis">
-	<ownedEnd xmi:id="kjsfxwis" visibility="public" type="kjsfxwii" association="kjsfxwip"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwio" name="_Blank1">
-	<ownedAttribute xmi:id="kjsfxwit" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2m" name="_Blank1">
+	<ownedAttribute xmi:id="l10kau2q" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwij" name=":Ultrauser">
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwiv" name="nodeKind" visibility="public" type="kjsfxwiu" isUnique="true">
+<packagedElement xmi:type="uml:Association" xmi:id="l10kau2n" memberEnd="l10kau2l l10kau2r">
+	<ownedEnd xmi:id="l10kau2r" visibility="public" type="l10kau2m" association="l10kau2n"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2h" name=":Ultrauser">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kau2t" name="nodeKind" visibility="public" type="l10kau2s" isUnique="true">
 	</ownedAttribute>
-	<generalization xmi:id="kjsfxwiw" general="kjsfxwii" name="AND"/>
+	<generalization xmi:id="l10kau2u" general="l10kau2g" name="AND"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwik" name=":Titanuser">
-	<ownedAttribute xmi:id="kjsfxwix" name="AND" visibility="public" type="kjsfxwiy" association="kjsfxwiz" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kjsfxwj0" general="kjsfxwii" name="AND"/>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwj2" name="nodeKind" visibility="public" type="kjsfxwj1" isUnique="true">
-	</ownedAttribute>
-</packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsfxwiz" memberEnd="kjsfxwix kjsfxwj3">
-	<ownedEnd xmi:id="kjsfxwj3" visibility="public" type="kjsfxwik" association="kjsfxwiz"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwiy" name="_Blank2"/>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwil" name="&lt;Product&gt;">
-	<ownedAttribute xmi:id="kjsfxwj4" name="AND" visibility="public" type="kjsfxwj5" association="kjsfxwj6" aggregation="composite"></ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwj8" name="nodeKind" visibility="public" type="kjsfxwj7" isUnique="true">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2i" name=":Titanuser">
+	<ownedAttribute xmi:id="l10kau2v" name="Shape" visibility="public" type="l10kau2w" association="l10kau2x" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10kau2y" general="l10kau2g" name="AND"/>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kau30" name="nodeKind" visibility="public" type="l10kau2z" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsfxwj6" memberEnd="kjsfxwj4 kjsfxwj9">
-	<ownedEnd xmi:id="kjsfxwj9" visibility="public" type="kjsfxwil" association="kjsfxwj6"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2w" name="_Blank2"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kau2x" memberEnd="l10kau2v l10kau31">
+	<ownedEnd xmi:id="l10kau31" visibility="public" type="l10kau2w" association="l10kau2x"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwj5" name="_Blank3"/>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsfxwim" name="&lt;AThing&gt;">
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsfxwja" name="nodeKind" visibility="public" type="kjsfxwiq" isUnique="true">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2j" name="&lt;Product&gt;">
+	<ownedAttribute xmi:id="l10kau32" name="Shape" visibility="public" type="l10kau33" association="l10kau34" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kau36" name="nodeKind" visibility="public" type="l10kau35" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsfxwih" name="Prefixes">
-	<ownedLiteral xmi:id="kjsfxwie" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsfxwif" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsfxwig" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau33" name="_Blank3"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kau34" memberEnd="l10kau32 l10kau37">
+	<ownedEnd xmi:id="l10kau37" visibility="public" type="l10kau33" association="l10kau34"/>
 </packagedElement>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsfxwiq" name="IRI"/>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsfxwiu" name="Literal"/>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsfxwj1" name="NonLiteral"/>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsfxwj7" name="BNode"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kau2k" name="&lt;AThing&gt;">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kau38" name="nodeKind" visibility="public" type="l10kau2o" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kau2f" name="Prefixes">
+	<ownedLiteral xmi:id="l10kau2c" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kau2d" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kau2e" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kau2o" name="IRI"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kau2s" name="Literal"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kau2z" name="NonLiteral"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kau35" name="BNode"/>
 </uml:Model>`;
     }
 
@@ -404,95 +400,95 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI9() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbeaes49\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbeaes4e\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes4f\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes4k\" name=\":age\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int\">\n" +
-            "\t\t</type>\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralInteger\" xmi:id=\"kbeaes4j\" />\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes4o\" name=\":c\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes4s\" name=\":d\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes4w\" name=\":e\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes50\" name=\":f\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbeaes54\" name=\":g\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<ownedRule xmi:id=\"kbeaes4h\" name=\"/[a-z]+/\" constrainedElement=\"kbeaes4f\">\n" +
-            "<specification body=\"/[a-z]+/\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes4g\" xmi:id=\"kbeaes4i\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes4f</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes4m\" name=\"MinInclusive 18\" constrainedElement=\"kbeaes4k\">\n" +
-            "<specification body=\"MinInclusive 18\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes4l\" xmi:id=\"kbeaes4n\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes4k</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes4q\" name=\"TotalDigits 3\" constrainedElement=\"kbeaes4o\">\n" +
-            "<specification body=\"TotalDigits 3\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes4p\" xmi:id=\"kbeaes4r\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes4o</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes4u\" name=\"FractionDigits 4\" constrainedElement=\"kbeaes4s\">\n" +
-            "<specification body=\"FractionDigits 4\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes4t\" xmi:id=\"kbeaes4v\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes4s</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes4y\" name=\"Length 6\" constrainedElement=\"kbeaes4w\">\n" +
-            "<specification body=\"Length 6\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes4x\" xmi:id=\"kbeaes4z\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes4w</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes52\" name=\"MinLength 3\" constrainedElement=\"kbeaes50\">\n" +
-            "<specification body=\"MinLength 3\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes51\" xmi:id=\"kbeaes53\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes50</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbeaes56\" name=\"MaxLength 15\" constrainedElement=\"kbeaes54\">\n" +
-            "<specification body=\"MaxLength 15\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbeaes55\" xmi:id=\"kbeaes57\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbeaes54</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbeaes4d\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbeaes4a\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbeaes4b\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbeaes4c\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kbbi3" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kbbi8" name=":User">
+	<ownedAttribute xmi:id="l10kbbi9" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbid" name=":age" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
+		</type>
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kbbic" />
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbig" name=":c" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbij" name=":d" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbim" name=":e" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbip" name=":f" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kbbis" name=":g" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<ownedRule xmi:id="l10kbbia" name="/[a-z]+/" constrainedElement="l10kbbi9">
+<specification body="/[a-z]+/" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbia" xmi:id="l10kbbib" xmi:type="uml:Comment">
+<body>l10kbbi9</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbie" name="MinInclusive 18" constrainedElement="l10kbbid">
+<specification body="MinInclusive 18" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbie" xmi:id="l10kbbif" xmi:type="uml:Comment">
+<body>l10kbbid</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbih" name="TotalDigits 3" constrainedElement="l10kbbig">
+<specification body="TotalDigits 3" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbih" xmi:id="l10kbbii" xmi:type="uml:Comment">
+<body>l10kbbig</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbik" name="FractionDigits 4" constrainedElement="l10kbbij">
+<specification body="FractionDigits 4" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbik" xmi:id="l10kbbil" xmi:type="uml:Comment">
+<body>l10kbbij</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbin" name="Length 6" constrainedElement="l10kbbim">
+<specification body="Length 6" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbin" xmi:id="l10kbbio" xmi:type="uml:Comment">
+<body>l10kbbim</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbiq" name="MinLength 3" constrainedElement="l10kbbip">
+<specification body="MinLength 3" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbiq" xmi:id="l10kbbir" xmi:type="uml:Comment">
+<body>l10kbbip</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10kbbit" name="MaxLength 15" constrainedElement="l10kbbis">
+<specification body="MaxLength 15" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10kbbit" xmi:id="l10kbbiu" xmi:type="uml:Comment">
+<body>l10kbbis</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbbi7" name="Prefixes">
+	<ownedLiteral xmi:id="l10kbbi4" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kbbi5" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kbbi6" name="base &lt;http://example.org/>"/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -500,38 +496,38 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI10() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"k8op8059\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8op805e\" name=\":Product\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8op805g\" name=\":status\" visibility=\"public\" type=\"k8op805f\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8op805i\" name=\":phone\" visibility=\"public\" type=\"k8op805h\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8op805k\" name=\":quantity\" visibility=\"public\" type=\"k8op805j\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8op805m\" name=\":url\" visibility=\"public\" type=\"k8op805l\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8op805a\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805b\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805c\" name=\"prefix codes: &lt;http://example.codes/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805d\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8op805f\" name=\":status-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805n\" name=\"codes:~ - codes:unknown - codes:bad.~ \"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805o\" name=\"&quot;111&quot;\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8op805h\" name=\":phone-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805p\" name=\"&quot;+34&quot;~ - &quot;+3468031&quot; - &quot;+3467182&quot;~ \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8op805j\" name=\":quantity-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805q\" name=\"99~ - 9987 - 991~ \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8op805l\" name=\":url-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8op805r\" name=\"codes:Personal~\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kbmff" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kbmfk" name=":Product">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbmfm" name=":status" visibility="public" type="l10kbmfl" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbmfo" name=":phone" visibility="public" type="l10kbmfn" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbmfq" name=":quantity" visibility="public" type="l10kbmfp" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbmfs" name=":url" visibility="public" type="l10kbmfr" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbmfj" name="Prefixes">
+	<ownedLiteral xmi:id="l10kbmfg" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kbmfh" name="prefix codes: &lt;http://example.codes/>"/>
+	<ownedLiteral xmi:id="l10kbmfi" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbmfl" name="Enum0">
+	<ownedLiteral xmi:id="l10kbmft" name="codes:~ - codes:unknown - codes:bad.~ "/>
+	<ownedLiteral xmi:id="l10kbmfu" name="&quot;111&quot;"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbmfn" name="Enum1">
+	<ownedLiteral xmi:id="l10kbmfv" name="&quot;+34&quot;~ - &quot;+3468031&quot; - &quot;+3467182&quot;~ "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbmfp" name="Enum2">
+	<ownedLiteral xmi:id="l10kbmfw" name="99~ - 9987 - 991~ "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbmfr" name="Enum3">
+	<ownedLiteral xmi:id="l10kbmfx" name="codes:Personal~"/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -539,32 +535,32 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI11() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"k8opvk4h\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8opvk4m\" name=\":Product\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8opvk4o\" name=\":status\" visibility=\"public\" type=\"k8opvk4n\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8opvk4q\" name=\":name\" visibility=\"public\" type=\"k8opvk4p\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8opvk4s\" name=\":price\" visibility=\"public\" type=\"k8opvk4r\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8opvk4i\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4j\" name=\"prefix codes: &lt;http://example.codes/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4k\" name=\"prefix : &lt;http://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4l\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8opvk4n\" name=\":status-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4t\" name=\". - codes:bad \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8opvk4p\" name=\":name-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4u\" name=\". - &quot;Trademark&quot; \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8opvk4r\" name=\":price-:Product\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8opvk4y\" name=\". - 66 \"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kbslu" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kbslz" name=":Product">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbsm1" name=":status" visibility="public" type="l10kbsm0" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbsm3" name=":name" visibility="public" type="l10kbsm2" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kbsm5" name=":price" visibility="public" type="l10kbsm4" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbsly" name="Prefixes">
+	<ownedLiteral xmi:id="l10kbslv" name="prefix codes: &lt;http://example.codes/>"/>
+	<ownedLiteral xmi:id="l10kbslw" name="prefix : &lt;http://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kbslx" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbsm0" name="Enum0">
+	<ownedLiteral xmi:id="l10kbsm6" name=". - codes:bad "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbsm2" name="Enum1">
+	<ownedLiteral xmi:id="l10kbsm7" name=". - &quot;Trademark&quot; "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kbsm4" name="Enum2">
+	<ownedLiteral xmi:id="l10kbsm8" name=". - 66 "/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -618,43 +614,43 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI13() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"k8pszqku\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8pszql2\" name=\":FrenchProduct\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8pszql4\" name=\":frlabel\" visibility=\"public\" type=\"k8pszql3\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8pszql5\" name=\":EnglishProduct\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8pszql7\" name=\":enlabel\" visibility=\"public\" type=\"k8pszql6\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8pszql8\" name=\":SpanishProduct\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8pszqla\" name=\":splabel\" visibility=\"public\" type=\"k8pszql9\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"k8pszqlb\" name=\":AnyProduct\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"k8pszqld\" name=\":label\" visibility=\"public\" type=\"k8pszqlc\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8pszqky\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszqkz\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszql0\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszql1\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8pszql3\" name=\":frlabel-:FrenchProduct\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszqle\" name=\"@fr \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8pszql6\" name=\":enlabel-:EnglishProduct\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszqlf\" name=\"@en~ \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8pszql9\" name=\":splabel-:SpanishProduct\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszqlg\" name=\"@es~ - @es-AR - @es-ES \"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"k8pszqlc\" name=\":label-:AnyProduct\">\n" +
-            "\t<ownedLiteral xmi:id=\"k8pszqlh\" name=\". - @kz \"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kc49v" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kc4a0" name=":FrenchProduct">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kc4a5" name=":frlabel" visibility="public" type="l10kc4a4" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kc4a1" name=":EnglishProduct">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kc4a7" name=":enlabel" visibility="public" type="l10kc4a6" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kc4a2" name=":SpanishProduct">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kc4a9" name=":splabel" visibility="public" type="l10kc4a8" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kc4a3" name=":AnyProduct">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kc4ab" name=":label" visibility="public" type="l10kc4aa" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kc49z" name="Prefixes">
+	<ownedLiteral xmi:id="l10kc49w" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kc49x" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kc49y" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kc4a4" name="Enum0">
+	<ownedLiteral xmi:id="l10kc4ac" name="@fr "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kc4a6" name="Enum1">
+	<ownedLiteral xmi:id="l10kc4ad" name="@en~ "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kc4a8" name="Enum2">
+	<ownedLiteral xmi:id="l10kc4ae" name="@es~ - @es-AR - @es-ES "/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kc4aa" name="Enum3">
+	<ownedLiteral xmi:id="l10kc4af" name=". - @kz "/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -662,102 +658,102 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI14() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kb9qw4w7\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4wc\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wd\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4we\" name=\"EachOf\" visibility=\"public\" type=\"kb9qw4wf\" association=\"kb9qw4wg\" aggregation=\"composite\">\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralInteger\" xmi:id=\"kb9qw4wh\" /></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wi\" name=\"EachOf\" visibility=\"public\" type=\"kb9qw4wj\" association=\"kb9qw4wk\" aggregation=\"composite\">\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralInteger\" xmi:id=\"kb9qw4wl\" />\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qw4wm\" value=\"*\"/></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wn\" name=\":owns\" visibility=\"public\" type=\"kb9qw4wo\" association=\"kb9qw4wp\" ></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4wg\" memberEnd=\"kb9qw4we kb9qw4wq\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4wq\" visibility=\"public\" type=\"kb9qw4wc\" association=\"kb9qw4wg\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4wk\" memberEnd=\"kb9qw4wi kb9qw4wr\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4wr\" visibility=\"public\" type=\"kb9qw4wc\" association=\"kb9qw4wk\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4wp\" memberEnd=\"kb9qw4wn kb9qw4ws\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4ws\" visibility=\"public\" type=\"kb9qw4wc\" association=\"kb9qw4wp\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4wf\" name=\"_Blank1\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wt\" name=\":givenName\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wu\" name=\":familyName\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4wj\" name=\"_Blank2\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4wv\" name=\":has\" visibility=\"public\" type=\"kb9qw4ww\" association=\"kb9qw4wx\" >\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qw4wy\" value=\"2\"/>\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qw4wz\" value=\"*\"/></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4x0\" name=\":c\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4wx\" memberEnd=\"kb9qw4wv kb9qw4x1\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4x1\" visibility=\"public\" type=\"kb9qw4wj\" association=\"kb9qw4wx\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4wo\" name=\":Garage\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4x2\" name=\"EachOf\" visibility=\"public\" type=\"kb9qw4x3\" association=\"kb9qw4x4\" aggregation=\"composite\">\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qw4x5\" value=\"*\"/></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4x4\" memberEnd=\"kb9qw4x2 kb9qw4x6\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4x6\" visibility=\"public\" type=\"kb9qw4wo\" association=\"kb9qw4x4\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4x3\" name=\"_Blank3\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4x7\" name=\"&lt;AE86&gt;\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4x8\" name=\"EachOf\" visibility=\"public\" type=\"kb9qw4x9\" association=\"kb9qw4xa\" aggregation=\"composite\">\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralInteger\" xmi:id=\"kb9qw4xb\" /></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4xc\" name=\"EachOf\" visibility=\"public\" type=\"kb9qw4xd\" association=\"kb9qw4xe\" aggregation=\"composite\">\n" +
-            "\t\t<lowerValue xmi:type=\"uml:LiteralInteger\" xmi:id=\"kb9qw4xf\" /></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4xa\" memberEnd=\"kb9qw4x8 kb9qw4xg\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4xg\" visibility=\"public\" type=\"kb9qw4x3\" association=\"kb9qw4xa\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qw4xe\" memberEnd=\"kb9qw4xc kb9qw4xh\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qw4xh\" visibility=\"public\" type=\"kb9qw4x3\" association=\"kb9qw4xe\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4x9\" name=\"_Blank4\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4xi\" name=\"&lt;Levin&gt;\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4xj\" name=\"&lt;Cilinders&gt;\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4xd\" name=\"_Blank5\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4xk\" name=\"&lt;Trueno&gt;\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qw4xl\" name=\"&lt;Cilinders&gt;\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qw4ww\" name=\"&lt;Something&gt;\"/>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kb9qw4wb\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qw4w8\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qw4w9\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qw4wa\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kclyr" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclyw" name=":User">
+	<ownedAttribute xmi:id="l10kclyz" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kclz0" name="EachOf" visibility="public" type="l10kclz1" association="l10kclz2" aggregation="composite">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kclz3" /></ownedAttribute>
+	<ownedAttribute xmi:id="l10kclz4" name="EachOf" visibility="public" type="l10kclz5" association="l10kclz6" aggregation="composite">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kclz7" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kclz8" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10kclz9" name=":owns" visibility="public" type="l10kclyx" association="l10kclza" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclza" memberEnd="l10kclz9 l10kclzb">
+	<ownedEnd xmi:id="l10kclzb" visibility="public" type="l10kclyw" association="l10kclza"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclz1" name="_Blank1">
+	<ownedAttribute xmi:id="l10kclzc" name=":givenName" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kclzd" name=":familyName" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclz2" memberEnd="l10kclz0 l10kclze">
+	<ownedEnd xmi:id="l10kclze" visibility="public" type="l10kclz1" association="l10kclz2"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclz6" memberEnd="l10kclz4 l10kclzf">
+	<ownedEnd xmi:id="l10kclzf" visibility="public" type="l10kclz1" association="l10kclz6"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclz5" name="_Blank2">
+	<ownedAttribute xmi:id="l10kclzg" name=":has" visibility="public" type="l10kclyy" association="l10kclzh" >
+		<lowerValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kclzi" value="2"/>
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kclzj" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l10kclzk" name=":c" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclyx" name=":Garage">
+	<ownedAttribute xmi:id="l10kclzl" name="EachOf" visibility="public" type="l10kclzm" association="l10kclzn" aggregation="composite">
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kclzo" value="*"/></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclzh" memberEnd="l10kclzg l10kclzp">
+	<ownedEnd xmi:id="l10kclzp" visibility="public" type="l10kclyx" association="l10kclzh"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclzm" name="_Blank3">
+	<ownedAttribute xmi:id="l10kclzq" name="&lt;AE86&gt;" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kclzr" name="EachOf" visibility="public" type="l10kclzs" association="l10kclzt" aggregation="composite">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kclzu" /></ownedAttribute>
+	<ownedAttribute xmi:id="l10kclzv" name="EachOf" visibility="public" type="l10kclzw" association="l10kclzx" aggregation="composite">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kclzy" /></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclzn" memberEnd="l10kclzl l10kclzz">
+	<ownedEnd xmi:id="l10kclzz" visibility="public" type="l10kclzm" association="l10kclzn"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclzt" memberEnd="l10kclzr l10kcm00">
+	<ownedEnd xmi:id="l10kcm00" visibility="public" type="l10kclzm" association="l10kclzt"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kclzx" memberEnd="l10kclzv l10kcm01">
+	<ownedEnd xmi:id="l10kcm01" visibility="public" type="l10kclzm" association="l10kclzx"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclzs" name="_Blank4">
+	<ownedAttribute xmi:id="l10kcm02" name="&lt;Levin&gt;" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kcm03" name="&lt;Cilinders&gt;" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclzw" name="_Blank5">
+	<ownedAttribute xmi:id="l10kcm04" name="&lt;Trueno&gt;" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kcm05" name="&lt;Cilinders&gt;" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kclyy" name="&lt;Something&gt;"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kclyv" name="Prefixes">
+	<ownedLiteral xmi:id="l10kclys" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kclyt" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kclyu" name="base &lt;http://example.org/>"/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -765,67 +761,93 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI15() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kb9qy9mn\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qy9ms\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9mt\" name=\"OneOf\" visibility=\"public\" type=\"kb9qy9mu\" association=\"kb9qy9mv\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qy9mv\" memberEnd=\"kb9qy9mt kb9qy9mw\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qy9mw\" visibility=\"public\" type=\"kb9qy9ms\" association=\"kb9qy9mv\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qy9mu\" name=\"_Blank1\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9mx\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9my\" name=\"EachOf\" visibility=\"public\" type=\"kb9qy9mz\" association=\"kb9qy9n0\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qy9n0\" memberEnd=\"kb9qy9my kb9qy9n1\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qy9n1\" visibility=\"public\" type=\"kb9qy9mu\" association=\"kb9qy9n0\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qy9mz\" name=\"_Blank2\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9n3\" name=\":givenName\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qy9n2\" value=\"*\"/>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9n4\" name=\":familyName\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qy9n5\" name=\":Car\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9n6\" name=\":model\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9n7\" name=\"OneOf\" visibility=\"public\" type=\"kb9qy9n8\" association=\"kb9qy9n9\" aggregation=\"composite\">\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kb9qy9na\" value=\"2\"/></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kb9qy9n9\" memberEnd=\"kb9qy9n7 kb9qy9nb\">\n" +
-            "\t<ownedEnd xmi:id=\"kb9qy9nb\" visibility=\"public\" type=\"kb9qy9n5\" association=\"kb9qy9n9\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kb9qy9n8\" name=\"_Blank3\">\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9nc\" name=\":turbo\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9nd\" name=\":misfiring\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kb9qy9ne\" name=\":atm\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kb9qy9mr\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qy9mo\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qy9mp\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kb9qy9mq\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l110hmh0" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmh5" name=":User">
+	<ownedAttribute xmi:id="l110hmh7" name="Shape" visibility="public" type="l110hmh8" association="l110hmh9" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l110hmha" name="Shape" visibility="public" type="l110hmhb" association="l110hmhc" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmh8" name="_Blank1">
+	<ownedAttribute xmi:id="l110hmhf" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhd" name="OneOf" visibility="public" type="l110hmhb" association="l110hmhe" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmh9" memberEnd="l110hmh7 l110hmhg">
+	<ownedEnd xmi:id="l110hmhg" visibility="public" type="l110hmh8" association="l110hmh9"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmhc" memberEnd="l110hmha l110hmhh">
+	<ownedEnd xmi:id="l110hmhh" visibility="public" type="l110hmh8" association="l110hmhc"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmhe" memberEnd="l110hmhd l110hmhi">
+	<ownedEnd xmi:id="l110hmhi" visibility="public" type="l110hmh8" association="l110hmhe"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmhb" name="_Blank2">
+	<ownedAttribute xmi:id="l110hmhk" name=":givenName" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l110hmhj" value="*"/>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhl" name=":familyName" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmh6" name=":Car">
+	<ownedAttribute xmi:id="l110hmhm" name=":model" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhn" name="Shape" visibility="public" type="l110hmho" association="l110hmhp" aggregation="composite">
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l110hmhq" value="2"/></ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhr" name="Shape" visibility="public" type="l110hmhs" association="l110hmht" aggregation="composite">
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l110hmhu" value="2"/></ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhv" name="Shape" visibility="public" type="l110hmhw" association="l110hmhx" aggregation="composite">
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l110hmhy" value="2"/></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmho" name="_Blank3">
+	<ownedAttribute xmi:id="l110hmi1" name=":turbo" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l110hmhz" name="OneOf" visibility="public" type="l110hmhs" association="l110hmi0" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmhp" memberEnd="l110hmhn l110hmi2">
+	<ownedEnd xmi:id="l110hmi2" visibility="public" type="l110hmho" association="l110hmhp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmht" memberEnd="l110hmhr l110hmi3">
+	<ownedEnd xmi:id="l110hmi3" visibility="public" type="l110hmho" association="l110hmht"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmhx" memberEnd="l110hmhv l110hmi4">
+	<ownedEnd xmi:id="l110hmi4" visibility="public" type="l110hmho" association="l110hmhx"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmi0" memberEnd="l110hmhz l110hmi5">
+	<ownedEnd xmi:id="l110hmi5" visibility="public" type="l110hmho" association="l110hmi0"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmhs" name="_Blank4">
+	<ownedAttribute xmi:id="l110hmi8" name=":misfiring" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l110hmi6" name="OneOf" visibility="public" type="l110hmhw" association="l110hmi7" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l110hmi7" memberEnd="l110hmi6 l110hmi9">
+	<ownedEnd xmi:id="l110hmi9" visibility="public" type="l110hmhs" association="l110hmi7"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l110hmhw" name="_Blank5">
+	<ownedAttribute xmi:id="l110hmia" name=":atm" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l110hmh4" name="Prefixes">
+	<ownedLiteral xmi:id="l110hmh1" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l110hmh2" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l110hmh3" name="base &lt;http://example.org/>"/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -833,61 +855,61 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI16() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbam4jq9\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqe\" name=\":Car\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jqk\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jql\" name=\":belongs\" visibility=\"public\" type=\"kbam4jqj\" association=\"kbam4jqm\" ></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbam4jqm\" memberEnd=\"kbam4jql kbam4jqn\">\n" +
-            "\t<ownedEnd xmi:id=\"kbam4jqn\" visibility=\"public\" type=\"kbam4jqe\" association=\"kbam4jqm\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqf\" name=\":Garage\"/>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqg\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jqo\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jqp\" name=\":worksFor\" visibility=\"public\" type=\"kbam4jqq\" association=\"kbam4jqr\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbam4jqr\" memberEnd=\"kbam4jqp kbam4jqs\">\n" +
-            "\t<ownedEnd xmi:id=\"kbam4jqs\" visibility=\"public\" type=\"kbam4jqg\" association=\"kbam4jqr\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqq\" name=\"_:2\">\n" +
-            "\t<generalization xmi:id=\"kbam4jqt\" general=\"kbam4jqh\" name=\"a\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqh\" name=\":Company\"/>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqi\" name=\":GreatGrandson\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jqu\" name=\":parent\" visibility=\"public\" type=\"kbam4jqv\" association=\"kbam4jqw\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbam4jqw\" memberEnd=\"kbam4jqu kbam4jqx\">\n" +
-            "\t<ownedEnd xmi:id=\"kbam4jqx\" visibility=\"public\" type=\"kbam4jqi\" association=\"kbam4jqw\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqv\" name=\"_:3\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbam4jqy\" name=\":parent\" visibility=\"public\" type=\"kbam4jqz\" association=\"kbam4jr0\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbam4jr0\" memberEnd=\"kbam4jqy kbam4jr1\">\n" +
-            "\t<ownedEnd xmi:id=\"kbam4jr1\" visibility=\"public\" type=\"kbam4jqv\" association=\"kbam4jr0\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqz\" name=\"_:4\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbam4jr3\" name=\":parent\" visibility=\"public\" type=\"kbam4jr4\" isUnique=\"true\">\n" +
-            "\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kbam4jr2\" value=\"*\"/>\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbam4jqj\" name=\"_:1\">\n" +
-            "\t<generalization xmi:id=\"kbam4jr5\" general=\"kbam4jqf\" name=\"a\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbam4jqd\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbam4jqa\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbam4jqb\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbam4jqc\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbam4jr4\" name=\"Any\"/>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kd5uz" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v4" name=":Car">
+	<ownedAttribute xmi:id="l10kd5va" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kd5vb" name=":belongs" visibility="public" type="l10kd5v9" association="l10kd5vc" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kd5vc" memberEnd="l10kd5vb l10kd5vd">
+	<ownedEnd xmi:id="l10kd5vd" visibility="public" type="l10kd5v4" association="l10kd5vc"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v5" name=":Garage"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v6" name=":User">
+	<ownedAttribute xmi:id="l10kd5ve" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kd5vf" name=":worksFor" visibility="public" type="l10kd5vg" association="l10kd5vh" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5vg" name="_:2">
+	<generalization xmi:id="l10kd5vi" general="l10kd5v7" name="a"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kd5vh" memberEnd="l10kd5vf l10kd5vj">
+	<ownedEnd xmi:id="l10kd5vj" visibility="public" type="l10kd5vg" association="l10kd5vh"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v7" name=":Company"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v8" name=":GreatGrandson">
+	<ownedAttribute xmi:id="l10kd5vk" name=":parent" visibility="public" type="l10kd5vl" association="l10kd5vm" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5vl" name="_:3">
+	<ownedAttribute xmi:id="l10kd5vn" name=":parent" visibility="public" type="l10kd5vo" association="l10kd5vp" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kd5vm" memberEnd="l10kd5vk l10kd5vq">
+	<ownedEnd xmi:id="l10kd5vq" visibility="public" type="l10kd5vl" association="l10kd5vm"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kd5vp" memberEnd="l10kd5vn l10kd5vr">
+	<ownedEnd xmi:id="l10kd5vr" visibility="public" type="l10kd5vl" association="l10kd5vp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5vo" name="_:4">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kd5vt" name=":parent" visibility="public" type="l10kd5vu" isUnique="true">
+
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kd5vs" value="*"/>	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kd5v9" name="_:1">
+	<generalization xmi:id="l10kd5vv" general="l10kd5v5" name="a"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kd5v3" name="Prefixes">
+	<ownedLiteral xmi:id="l10kd5v0" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kd5v1" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kd5v2" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kd5vu" name="Any"/>
+</uml:Model>`;
     }
 
     /**
@@ -897,69 +919,69 @@ class Xmirepository {
     static getXMI17() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsghtir" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsghtiw" name=":User">
-	<ownedAttribute xmi:id="kjsghtj0" name="AND" visibility="public" type="kjsghtj1" association="kjsghtj2" aggregation="composite"></ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsghtj4" name="nodeKind" visibility="public" type="kjsghtj3" isUnique="true">
+ xmi:id="l10lop5a" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lop5f" name=":User">
+	<ownedAttribute xmi:id="l10lop5j" name="Shape" visibility="public" type="l10lop5k" association="l10lop5l" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10lop5n" name="nodeKind" visibility="public" type="l10lop5m" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<ownedRule xmi:id="kjsghtiy" name="CLOSED" constrainedElement="kjsghtiw">
+<ownedRule xmi:id="l10lop5h" name="CLOSED" constrainedElement="l10lop5f">
 <specification body="CLOSED" xmi:type="uml:OpaqueExpression"/>
-<ownedComment annotatedElement="kjsghtiy" xmi:id="kjsghtiz" xmi:type="uml:Comment">
-<body>kjsghtiw</body>
+<ownedComment annotatedElement="l10lop5h" xmi:id="l10lop5i" xmi:type="uml:Comment">
+<body>l10lop5f</body>
 </ownedComment>
 
 </ownedRule>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsghtj2" memberEnd="kjsghtj0 kjsghtj5">
-	<ownedEnd xmi:id="kjsghtj5" visibility="public" type="kjsghtiw" association="kjsghtj2"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsghtj1" name="_Blank1">
-	<ownedAttribute xmi:id="kjsghtj6" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lop5k" name="_Blank1">
+	<ownedAttribute xmi:id="l10lop5o" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsghtja" name=":age" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10lop5s" name=":age" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Int">
 		</type>
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsghtj9" />
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10lop5r" />
 	</ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kjsghtjc" name=":gender" visibility="public" type="kjsghtjb" isUnique="true">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10lop5u" name=":gender" visibility="public" type="l10lop5t" isUnique="true">
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsghtjd" name=":knows" visibility="public" type="kjsghtiw" association="kjsghtje" ></ownedAttribute>
+	<ownedAttribute xmi:id="l10lop5v" name=":knows" visibility="public" type="l10lop5f" association="l10lop5w" ></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsghtje" memberEnd="kjsghtjd kjsghtjf">
-	<ownedEnd xmi:id="kjsghtjf" visibility="public" type="kjsghtj1" association="kjsghtje"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10lop5l" memberEnd="l10lop5j l10lop5x">
+	<ownedEnd xmi:id="l10lop5x" visibility="public" type="l10lop5k" association="l10lop5l"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsghtix" name=":Company">
-	<ownedAttribute xmi:id="kjsghtjg" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lop5g" name=":Company">
+	<ownedAttribute xmi:id="l10lop5y" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<ownedRule xmi:id="kjsghtj7" name="MaxLength 3" constrainedElement="kjsghtj6">
+<ownedRule xmi:id="l10lop5p" name="MaxLength 3" constrainedElement="l10lop5o">
 <specification body="MaxLength 3" xmi:type="uml:OpaqueExpression"/>
-<ownedComment annotatedElement="kjsghtj7" xmi:id="kjsghtj8" xmi:type="uml:Comment">
-<body>kjsghtj6</body>
+<ownedComment annotatedElement="l10lop5p" xmi:id="l10lop5q" xmi:type="uml:Comment">
+<body>l10lop5o</body>
 </ownedComment>
 
 </ownedRule>
-<ownedRule xmi:id="kjsghtjh" name="CLOSED" constrainedElement="kjsghtix">
+<ownedRule xmi:id="l10lop5z" name="CLOSED" constrainedElement="l10lop5g">
 <specification body="CLOSED" xmi:type="uml:OpaqueExpression"/>
-<ownedComment annotatedElement="kjsghtjh" xmi:id="kjsghtji" xmi:type="uml:Comment">
-<body>kjsghtix</body>
+<ownedComment annotatedElement="l10lop5z" xmi:id="l10lop60" xmi:type="uml:Comment">
+<body>l10lop5g</body>
 </ownedComment>
 
 </ownedRule>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsghtiv" name="Prefixes">
-	<ownedLiteral xmi:id="kjsghtis" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsghtit" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsghtiu" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10lop5w" memberEnd="l10lop5v l10lop61">
+	<ownedEnd xmi:id="l10lop61" visibility="public" type="l10lop5g" association="l10lop5w"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsghtjb" name=":gender-_Blank1">
-	<ownedLiteral xmi:id="kjsghtjj" name=":Male"/>
-	<ownedLiteral xmi:id="kjsghtjk" name=":Female"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10lop5e" name="Prefixes">
+	<ownedLiteral xmi:id="l10lop5b" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10lop5c" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10lop5d" name="base &lt;http://example.org/>"/>
 </packagedElement>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kjsghtj3" name="IRI"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10lop5t" name="Enum0">
+	<ownedLiteral xmi:id="l10lop62" name=":Male"/>
+	<ownedLiteral xmi:id="l10lop63" name=":Female"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10lop5m" name="IRI"/>
 </uml:Model>`;
     }
 
@@ -968,43 +990,39 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI18() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbamo85s\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamo85x\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbamo85y\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbamo85z\" name=\":parent\" visibility=\"public\" type=\"kbamo860\" association=\"kbamo861\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbamo862\" name=\":parent\" visibility=\"public\" type=\"kbamo863\" association=\"kbamo864\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamo861\" memberEnd=\"kbamo85z kbamo865\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamo865\" visibility=\"public\" type=\"kbamo85x\" association=\"kbamo861\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamo864\" memberEnd=\"kbamo862 kbamo866\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamo866\" visibility=\"public\" type=\"kbamo85x\" association=\"kbamo864\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamo860\" name=\"_:1\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamo868\" name=\":gender\" visibility=\"public\" type=\"kbamo867\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamo863\" name=\"_:2\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamo86a\" name=\":gender\" visibility=\"public\" type=\"kbamo869\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamo85w\" name=\"Prefixes\">\n" +
-			"\t<ownedLiteral xmi:id=\"kbamo85u\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamo85t\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamo85v\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamo867\" name=\":gender-_:1\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbamo86b\" name=\":Male\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamo869\" name=\":gender-_:2\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbamo86c\" name=\":Female\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10lq2n0" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10lq2n5" name=":User">
+	<ownedAttribute xmi:id="l10lq2n6" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10lq2nb" name=":parent" visibility="public" type="l10lq2nc" association="l10lq2nd" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l10lq2ne" name=":parent" visibility="public" type="l10lq2nf" association="l10lq2ng" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10lq2nc" name="_:1">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10lq2nh" name=":gender" visibility="public" type="l10lq2ni" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10lq2nd" memberEnd="l10lq2nb l10lq2nj">
+	<ownedEnd xmi:id="l10lq2nj" visibility="public" type="l10lq2nc" association="l10lq2nd"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10lq2ng" memberEnd="l10lq2ne l10lq2nk">
+	<ownedEnd xmi:id="l10lq2nk" visibility="public" type="l10lq2nc" association="l10lq2ng"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10lq2nf" name="_:2">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10lq2nl" name=":gender" visibility="public" type="l10lq2nm" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10lq2n4" name="Prefixes">
+	<ownedLiteral xmi:id="l10lq2n1" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10lq2n2" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10lq2n3" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10lq2ni" name=":Male"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10lq2nm" name=":Female"/>
+</uml:Model>`;
     }
 
     /**
@@ -1012,36 +1030,36 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI19() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbamltd5\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamltda\" name=\":Person\"/>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamltdb\" name=\":User\">\n" +
-            "\t<generalization xmi:id=\"kbamltdd\" general=\"kbamltda\" name=\"^a\"/>\n" +
-            "\t<ownedAttribute xmi:id=\"kbamltde\" name=\"^:name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamltdg\" name=\"^:gender\" visibility=\"public\" type=\"kbamltdf\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamltdc\" name=\":Company\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbamltdh\" name=\"^:worksFor\" visibility=\"public\" type=\"kbamltdb\" association=\"kbamltdi\" >\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kbamltdj\" value=\"*\"/></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamltdi\" memberEnd=\"kbamltdh kbamltdk\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamltdk\" visibility=\"public\" type=\"kbamltdc\" association=\"kbamltdi\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamltd9\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbamltd6\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamltd7\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamltd8\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamltdf\" name=\"^:gender-:User\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbamltdl\" name=\":Male\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamltdm\" name=\":Female\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10kdtwa" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kdtwf" name=":Person"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kdtwg" name=":User">
+	<generalization xmi:id="l10kdtwi" general="l10kdtwf" name="^a"/>
+	<ownedAttribute xmi:id="l10kdtwj" name="^:name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kdtwl" name="^:gender" visibility="public" type="l10kdtwk" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kdtwh" name=":Company">
+	<ownedAttribute xmi:id="l10kdtwm" name="^:worksFor" visibility="public" type="l10kdtwg" association="l10kdtwn" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10kdtwo" value="*"/></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kdtwn" memberEnd="l10kdtwm l10kdtwp">
+	<ownedEnd xmi:id="l10kdtwp" visibility="public" type="l10kdtwh" association="l10kdtwn"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kdtwe" name="Prefixes">
+	<ownedLiteral xmi:id="l10kdtwb" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kdtwc" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kdtwd" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kdtwk" name="Enum0">
+	<ownedLiteral xmi:id="l10kdtwq" name=":Male"/>
+	<ownedLiteral xmi:id="l10kdtwr" name=":Female"/>
+</packagedElement>
+</uml:Model>`;
     }
 
     /**
@@ -1049,34 +1067,30 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI20() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbaml03i\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbaml03n\" name=\":FollowSpaniards\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbaml03o\" name=\":follows\" visibility=\"public\" type=\"kbaml03p\" association=\"kbaml03q\" aggregation=\"composite\">\n" +
-            "\t\t<upperValue xmi:type=\"uml:LiteralUnlimitedNatural\" xmi:id=\"kbaml03r\" value=\"*\"/></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbaml03n\" name=\"Extra\" visibility=\"public\" type=\"kbaml03s\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbaml03q\" memberEnd=\"kbaml03o kbaml03u\">\n" +
-            "\t<ownedEnd xmi:id=\"kbaml03u\" visibility=\"public\" type=\"kbaml03n\" association=\"kbaml03q\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbaml03p\" name=\"_:1\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbaml03w\" name=\":nationality\" visibility=\"public\" type=\"kbaml03v\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbaml03m\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbaml03j\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbaml03k\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbaml03l\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbaml03s\" name=\"Extra-:FollowSpaniards\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbaml03x\" name=\":follows\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbaml03v\" name=\":nationality-_:1\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbaml03y\" name=\":Spain\"/>\n" +
-            "</packagedElement>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10ke4k1" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10ke4k6" name=":FollowSpaniards">
+	<ownedAttribute xmi:id="l10ke4k7" name=":follows" visibility="public" type="l10ke4k8" association="l10ke4k9" aggregation="composite">
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l10ke4ka" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id=":FollowSpaniards" name="Extra" visibility="public" type="l10ke4kc" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10ke4k8" name="_:1">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10ke4kd" name=":nationality" visibility="public" type="l10ke4ke" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10ke4k9" memberEnd="l10ke4k7 l10ke4kf">
+	<ownedEnd xmi:id="l10ke4kf" visibility="public" type="l10ke4k8" association="l10ke4k9"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10ke4k5" name="Prefixes">
+	<ownedLiteral xmi:id="l10ke4k2" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10ke4k3" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10ke4k4" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10ke4kc" name=":follows"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10ke4ke" name=":Spain"/>
+</uml:Model>`;
     }
 
     /**
@@ -1084,53 +1098,39 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI21() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbamkh16\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamkh1b\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbamkh1d\" name=\"$:name\" visibility=\"public\" type=\"kbamkh1e\" association=\"kbamkh1f\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamkh1h\" name=\":email\" visibility=\"public\" type=\"kbamkh1g\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamkh1f\" memberEnd=\"kbamkh1d kbamkh1i\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamkh1i\" visibility=\"public\" type=\"kbamkh1b\" association=\"kbamkh1f\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamkh1e\" name=\"_Blank1\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbamkh1j\" name=\"OneOf\" visibility=\"public\" type=\"kbamkh1k\" association=\"kbamkh1l\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamkh1l\" memberEnd=\"kbamkh1j kbamkh1m\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamkh1m\" visibility=\"public\" type=\"kbamkh1e\" association=\"kbamkh1l\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamkh1k\" name=\"_Blank2\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamkh1n\" name=\":name\" visibility=\"public\" type=\"kbamkh1o\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbamkh1p\" name=\"EachOf\" visibility=\"public\" type=\"kbamkh1q\" association=\"kbamkh1r\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamkh1r\" memberEnd=\"kbamkh1p kbamkh1s\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamkh1s\" visibility=\"public\" type=\"kbamkh1k\" association=\"kbamkh1r\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamkh1q\" name=\"_Blank3\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamkh1t\" name=\":givenName\" visibility=\"public\" type=\"kbamkh1o\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamkh1u\" name=\":familyName\" visibility=\"public\" type=\"kbamkh1o\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbamkh1c\" name=\":Employee\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbamkh1v\" name=\"&#38;:name\" visibility=\"public\" type=\"kbamkh1e\" association=\"kbamkh1w\" ></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbamkh1x\" name=\":employeeId\" visibility=\"public\" type=\"kbamkh1o\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbamkh1w\" memberEnd=\"kbamkh1v kbamkh1y\">\n" +
-            "\t<ownedEnd xmi:id=\"kbamkh1y\" visibility=\"public\" type=\"kbamkh1c\" association=\"kbamkh1w\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbamkh1a\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbamkh17\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamkh18\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbamkh19\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbamkh1o\" name=\"Any\"/>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbamkh1g\" name=\"IRI\"/>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10wwb6h" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10wwb6m" name=":User">
+	<ownedAttribute xmi:id="l10wwb6o" name="$:name" visibility="public" type="l10wwb6p" association="l10wwb6q" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10wwb6p" name="_Blank1">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10wwb6r" name=":givenName" visibility="public" type="l10wwb6s" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10wwb6t" name=":familyName" visibility="public" type="l10wwb6s" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10wwb6v" name=":email" visibility="public" type="l10wwb6u" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10wwb6q" memberEnd="l10wwb6o l10wwb6w">
+	<ownedEnd xmi:id="l10wwb6w" visibility="public" type="l10wwb6p" association="l10wwb6q"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10wwb6n" name=":Employee">
+	<ownedAttribute xmi:id="l10wwb6x" name="&#38;:name" visibility="public" type="l10wwb6p" association="l10wwb6y" ></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10wwb6z" name=":employeeId" visibility="public" type="l10wwb6s" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10wwb6y" memberEnd="l10wwb6x l10wwb70">
+	<ownedEnd xmi:id="l10wwb70" visibility="public" type="l10wwb6n" association="l10wwb6y"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10wwb6l" name="Prefixes">
+	<ownedLiteral xmi:id="l10wwb6i" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10wwb6j" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10wwb6k" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10wwb6s" name="Any"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10wwb6u" name="IRI"/>
+</uml:Model>`;
     }
 
     /**
@@ -1138,99 +1138,95 @@ class Xmirepository {
      * @returns {string}
      */
     static getXMI22() {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<uml:Model xmi:version=\"2.1\" xmlns:xmi=\"http://schema.omg.org/spec/XMI/2.1\" xmlns:uml=\"http://www.eclipse.org/uml2/3.0.0/UML\"\n" +
-            " xmi:id=\"kbea7kya\" name=\"ShExGeneratedXMI\">\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyf\" name=\":User\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kyj\" name=\"AND\" visibility=\"public\" type=\"kbea7kyk\" association=\"kbea7kyl\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kyl\" memberEnd=\"kbea7kyj kbea7kym\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kym\" visibility=\"public\" type=\"kbea7kyf\" association=\"kbea7kyl\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyk\" name=\"_Blank1\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kyn\" name=\"Shape\" visibility=\"public\" type=\"kbea7kyo\" association=\"kbea7kyp\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kyq\" name=\"Shape\" visibility=\"public\" type=\"kbea7kyr\" association=\"kbea7kys\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kyp\" memberEnd=\"kbea7kyn kbea7kyt\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kyt\" visibility=\"public\" type=\"kbea7kyk\" association=\"kbea7kyp\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kys\" memberEnd=\"kbea7kyq kbea7kyu\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kyu\" visibility=\"public\" type=\"kbea7kyk\" association=\"kbea7kys\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyo\" name=\"_Blank2\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kyv\" name=\":name\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbea7kyx\" name=\":owns\" visibility=\"public\" type=\"kbea7kyw\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyr\" name=\"_Blank3\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kyy\" name=\":owns\" visibility=\"public\" type=\"kbea7kyi\" association=\"kbea7kyz\" ></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kyz\" memberEnd=\"kbea7kyy kbea7kz0\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kz0\" visibility=\"public\" type=\"kbea7kyr\" association=\"kbea7kyz\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyg\" name=\":Titanuser\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kz1\" name=\"AND\" visibility=\"public\" type=\"kbea7kz2\" association=\"kbea7kz3\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<generalization xmi:id=\"kbea7kz4\" general=\"kbea7kyf\" name=\"AND\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kz3\" memberEnd=\"kbea7kz1 kbea7kz5\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kz5\" visibility=\"public\" type=\"kbea7kyg\" association=\"kbea7kz3\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kz2\" name=\"_Blank4\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kz6\" name=\"Shape\" visibility=\"public\" type=\"kbea7kz7\" association=\"kbea7kz8\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kz9\" name=\"Shape\" visibility=\"public\" type=\"kbea7kza\" association=\"kbea7kzb\" aggregation=\"composite\"></ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kz8\" memberEnd=\"kbea7kz6 kbea7kzc\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kzc\" visibility=\"public\" type=\"kbea7kz2\" association=\"kbea7kz8\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Association\" xmi:id=\"kbea7kzb\" memberEnd=\"kbea7kz9 kbea7kzd\">\n" +
-            "\t<ownedEnd xmi:id=\"kbea7kzd\" visibility=\"public\" type=\"kbea7kz2\" association=\"kbea7kzb\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kz7\" name=\"_Blank5\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kze\" name=\":titancode\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kza\" name=\"_Blank6\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbea7kzg\" name=\":owns\" visibility=\"public\" type=\"kbea7kzf\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyh\" name=\":Ultrauser\">\n" +
-            "\t<ownedAttribute xmi:type=\"uml:Property\" xmi:id=\"kbea7kzh\" name=\"nodeKind\" visibility=\"public\" type=\"kbea7kzf\" isUnique=\"true\">\n" +
-            "\t</ownedAttribute>\n" +
-            "\t<generalization xmi:id=\"kbea7kzi\" general=\"kbea7kyf\" name=\"AND\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:Class\" xmi:id=\"kbea7kyi\" name=\":Product\">\n" +
-            "\t<ownedAttribute xmi:id=\"kbea7kzj\" name=\":productId\" visibility=\"public\" isUnique=\"false\">\n" +
-            "\t\t<type xmi:type=\"uml:PrimitiveType\" href=\"pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String\">\n" +
-            "\t\t</type>\n" +
-            "\t</ownedAttribute>\n" +
-            "</packagedElement>\n" +
-            "<ownedRule xmi:id=\"kbea7kzm\" name=\"MinLength 5\" constrainedElement=\"kbea7kzj\">\n" +
-            "<specification body=\"MinLength 5\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbea7kzl\" xmi:id=\"kbea7kzn\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbea7kzj</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<ownedRule xmi:id=\"kbea7kzp\" name=\"AND MaxLength 10\" constrainedElement=\"kbea7kzj\">\n" +
-            "<specification body=\"AND MaxLength 10\" xmi:type=\"uml:OpaqueExpression\"/>\n" +
-            "<ownedComment annotatedElement=\"kbea7kzo\" xmi:id=\"kbea7kzq\" xmi:type=\"uml:Comment\">\n" +
-            "<body>kbea7kzj</body>\n" +
-            "</ownedComment>\n" +
-            "\n" +
-            "</ownedRule>\n" +
-            "<packagedElement xmi:type=\"uml:Enumeration\" xmi:id=\"kbea7kye\" name=\"Prefixes\">\n" +
-            "\t<ownedLiteral xmi:id=\"kbea7kyb\" name=\"prefix : &lt;https://schema.org/>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbea7kyc\" name=\"prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>\"/>\n" +
-            "\t<ownedLiteral xmi:id=\"kbea7kyd\" name=\"base &lt;http://example.org/>\"/>\n" +
-            "</packagedElement>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbea7kyw\" name=\"IRI\"/>\n" +
-            "<packagedElement xmi:type=\"uml:PrimitiveType\" xmi:id=\"kbea7kzf\" name=\"Literal\"/>\n" +
-            "</uml:Model>";
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l10z7hl9" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hle" name=":User">
+	<ownedAttribute xmi:id="l10z7hli" name="Shape" visibility="public" type="l10z7hlj" association="l10z7hlk" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l10z7hll" name="Shape" visibility="public" type="l10z7hlm" association="l10z7hln" aggregation="composite"></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlj" name="_Blank1">
+	<ownedAttribute xmi:id="l10z7hlq" name=":name" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10z7hls" name=":owns" visibility="public" type="l10z7hlr" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10z7hlo" name="AND" visibility="public" type="l10z7hlm" association="l10z7hlp" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hlk" memberEnd="l10z7hli l10z7hlt">
+	<ownedEnd xmi:id="l10z7hlt" visibility="public" type="l10z7hlj" association="l10z7hlk"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hln" memberEnd="l10z7hll l10z7hlu">
+	<ownedEnd xmi:id="l10z7hlu" visibility="public" type="l10z7hlj" association="l10z7hln"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hlp" memberEnd="l10z7hlo l10z7hlv">
+	<ownedEnd xmi:id="l10z7hlv" visibility="public" type="l10z7hlj" association="l10z7hlp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlm" name="_Blank2">
+	<ownedAttribute xmi:id="l10z7hlw" name=":owns" visibility="public" type="l10z7hlh" association="l10z7hlx" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlf" name=":Titanuser">
+	<ownedAttribute xmi:id="l10z7hly" name="Shape" visibility="public" type="l10z7hlz" association="l10z7hm0" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l10z7hm1" name="Shape" visibility="public" type="l10z7hm2" association="l10z7hm3" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10z7hm4" general="l10z7hle" name="AND"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hlx" memberEnd="l10z7hlw l10z7hm5">
+	<ownedEnd xmi:id="l10z7hm5" visibility="public" type="l10z7hlf" association="l10z7hlx"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlz" name="_Blank3">
+	<ownedAttribute xmi:id="l10z7hm8" name=":titancode" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l10z7hm6" name="AND" visibility="public" type="l10z7hm2" association="l10z7hm7" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hm0" memberEnd="l10z7hly l10z7hm9">
+	<ownedEnd xmi:id="l10z7hm9" visibility="public" type="l10z7hlz" association="l10z7hm0"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hm3" memberEnd="l10z7hm1 l10z7hma">
+	<ownedEnd xmi:id="l10z7hma" visibility="public" type="l10z7hlz" association="l10z7hm3"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10z7hm7" memberEnd="l10z7hm6 l10z7hmb">
+	<ownedEnd xmi:id="l10z7hmb" visibility="public" type="l10z7hlz" association="l10z7hm7"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hm2" name="_Blank4">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10z7hmd" name=":owns" visibility="public" type="l10z7hmc" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlg" name=":Ultrauser">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10z7hme" name="nodeKind" visibility="public" type="l10z7hmc" isUnique="true">
+	</ownedAttribute>
+	<generalization xmi:id="l10z7hmf" general="l10z7hle" name="AND"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10z7hlh" name=":Product">
+	<ownedAttribute xmi:id="l10z7hmg" name=":productId" visibility="public" isUnique="false">
+		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
+		</type>
+	</ownedAttribute>
+</packagedElement>
+<ownedRule xmi:id="l10z7hmi" name="MinLength 5" constrainedElement="l10z7hmg">
+<specification body="MinLength 5" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10z7hmi" xmi:id="l10z7hmj" xmi:type="uml:Comment">
+<body>l10z7hmg</body>
+</ownedComment>
+
+</ownedRule>
+<ownedRule xmi:id="l10z7hmk" name="AND MaxLength 10" constrainedElement="l10z7hmg">
+<specification body="AND MaxLength 10" xmi:type="uml:OpaqueExpression"/>
+<ownedComment annotatedElement="l10z7hmk" xmi:id="l10z7hml" xmi:type="uml:Comment">
+<body>l10z7hmg</body>
+</ownedComment>
+
+</ownedRule>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10z7hld" name="Prefixes">
+	<ownedLiteral xmi:id="l10z7hla" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10z7hlb" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10z7hlc" name="base &lt;http://example.org/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10z7hlr" name="IRI"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10z7hmc" name="Literal"/>
+</uml:Model>`;
     }
 
     /**
@@ -1240,136 +1236,132 @@ class Xmirepository {
     static getXMI23() {
         return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kz4axwxb" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxg" name=":User">
-	<ownedAttribute xmi:id="kz4axwxj" name="OR" visibility="public" type="kz4axwxk" association="kz4axwxl" aggregation="composite"></ownedAttribute>
+ xmi:id="l10kf0mh" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0mm" name=":User">
+	<ownedAttribute xmi:id="l10kf0mp" name="Shape" visibility="public" type="l10kf0mq" association="l10kf0mr" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l10kf0ms" name="Shape" visibility="public" type="l10kf0mt" association="l10kf0mu" aggregation="composite"></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxl" memberEnd="kz4axwxj kz4axwxm">
-	<ownedEnd xmi:id="kz4axwxm" visibility="public" type="kz4axwxg" association="kz4axwxl"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxk" name="_Blank1">
-	<ownedAttribute xmi:id="kz4axwxn" name="Shape" visibility="public" type="kz4axwxo" association="kz4axwxp" aggregation="composite"></ownedAttribute>
-	<ownedAttribute xmi:id="kz4axwxq" name="Shape" visibility="public" type="kz4axwxr" association="kz4axwxs" aggregation="composite"></ownedAttribute>
-</packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxp" memberEnd="kz4axwxn kz4axwxt">
-	<ownedEnd xmi:id="kz4axwxt" visibility="public" type="kz4axwxk" association="kz4axwxp"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxs" memberEnd="kz4axwxq kz4axwxu">
-	<ownedEnd xmi:id="kz4axwxu" visibility="public" type="kz4axwxk" association="kz4axwxs"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxo" name="_Blank2">
-	<ownedAttribute xmi:id="kz4axwxv" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0mq" name="_Blank1">
+	<ownedAttribute xmi:id="l10kf0mx" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwxx" name=":owns" visibility="public" type="kz4axwxw" isUnique="true">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kf0mz" name=":owns" visibility="public" type="l10kf0my" isUnique="true">
 	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kf0mv" name="OR" visibility="public" type="l10kf0mt" association="l10kf0mw" ></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxr" name="_Blank3">
-	<ownedAttribute xmi:id="kz4axwxy" name=":owns" visibility="public" type="kz4axwxi" association="kz4axwxz" ></ownedAttribute>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0mr" memberEnd="l10kf0mp l10kf0n0">
+	<ownedEnd xmi:id="l10kf0n0" visibility="public" type="l10kf0mq" association="l10kf0mr"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwxz" memberEnd="kz4axwxy kz4axwy0">
-	<ownedEnd xmi:id="kz4axwy0" visibility="public" type="kz4axwxr" association="kz4axwxz"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0mu" memberEnd="l10kf0ms l10kf0n1">
+	<ownedEnd xmi:id="l10kf0n1" visibility="public" type="l10kf0mq" association="l10kf0mu"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxh" name=":Titanuser">
-	<ownedAttribute xmi:id="kz4axwy1" name="OR" visibility="public" type="kz4axwy2" association="kz4axwy3" aggregation="composite"></ownedAttribute>
-	<generalization xmi:id="kz4axwy4" general="kz4axwxg" name="OR"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0mw" memberEnd="l10kf0mv l10kf0n2">
+	<ownedEnd xmi:id="l10kf0n2" visibility="public" type="l10kf0mq" association="l10kf0mw"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwy3" memberEnd="kz4axwy1 kz4axwy5">
-	<ownedEnd xmi:id="kz4axwy5" visibility="public" type="kz4axwxh" association="kz4axwy3"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0mt" name="_Blank2">
+	<ownedAttribute xmi:id="l10kf0n3" name=":owns" visibility="public" type="l10kf0mo" association="l10kf0n4" ></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwy2" name="_Blank4">
-	<ownedAttribute xmi:id="kz4axwy6" name="Shape" visibility="public" type="kz4axwy7" association="kz4axwy8" aggregation="composite"></ownedAttribute>
-	<ownedAttribute xmi:id="kz4axwy9" name="Shape" visibility="public" type="kz4axwya" association="kz4axwyb" aggregation="composite"></ownedAttribute>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0mn" name=":Titanuser">
+	<ownedAttribute xmi:id="l10kf0n5" name="Shape" visibility="public" type="l10kf0n6" association="l10kf0n7" aggregation="composite"></ownedAttribute>
+	<ownedAttribute xmi:id="l10kf0n8" name="Shape" visibility="public" type="l10kf0n9" association="l10kf0na" aggregation="composite"></ownedAttribute>
+	<generalization xmi:id="l10kf0nb" general="l10kf0mm" name="OR"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwy8" memberEnd="kz4axwy6 kz4axwyc">
-	<ownedEnd xmi:id="kz4axwyc" visibility="public" type="kz4axwy2" association="kz4axwy8"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0n4" memberEnd="l10kf0n3 l10kf0nc">
+	<ownedEnd xmi:id="l10kf0nc" visibility="public" type="l10kf0mn" association="l10kf0n4"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kz4axwyb" memberEnd="kz4axwy9 kz4axwyd">
-	<ownedEnd xmi:id="kz4axwyd" visibility="public" type="kz4axwy2" association="kz4axwyb"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwy7" name="_Blank5">
-	<ownedAttribute xmi:id="kz4axwye" name=":titancode" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0n6" name="_Blank3">
+	<ownedAttribute xmi:id="l10kf0nf" name=":titancode" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
+	<ownedAttribute xmi:id="l10kf0nd" name="OR" visibility="public" type="l10kf0n9" association="l10kf0ne" ></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwya" name="_Blank6">
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyg" name=":owns" visibility="public" type="kz4axwyf" isUnique="true">
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0n7" memberEnd="l10kf0n5 l10kf0ng">
+	<ownedEnd xmi:id="l10kf0ng" visibility="public" type="l10kf0n6" association="l10kf0n7"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0na" memberEnd="l10kf0n8 l10kf0nh">
+	<ownedEnd xmi:id="l10kf0nh" visibility="public" type="l10kf0n6" association="l10kf0na"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf0ne" memberEnd="l10kf0nd l10kf0ni">
+	<ownedEnd xmi:id="l10kf0ni" visibility="public" type="l10kf0n6" association="l10kf0ne"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0n9" name="_Blank4">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kf0nk" name=":owns" visibility="public" type="l10kf0nj" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kz4axwxi" name=":Product">
-	<ownedAttribute xmi:id="kz4axwyh" name=":productId" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf0mo" name=":Product">
+	<ownedAttribute xmi:id="l10kf0nm" name=":productId" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyi" />
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kf0nn" />
 	</ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyk" name=":productId" visibility="public" type="kz4axwyp" isUnique="true">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kf0np" name=":productId" visibility="public" type="l10kf0nu" isUnique="true">
 
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyl" />	</ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4axwyq" name=":productId" visibility="public" type="kz4axwyp" isUnique="true">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kf0nq" />	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l10kf0nv" name=":productId" visibility="public" type="l10kf0nu" isUnique="true">
 
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4axwyr" />	</ownedAttribute>
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kf0nw" />	</ownedAttribute>
 </packagedElement>
-<ownedRule xmi:id="kz4axwyn" name="MinLength 5" constrainedElement="kz4axwyk">
+<ownedRule xmi:id="l10kf0ns" name="MinLength 5" constrainedElement="l10kf0np">
 <specification body="MinLength 5" xmi:type="uml:OpaqueExpression"/>
-<ownedComment annotatedElement="kz4axwyn" xmi:id="kz4axwyo" xmi:type="uml:Comment">
-<body>kz4axwyk</body>
+<ownedComment annotatedElement="l10kf0ns" xmi:id="l10kf0nt" xmi:type="uml:Comment">
+<body>l10kf0np</body>
 </ownedComment>
 
 </ownedRule>
-<ownedRule xmi:id="kz4axwyt" name="MaxLength 10" constrainedElement="kz4axwyq">
+<ownedRule xmi:id="l10kf0ny" name="MaxLength 10" constrainedElement="l10kf0nv">
 <specification body="MaxLength 10" xmi:type="uml:OpaqueExpression"/>
-<ownedComment annotatedElement="kz4axwyt" xmi:id="kz4axwyu" xmi:type="uml:Comment">
-<body>kz4axwyq</body>
+<ownedComment annotatedElement="l10kf0ny" xmi:id="l10kf0nz" xmi:type="uml:Comment">
+<body>l10kf0nv</body>
 </ownedComment>
 
 </ownedRule>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4axwxf" name="Prefixes">
-	<ownedLiteral xmi:id="kz4axwxc" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kz4axwxd" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kz4axwxe" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kf0ml" name="Prefixes">
+	<ownedLiteral xmi:id="l10kf0mi" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kf0mj" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kf0mk" name="base &lt;http://example.org/>"/>
 </packagedElement>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwyp" name="Any"/>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwxw" name="IRI"/>
-<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4axwyf" name="Literal"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kf0nu" name="Any"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kf0my" name="IRI"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l10kf0nj" name="Literal"/>
 </uml:Model>`;
     }
 	
 	static getXMI24() {
 		return `<?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
- xmi:id="kjsf4gwj" name="ShExGeneratedXMI">
-<packagedElement xmi:type="uml:Class" xmi:id="kjsf4gwo" name=":User">
-	<ownedAttribute xmi:id="kjsf4gwr" name=":name" visibility="public" isUnique="false">
+ xmi:id="l10kf83t" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf83y" name=":User">
+	<ownedAttribute xmi:id="l10kf841" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
-	<ownedAttribute xmi:id="kjsf4gwt" name=":birthDate" visibility="public" isUnique="false">
+	<ownedAttribute xmi:id="l10kf843" name=":birthDate" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Date">
 		</type>
-		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kjsf4gws" />
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l10kf842" />
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsf4gwp" name=":NoUser">
-	<generalization xmi:id="kjsf4gwu" general="kjsf4gwo" name="NOT"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf83z" name=":NoUser">
+	<generalization xmi:id="l10kf844" general="l10kf83y" name="NOT"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsf4gwq" name=":NoName">
-	<ownedAttribute xmi:id="kjsf4gwv" name="NOT" visibility="public" type="kjsf4gww" association="kjsf4gwx" aggregation="composite"></ownedAttribute>
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf840" name=":NoName">
+	<ownedAttribute xmi:id="l10kf845" name="NOT" visibility="public" type="l10kf846" association="l10kf847" aggregation="composite"></ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Association" xmi:id="kjsf4gwx" memberEnd="kjsf4gwv kjsf4gwy">
-	<ownedEnd xmi:id="kjsf4gwy" visibility="public" type="kjsf4gwq" association="kjsf4gwx"/>
-</packagedElement>
-<packagedElement xmi:type="uml:Class" xmi:id="kjsf4gww" name="_Blank1">
-	<ownedAttribute xmi:id="kjsf4gwz" name=":name" visibility="public" isUnique="false">
+<packagedElement xmi:type="uml:Class" xmi:id="l10kf846" name="_Blank1">
+	<ownedAttribute xmi:id="l10kf848" name=":name" visibility="public" isUnique="false">
 		<type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String">
 		</type>
 	</ownedAttribute>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kjsf4gwn" name="Prefixes">
-	<ownedLiteral xmi:id="kjsf4gwk" name="prefix : &lt;https://schema.org/>"/>
-	<ownedLiteral xmi:id="kjsf4gwl" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
-	<ownedLiteral xmi:id="kjsf4gwm" name="base &lt;http://example.org/>"/>
+<packagedElement xmi:type="uml:Association" xmi:id="l10kf847" memberEnd="l10kf845 l10kf849">
+	<ownedEnd xmi:id="l10kf849" visibility="public" type="l10kf846" association="l10kf847"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l10kf83x" name="Prefixes">
+	<ownedLiteral xmi:id="l10kf83u" name="prefix : &lt;https://schema.org/>"/>
+	<ownedLiteral xmi:id="l10kf83v" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l10kf83w" name="base &lt;http://example.org/>"/>
 </packagedElement>
 </uml:Model>`;
 	}
@@ -1398,7 +1390,7 @@ class Xmirepository {
 		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="kz4b0mwk" /></ownedAttribute>
 	<ownedAttribute xmi:id="kz4b0mwl" name=":worksFor" visibility="public" type="kz4b0mw0" association="kz4b0mwm" >
 		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="kz4b0mwn" value="*"/></ownedAttribute>
-	<ownedAttribute xmi:type="uml:Property" xmi:id="kz4b0mwp" name="Extra" visibility="public" type="kz4b0mwo" isUnique="true">
+	<ownedAttribute xmi:type="uml:Property" xmi:id=":AdultPerson" name="Extra" visibility="public" type="kz4b0mwo" isUnique="true">
 	</ownedAttribute>
 </packagedElement>
 <ownedRule xmi:id="kz4b0mw8" name="MinInclusive 18" constrainedElement="kz4b0mw7">
@@ -1478,13 +1470,11 @@ class Xmirepository {
 	<ownedLiteral xmi:id="kz4b0mvw" name="base &lt;http://example.org/>"/>
 </packagedElement>
 <packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4b0mwa" name="Any"/>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mwd" name=":gender-:AdultPerson">
+<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mwd" name="Enum0">
 	<ownedLiteral xmi:id="kz4b0mxe" name=":Male"/>
 	<ownedLiteral xmi:id="kz4b0mxf" name=":Female"/>
 </packagedElement>
-<packagedElement xmi:type="uml:Enumeration" xmi:id="kz4b0mwo" name="Extra-:AdultPerson">
-	<ownedLiteral xmi:id="kz4b0mxg" name="rdf:type"/>
-</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4b0mwo" name="rdf:type"/>
 </uml:Model>`;
 	}
 

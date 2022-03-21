@@ -4,14 +4,29 @@ const ShExCardinality = require("./ShExCardinality.js");
  * Genera el equivalente a los atributos de UML en ShEx (TripleConstraint)
  */
 class ShExAttributes {
-
+	
     constructor(shext, shm, shexco, shexen) {
         this.shext = shext;
         this.shm = shm;
         this.shexco = shexco;
         this.shexcar = ShExCardinality;
         this.shexen = shexen;
+		this.lop = -1;
+		this.processedSubSets = [];
     }
+	
+	getOr() {
+		return 0;
+	}
+	
+	getOneOf() {
+		return 1;
+	}
+	
+	getAnd() {
+		return 2;
+	}
+
 
     /**
      *  Genera el equivalente a los atributos de UML en ShEx
@@ -20,7 +35,6 @@ class ShExAttributes {
      * @returns {{header: string, content: string, brackets: *}}
      */
     attributesToShEx(attributes, brs){
-
         let brackets = brs;
         let content = "";
         let header = "";
@@ -84,11 +98,17 @@ class ShExAttributes {
         else if(attr.$.name.toLowerCase() === "extra") {
             let values = this.shexen.getEnum(attr.$.type);
             let extravals = "";
-            for(let value in values.values) {
-                if(values.values.hasOwnProperty(value)) {
-                    extravals += values.values[value].$.name + " ";
-                }
-            }
+			if(values) {
+				for(let value in values.values) {
+					if(values.values.hasOwnProperty(value)) {
+						extravals += values.values[value].$.name + " ";
+					}
+				}
+			}
+			else {
+				extravals = this.shext.getAttrType(attr);
+			}
+            
             header += " EXTRA " + extravals;
             brackets = true;
         }
@@ -157,9 +177,11 @@ class ShExAttributes {
 
         //Caso afirmativo
         if(subSet !== undefined) {
-            //La clase a la que señala abarca el contenido de un OneOf
-            if(attr.$.name === "OneOf") {
-                return this.createOneOf(attr, subSet);
+			if(this.processedSubSets.includes(subSet.name)) {
+				return "";
+			}
+			else if(attr.$.name === "OneOf") {
+                return "";
             }
             //Es una referencia a una expresión etiquetada
             else if(attr.$.name.includes("&:")) {
@@ -179,14 +201,14 @@ class ShExAttributes {
                 this.shm.saveInShExShapes(attr.$.type, subSet.name);
             }
             //Conjunción
-            else if(attr.$.name === "AND" && attr.$.aggregation === "composite") {
-                return this.createLogicOperation(subSet, "AND");
-            }
-            else if(attr.$.name === "OR" && attr.$.aggregation === "composite") {
-                return this.createLogicOperation(subSet, "OR");
+            else if(attr.$.name === "Shape" && attr.$.aggregation === "composite") {
+				let complementaries = [];
+				complementaries.push(this.removeComplementaryReferences(subSet));
+				if(subSet.attributes) complementaries = complementaries.concat(this.checkComplementaryShapes(subSet.attributes));
+				return this.createLogicOperation(attr, complementaries);
             }
 			else if(attr.$.name === "NOT" && attr.$.aggregation === "composite") {
-                return this.createLogicOperation(subSet, "Not");
+                return this.oldCreateLogicOperation(subSet, "Not");
             }
             //Es una expresión EachOf con cardinalidad
             else {
@@ -202,38 +224,109 @@ class ShExAttributes {
             + this.shexcar.cardinalityOf(attr)
             + ";"
     }
+	
+	checkComplementaryShapes(satrs) {
+		let complementaries = [];
+		for(let i = 0; i < satrs.length; i++) {
+			if(satrs[i].$.name === "OneOf") {
+				this.lop = this.getOneOf();	
+				complementaries = complementaries.concat(this.recursiveComplementary(satrs[i]));
+			}
+			else if(satrs[i].$.name === "OR") {
+				this.lop = this.getOr();
+				complementaries = complementaries.concat(this.recursiveComplementary(satrs[i]));				
+			}
+			else if(satrs[i].$.name === "AND") {
+				this.lop = this.getAnd();
+				complementaries = complementaries.concat(this.recursiveComplementary(satrs[i]));				
+			}				
+						
+		}
+		return complementaries;
+	}
+	
+	recursiveComplementary(satr) {
+		let complementary = this.shm.getSubSet(satr.$.type);
+		let comps = [];
+		comps.push(this.removeComplementaryReferences(complementary));
+		if(complementary.attributes) {
+			let recursiveList = this.checkComplementaryShapes(complementary.attributes);
+			comps = comps.concat(recursiveList);
+		}
+		return comps;
+	}
+	
+	removeComplementaryReferences(subset) {
+		let newSubset = {attributes: [], gen: subset.gen, name: subset.name};
+		if(!subset.attributes) return newSubset;
+		for(let i = 0; i < subset.attributes.length; i++) {
+			if(subset.attributes[i].$.name !== "OneOf" && subset.attributes[i].$.name !== "AND"  && subset.attributes[i].$.name !== "OR" ) {
+				newSubset.attributes.push(subset.attributes[i]);
+			}						
+		}
+		return newSubset;
+	}
+	
+    createLogicOperation(attr, complementaries) {
+		if(this.lop === this.getOneOf()) {		
+			let conj = "\n (";
+			let card = this.shexcar.cardinalityOf(attr);
 
-    /**
-     * Crea un OneOf
-     * @param attr  Atributo XMI que referencia al componente OneOf
-     * @param subSet    Componente XMI que representa el OneOf
-     * @returns {string}    ShEx OneOf
+			for(let i = 0; i < complementaries.length; i++) {
+				this.processedSubSets.push(complementaries[i].name);
+				if(complementaries[i].attributes.length > 1) {
+					conj += "\n("
+				}
+				conj += this.attributesToShEx(complementaries[i].attributes, false).content;
+				if(complementaries[i].attributes.length > 1) {
+					conj += " );"
+				}
+				if(i < complementaries.length - 1) {
+					conj += " |"
+				}
+			}
+			conj += ") " + card + ";";
+
+			return conj;
+		}
+		else {
+			let conj = "";
+			let op = this.lop === this.getAnd() ? "AND " : "OR ";
+			conj += this.attributesToShEx(complementaries[0].attributes, false).content;
+			this.processedSubSets.push(complementaries[0].name);
+			for(let i = 1; i < complementaries.length; i++) {
+				this.processedSubSets.push(complementaries[i].name);
+			conj += " }\n" + op + "{";
+				conj += this.attributesToShEx(complementaries[i].attributes, false).content;
+			}
+			return conj;
+		}
+    }
+	
+	/**
+     * Crea una operación lógica, conjunción/disyunción de shapes
+     * @param subSet    Componente XMI que aúna las shapes
+     * @param lop   Operación lógica, AND/OR
+     * @returns {string}
      */
-    createOneOf(attr, subSet) {
+    oldCreateLogicOperation(subSet, lop) {
         let conj = "";
-        let card = this.shexcar.cardinalityOf(attr);
-        if(card !== "") {
-            conj = "\n (";
-        }
-        //Añadimos cada uno de los elementos de la clase subconjunto
-        //Separados por | como elementos del OneOf
-        for(let i = 0; i < subSet.attributes.length; i++) {
-            if(subSet.attributes[i].$.aggregation === "composite") {
-                conj += "\n("
+        if(subSet.attributes) {
+            //Primera Shape
+            conj += this.attributeToShEx(subSet.attributes[0]).content;
+			for(let i = 1; i < subSet.attributes.length; i++) {
+                if(subSet.attributes[i].$.name !== "Shape") {	//Atributos de la propia Shape (probablemente un AND de única shape)
+					conj += this.attributeToShEx(subSet.attributes[i]).content;
+				}   
             }
-            conj += this.attributeToShEx(subSet.attributes[i]).content;
-            if(subSet.attributes[i].$.aggregation === "composite") {
-                conj += " );"
-            }
-            if(i < subSet.attributes.length - 1) {
-                conj += " |"
+            //El resto son precedidas por la OPLog
+            for(let i = 1; i < subSet.attributes.length; i++) {
+				if(subSet.attributes[i].$.name === "Shape") {	//Otras Shapes del AND/OR
+					conj += " }\n" + lop + " {";
+					conj += this.attributeToShEx(subSet.attributes[i]).content;
+				}
             }
         }
-        //Se añaden paréntesis si posee cardinalidad
-        if(card !== "") {
-            conj += ") " + card + ";";
-        }
-
         return conj;
     }
 
@@ -298,32 +391,7 @@ class ShExAttributes {
         return conj;
     }
 
-    /**
-     * Crea una operación lógica, conjunción/disyunción de shapes
-     * @param subSet    Componente XMI que aúna las shapes
-     * @param lop   Operación lógica, AND/OR
-     * @returns {string}
-     */
-    createLogicOperation(subSet, lop) {
-        let conj = "";
-        if(subSet.attributes) {
-            //Primera Shape
-            conj += this.attributeToShEx(subSet.attributes[0]).content;
-			for(let i = 1; i < subSet.attributes.length; i++) {
-                if(subSet.attributes[i].$.name !== "Shape") {	//Atributos de la propia Shape (probablemente un AND de única shape)
-					conj += this.attributeToShEx(subSet.attributes[i]).content;
-				}   
-            }
-            //El resto son precedidas por la OPLog
-            for(let i = 1; i < subSet.attributes.length; i++) {
-				if(subSet.attributes[i].$.name === "Shape") {	//Otras Shapes del AND/OR
-					conj += " }\n" + lop + " {";
-					conj += this.attributeToShEx(subSet.attributes[i]).content;
-				}
-            }
-        }
-        return conj;
-    }
+
 
     /**
      * Crea una relación de herencia
@@ -366,6 +434,11 @@ class ShExAttributes {
                 return "\n\t" + inv + "a [" + IRIManager.getShexTerm(name) + "];";
         }
     }
+	
+	clear() {
+		this.lop = -1;
+		this.processedSubSets = [];
+	}
 
 }
 module.exports = ShExAttributes;

@@ -9,7 +9,7 @@ const unid = require("uniqid");
  */
 class XMIAttributes {
 
-    constructor (xmienum, xmitype, irim, xmicon, shm) {
+    constructor (xmienum, xmitype, irim, xmicon, shm, xmisub) {
         this.unid = unid;
         this.irim = irim;
         this.shm = shm;
@@ -20,7 +20,7 @@ class XMIAttributes {
 
         this.XMIAux = XMIAux;
         this.IRIManager = IRIManager;
-        this.xmisub = new XMIComposition(this.shm, this.irim, this.xmiasoc);
+        this.xmisub = xmisub;
         this.xmisub.xmiats = this;
 
         this.depth = 0;
@@ -108,10 +108,19 @@ class XMIAttributes {
      * @returns {*} Equivalente XMI
      */
     createOneOf(expr, className) {
-        let subClassName = this.xmisub.getComponentNumber();
-        let oneOfExpr = JSON.parse(JSON.stringify(expr));
-        oneOfExpr.type = "EachOf";
-        return this.createComponent("OneOf", subClassName, oneOfExpr, expr.min, expr.max);
+        let ats = "";
+		for(let i = 0; i < expr.expressions.length; i++) {
+				let componentName = this.xmisub.getComponentNumber();
+				let next;
+				let lopAsoc;
+				if(i < expr.expressions.length - 1) {
+					next = "_Blank" + (parseInt(componentName.replace("_Blank", "")) + 1);
+					lopAsoc = { lope: "OneOf", target: next};
+				}
+                ats += this.createComponent("Shape", componentName,
+                    expr.expressions[i], expr.min,expr.max, lopAsoc);
+        }
+        return ats;
     }
 
     /**
@@ -193,6 +202,10 @@ class XMIAttributes {
                 let list = [{reference: expr.valueExpr.values[0]}];
                 return this.createXMIGeneralization(list, expr.inverse, null, "a");
             }
+			else if (expr.valueExpr.values.length === 1 && !expr.valueExpr.values[0].type) {
+				return this.createXMIPrimAttribute(name, expr.valueExpr.values[0], expr.min, expr.max,
+                expr.valueExpr, id);
+			}
             return this.xmienum.createXMIEnumAttribute(name, expr.valueExpr.values, expr.min, expr.max, id, cn);
         }
         //Tipo de nodo (Literal, IRI...) -> Atributo con tal tipo
@@ -385,8 +398,8 @@ class XMIAttributes {
         return this.xmisub.getComponentNumber();
     }
 
-    createComponent(asocName, subClassName, expr, min, max) {
-        return this.xmisub.createComponent(asocName, subClassName, expr, min, max);
+    createComponent(asocName, subClassName, expr, min, max, lop) {
+        return this.xmisub.createComponent(asocName, subClassName, expr, min, max, lop);
     }
 
     /**

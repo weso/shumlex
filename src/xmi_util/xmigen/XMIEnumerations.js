@@ -12,6 +12,7 @@ class XMIEnumerations {
         this.irim = irim;
         this.xmicard = new XMICardinality();
         this.XMIAux = XMIAux;
+		this.count = 0;
     }
 
     /**
@@ -26,7 +27,7 @@ class XMIEnumerations {
      */
     createXMIEnumAttribute(name, values, min, max, id, clase) {
         let card = this.xmicard.createXMICardinality(min, max);
-        let nom = name + "-" + clase;
+        let nom = "Enum" + this.count++;
         let enumer = { id: this.unid(), name: nom, values: values};
         this.saveEnum(enumer);
         let atId = this.unid();
@@ -211,6 +212,7 @@ class XMIEnumerations {
      */
     clear() {
         this.enumerations = [];
+		this.count = 0;
     }
 
 }
