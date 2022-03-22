@@ -124,7 +124,11 @@ class UMLGen {
 		
 		$(".edgeTerminals span").attr("font-size", "12");	
 		
-		// Evento de ocultar todos los elementos y mostrar las relaciones vinculadas a un ID
+	}
+	
+	asignarEventos(id) {
+		let self = this;
+				// Evento de ocultar todos los elementos y mostrar las relaciones vinculadas a un ID
 		function resaltar(event) {
 			
 			let element = $( "#" + $.escapeSelector(event.data.idB) );
@@ -407,7 +411,6 @@ class UMLGen {
 				mouseActive = -1;
 			});
 		});
-		
 	}
 
     /**
