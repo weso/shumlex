@@ -1477,6 +1477,388 @@ class Xmirepository {
 <packagedElement xmi:type="uml:PrimitiveType" xmi:id="kz4b0mwo" name="rdf:type"/>
 </uml:Model>`;
 	}
+	
+	static getXMI26() {
+		return `<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML"
+ xmi:id="l1vyjxct" name="ShExGeneratedXMI">
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxd7" name="wd:#wikidata-human-gene">
+	<ownedAttribute xmi:id="l1vyjxdx" name="p:P31" visibility="public" type="l1vyjxd8" association="l1vyjxdy" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxdz" name="EachOf" visibility="public" type="l1vyjxe0" association="l1vyjxe1" aggregation="composite">
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxe2" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxe3" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxe4" name="p:P684" visibility="public" type="l1vyjxdc" association="l1vyjxe5" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxe6" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxe7" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxe8" name="p:P688" visibility="public" type="l1vyjxdd" association="l1vyjxe9" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxea" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxeb" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxec" name="p:P703" visibility="public" type="l1vyjxde" association="l1vyjxed" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxee" name="p:P1057" visibility="public" type="l1vyjxdf" association="l1vyjxef" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxeg" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxeh" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxei" name="p:P2888" visibility="public" type="l1vyjxej" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxek" name="p:P2548" visibility="public" type="l1vyjxdh" association="l1vyjxel" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxem" name="p:P351" visibility="public" type="l1vyjxdj" association="l1vyjxen" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxeo" name="p:P353" visibility="public" type="l1vyjxdl" association="l1vyjxep" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxeq" name="p:P354" visibility="public" type="l1vyjxdm" association="l1vyjxer" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxes" name="p:P594" visibility="public" type="l1vyjxdo" association="l1vyjxet" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxeu" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxev" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxew" name="p:P639" visibility="public" type="l1vyjxdp" association="l1vyjxex" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxey" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxez" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxf0" name="p:P704" visibility="public" type="l1vyjxdq" association="l1vyjxf1" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxf2" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxf3" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxf4" name="p:P593" visibility="public" type="l1vyjxdn" association="l1vyjxf5" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxf6" name="p:P352" visibility="public" type="l1vyjxdk" association="l1vyjxf7" >
+		<lowerValue xmi:type="uml:LiteralInteger" xmi:id="l1vyjxf8" />
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxf9" value="0"/></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxfb" name="Extra" visibility="public" type="l1vyjxfa" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxdy" memberEnd="l1vyjxdx l1vyjxfc">
+	<ownedEnd xmi:id="l1vyjxfc" visibility="public" type="l1vyjxd7" association="l1vyjxdy"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxe1" memberEnd="l1vyjxdz l1vyjxfd">
+	<ownedEnd xmi:id="l1vyjxfd" visibility="public" type="l1vyjxd7" association="l1vyjxe1"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxe5" memberEnd="l1vyjxe4 l1vyjxfe">
+	<ownedEnd xmi:id="l1vyjxfe" visibility="public" type="l1vyjxd7" association="l1vyjxe5"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxe9" memberEnd="l1vyjxe8 l1vyjxff">
+	<ownedEnd xmi:id="l1vyjxff" visibility="public" type="l1vyjxd7" association="l1vyjxe9"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxed" memberEnd="l1vyjxec l1vyjxfg">
+	<ownedEnd xmi:id="l1vyjxfg" visibility="public" type="l1vyjxd7" association="l1vyjxed"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxef" memberEnd="l1vyjxee l1vyjxfh">
+	<ownedEnd xmi:id="l1vyjxfh" visibility="public" type="l1vyjxd7" association="l1vyjxef"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxel" memberEnd="l1vyjxek l1vyjxfi">
+	<ownedEnd xmi:id="l1vyjxfi" visibility="public" type="l1vyjxd7" association="l1vyjxel"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxen" memberEnd="l1vyjxem l1vyjxfj">
+	<ownedEnd xmi:id="l1vyjxfj" visibility="public" type="l1vyjxd7" association="l1vyjxen"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxep" memberEnd="l1vyjxeo l1vyjxfk">
+	<ownedEnd xmi:id="l1vyjxfk" visibility="public" type="l1vyjxd7" association="l1vyjxep"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxer" memberEnd="l1vyjxeq l1vyjxfl">
+	<ownedEnd xmi:id="l1vyjxfl" visibility="public" type="l1vyjxd7" association="l1vyjxer"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxet" memberEnd="l1vyjxes l1vyjxfm">
+	<ownedEnd xmi:id="l1vyjxfm" visibility="public" type="l1vyjxd7" association="l1vyjxet"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxex" memberEnd="l1vyjxew l1vyjxfn">
+	<ownedEnd xmi:id="l1vyjxfn" visibility="public" type="l1vyjxd7" association="l1vyjxex"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxf1" memberEnd="l1vyjxf0 l1vyjxfo">
+	<ownedEnd xmi:id="l1vyjxfo" visibility="public" type="l1vyjxd7" association="l1vyjxf1"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxf5" memberEnd="l1vyjxf4 l1vyjxfp">
+	<ownedEnd xmi:id="l1vyjxfp" visibility="public" type="l1vyjxd7" association="l1vyjxf5"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxf7" memberEnd="l1vyjxf6 l1vyjxfq">
+	<ownedEnd xmi:id="l1vyjxfq" visibility="public" type="l1vyjxd7" association="l1vyjxf7"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxe0" name="_Blank1">
+	<ownedAttribute xmi:id="l1vyjxfr" name="p:P644" visibility="public" type="l1vyjxda" association="l1vyjxfs" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxft" name="p:P645" visibility="public" type="l1vyjxdb" association="l1vyjxfu" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxfs" memberEnd="l1vyjxfr l1vyjxfv">
+	<ownedEnd xmi:id="l1vyjxfv" visibility="public" type="l1vyjxe0" association="l1vyjxfs"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxfu" memberEnd="l1vyjxft l1vyjxfw">
+	<ownedEnd xmi:id="l1vyjxfw" visibility="public" type="l1vyjxe0" association="l1vyjxfu"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxd8" name="wd:#P31_instance_of_gene">
+	<ownedAttribute xmi:id="l1vyjxfx" name="p:statement/P31" visibility="public" type="l1vyjxdw" association="l1vyjxfy" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxg0" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxg1" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxg2" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxg3" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxfy" memberEnd="l1vyjxfx l1vyjxg4">
+	<ownedEnd xmi:id="l1vyjxg4" visibility="public" type="l1vyjxd8" association="l1vyjxfy"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxg1" memberEnd="l1vyjxg0 l1vyjxg5">
+	<ownedEnd xmi:id="l1vyjxg5" visibility="public" type="l1vyjxd8" association="l1vyjxg1"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxg3" memberEnd="l1vyjxg2 l1vyjxg6">
+	<ownedEnd xmi:id="l1vyjxg6" visibility="public" type="l1vyjxd8" association="l1vyjxg3"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxd9" name="wd:#P279_subclass_of_gene">
+	<ownedAttribute xmi:id="l1vyjxg7" name="p:statement/P279" visibility="public" type="l1vyjxdw" association="l1vyjxg8" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxga" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxgb" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxgc" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxgd" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxg8" memberEnd="l1vyjxg7 l1vyjxge">
+	<ownedEnd xmi:id="l1vyjxge" visibility="public" type="l1vyjxd9" association="l1vyjxg8"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgb" memberEnd="l1vyjxga l1vyjxgf">
+	<ownedEnd xmi:id="l1vyjxgf" visibility="public" type="l1vyjxd9" association="l1vyjxgb"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgd" memberEnd="l1vyjxgc l1vyjxgg">
+	<ownedEnd xmi:id="l1vyjxgg" visibility="public" type="l1vyjxd9" association="l1vyjxgd"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxda" name="wd:#P644_genomic_start">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxgi" name="p:statement/P644" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxgj" name="p:qualifier/P1057" visibility="public" type="l1vyjxgk" association="l1vyjxgl" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxgm" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxgn" name="p:qualifier/P659" visibility="public" type="l1vyjxgo" association="l1vyjxgp" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxgq" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxgr" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxgs" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgl" memberEnd="l1vyjxgj l1vyjxgt">
+	<ownedEnd xmi:id="l1vyjxgt" visibility="public" type="l1vyjxda" association="l1vyjxgl"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgp" memberEnd="l1vyjxgn l1vyjxgu">
+	<ownedEnd xmi:id="l1vyjxgu" visibility="public" type="l1vyjxda" association="l1vyjxgp"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgs" memberEnd="l1vyjxgr l1vyjxgv">
+	<ownedEnd xmi:id="l1vyjxgv" visibility="public" type="l1vyjxda" association="l1vyjxgs"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxgk" name="E109:humanChromosome"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxgo" name="E108:sequence_assembly"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdb" name="wd:#P645_genomic_end">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxgw" name="p:statement/P645" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxgx" name="p:qualifier/P1057" visibility="public" type="l1vyjxgk" association="l1vyjxgy" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxgz" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxh0" name="p:qualifier/P659" visibility="public" type="l1vyjxgo" association="l1vyjxh1" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxh2" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxh3" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxh4" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxgy" memberEnd="l1vyjxgx l1vyjxh5">
+	<ownedEnd xmi:id="l1vyjxh5" visibility="public" type="l1vyjxdb" association="l1vyjxgy"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxh1" memberEnd="l1vyjxh0 l1vyjxh6">
+	<ownedEnd xmi:id="l1vyjxh6" visibility="public" type="l1vyjxdb" association="l1vyjxh1"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxh4" memberEnd="l1vyjxh3 l1vyjxh7">
+	<ownedEnd xmi:id="l1vyjxh7" visibility="public" type="l1vyjxdb" association="l1vyjxh4"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdc" name="wd:#P684_ortholog">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxh9" name="p:statement/P684" visibility="public" type="l1vyjxh8" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxha" name="p:qualifier/P703" visibility="public" type="l1vyjxh8" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxhb" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdt" association="l1vyjxhc" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhc" memberEnd="l1vyjxhb l1vyjxhd">
+	<ownedEnd xmi:id="l1vyjxhd" visibility="public" type="l1vyjxdc" association="l1vyjxhc"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdd" name="wd:#P688_encodes">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxhe" name="p:statement/P688" visibility="public" type="l1vyjxh8" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxhf" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdv" association="l1vyjxhg" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhg" memberEnd="l1vyjxhf l1vyjxhh">
+	<ownedEnd xmi:id="l1vyjxhh" visibility="public" type="l1vyjxdd" association="l1vyjxhg"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxde" name="wd:#P703_found_in_taxon_human">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxhj" name="p:statement/P703" visibility="public" type="l1vyjxhi" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxhl" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxhm" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxhn" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxho" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhm" memberEnd="l1vyjxhl l1vyjxhp">
+	<ownedEnd xmi:id="l1vyjxhp" visibility="public" type="l1vyjxde" association="l1vyjxhm"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxho" memberEnd="l1vyjxhn l1vyjxhq">
+	<ownedEnd xmi:id="l1vyjxhq" visibility="public" type="l1vyjxde" association="l1vyjxho"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdf" name="wd:#P1057_chromosome">
+	<ownedAttribute xmi:id="l1vyjxhr" name="p:statement/P1057" visibility="public" type="l1vyjxgk" association="l1vyjxhs" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxht" name="p:qualifier/P659" visibility="public" type="l1vyjxgo" association="l1vyjxhu" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxhv" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxhw" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxhx" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhs" memberEnd="l1vyjxhr l1vyjxhy">
+	<ownedEnd xmi:id="l1vyjxhy" visibility="public" type="l1vyjxdf" association="l1vyjxhs"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhu" memberEnd="l1vyjxht l1vyjxhz">
+	<ownedEnd xmi:id="l1vyjxhz" visibility="public" type="l1vyjxdf" association="l1vyjxhu"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxhx" memberEnd="l1vyjxhw l1vyjxi0">
+	<ownedEnd xmi:id="l1vyjxi0" visibility="public" type="l1vyjxdf" association="l1vyjxhx"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdg" name="wd:#P2888_exact_match">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxi1" name="p:statement/P2888" visibility="public" type="l1vyjxh8" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxi3" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdu" association="l1vyjxi4" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxi5" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxi6" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxi4" memberEnd="l1vyjxi3 l1vyjxi7">
+	<ownedEnd xmi:id="l1vyjxi7" visibility="public" type="l1vyjxdg" association="l1vyjxi4"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxi6" memberEnd="l1vyjxi5 l1vyjxi8">
+	<ownedEnd xmi:id="l1vyjxi8" visibility="public" type="l1vyjxdg" association="l1vyjxi6"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdh" name="wd:#P2548_strand_orientation">
+	<ownedAttribute xmi:id="l1vyjxi9" name="p:statement/P2548" visibility="public" type="l1vyjxdi" association="l1vyjxia" ></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxib" name="p:qualifier/P659" visibility="public" type="l1vyjxgo" association="l1vyjxic" >
+		<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="l1vyjxid" value="*"/></ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxie" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxif" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxia" memberEnd="l1vyjxi9 l1vyjxig">
+	<ownedEnd xmi:id="l1vyjxig" visibility="public" type="l1vyjxdh" association="l1vyjxia"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxic" memberEnd="l1vyjxib l1vyjxih">
+	<ownedEnd xmi:id="l1vyjxih" visibility="public" type="l1vyjxdh" association="l1vyjxic"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxif" memberEnd="l1vyjxie l1vyjxii">
+	<ownedEnd xmi:id="l1vyjxii" visibility="public" type="l1vyjxdh" association="l1vyjxif"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdi" name="wd:#strand-orientation"/>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdj" name="wd:#P351_ncbi_gene_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxij" name="p:statement/P351" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxik" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxil" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxil" memberEnd="l1vyjxik l1vyjxim">
+	<ownedEnd xmi:id="l1vyjxim" visibility="public" type="l1vyjxdj" association="l1vyjxil"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdk" name="wd:#P352_uniprot_id_wor">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxin" name="p:statement/P352" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdl" name="wd:#P353_hgnc_gene_symbol">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxio" name="p:statement/P353" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxip" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxiq" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxiq" memberEnd="l1vyjxip l1vyjxir">
+	<ownedEnd xmi:id="l1vyjxir" visibility="public" type="l1vyjxdl" association="l1vyjxiq"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdm" name="wd:#P354_hgnc_gene_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxis" name="p:statement/P354" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxit" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxiu" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxiu" memberEnd="l1vyjxit l1vyjxiv">
+	<ownedEnd xmi:id="l1vyjxiv" visibility="public" type="l1vyjxdm" association="l1vyjxiu"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdn" name="wd:#P593_homologene_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxiw" name="p:statement/P593" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxix" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxiy" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxiy" memberEnd="l1vyjxix l1vyjxiz">
+	<ownedEnd xmi:id="l1vyjxiz" visibility="public" type="l1vyjxdn" association="l1vyjxiy"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdo" name="wd:#P594_ensembl_gene_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxj0" name="p:statement/P594" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxj1" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxj2" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxj2" memberEnd="l1vyjxj1 l1vyjxj3">
+	<ownedEnd xmi:id="l1vyjxj3" visibility="public" type="l1vyjxdo" association="l1vyjxj2"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdp" name="wd:#P639_refseq_rna_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxj4" name="p:statement/P639" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxj5" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxdr" association="l1vyjxj6" ></ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxj6" memberEnd="l1vyjxj5 l1vyjxj7">
+	<ownedEnd xmi:id="l1vyjxj7" visibility="public" type="l1vyjxdp" association="l1vyjxj6"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdq" name="wd:#P704_ensembl_transcript_id">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxj8" name="p:statement/P704" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:id="l1vyjxja" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxds" association="l1vyjxjb" ></ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxj9" name="prov:wasDerivedFrom" visibility="public" type="l1vyjxjd" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="l1vyjxjb" memberEnd="l1vyjxja l1vyjxje">
+	<ownedEnd xmi:id="l1vyjxje" visibility="public" type="l1vyjxdq" association="l1vyjxjb"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdr" name="wd:#ncbi-gene-reference">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjg" name="p:reference/P248" visibility="public" type="l1vyjxjf" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjh" name="p:reference/P351" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxji" name="p:reference/P813" visibility="public" type="l1vyjxjj" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxds" name="wd:#ensembl-gene-reference">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjl" name="p:reference/P248" visibility="public" type="l1vyjxjk" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjm" name="p:reference/P594" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdt" name="wd:#homologene-reference">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjo" name="p:reference/P248" visibility="public" type="l1vyjxjn" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjp" name="p:reference/P593" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdu" name="wd:#miriam_reference">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjr" name="p:reference/P248" visibility="public" type="l1vyjxjq" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjs" name="p:reference/P854" visibility="public" type="l1vyjxh8" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdv" name="wd:#uniprot-reference">
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxju" name="p:reference/P248" visibility="public" type="l1vyjxjt" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjv" name="p:reference/P352" visibility="public" type="l1vyjxgh" isUnique="true">
+	</ownedAttribute>
+	<ownedAttribute xmi:type="uml:Property" xmi:id="l1vyjxjw" name="p:reference/P813" visibility="public" type="l1vyjxjj" isUnique="true">
+	</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="l1vyjxdw" name="wd:#gene_types"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxd6" name="Prefixes">
+	<ownedLiteral xmi:id="l1vyjxcu" name="prefix E108: &lt;https://www.wikidata.org/wiki/Special:EntitySchemaText/E108#>"/>
+	<ownedLiteral xmi:id="l1vyjxcv" name="prefix E109: &lt;https://www.wikidata.org/wiki/Special:EntitySchemaText/E109#>"/>
+	<ownedLiteral xmi:id="l1vyjxcw" name="prefix wd: &lt;http://www.wikidata.org/entity/>"/>
+	<ownedLiteral xmi:id="l1vyjxcx" name="prefix wdt: &lt;http://www.wikidata.org/prop/direct/>"/>
+	<ownedLiteral xmi:id="l1vyjxcy" name="prefix p: &lt;http://www.wikidata.org/prop/>"/>
+	<ownedLiteral xmi:id="l1vyjxcz" name="prefix prov: &lt;http://www.w3.org/ns/prov#>"/>
+	<ownedLiteral xmi:id="l1vyjxd0" name="prefix pq: &lt;http://www.wikidata.org/prop/qualifier/>"/>
+	<ownedLiteral xmi:id="l1vyjxd1" name="prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>
+	<ownedLiteral xmi:id="l1vyjxd2" name="prefix prv: &lt;http://www.wikidata.org/prop/reference/value/>"/>
+	<ownedLiteral xmi:id="l1vyjxd3" name="prefix pr: &lt;http://www.wikidata.org/prop/reference/>"/>
+	<ownedLiteral xmi:id="l1vyjxd4" name="prefix ps: &lt;http://www.wikidata.org/prop/statement/>"/>
+	<ownedLiteral xmi:id="l1vyjxd5" name="base &lt;http://www.wikidata.org/entity/>"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l1vyjxej" name="Any"/>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxfa" name="Extra_wd:#wikidata-human-gene">
+	<ownedLiteral xmi:id="l1vyjxjx" name="p:P31"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxhi" name="p:statement/P703">
+	<ownedLiteral xmi:id="l1vyjxjy" name="wd:Q15978631"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxjf" name="p:reference/P248">
+	<ownedLiteral xmi:id="l1vyjxjz" name="wd:Q20641742"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxjk" name="p:reference/P248">
+	<ownedLiteral xmi:id="l1vyjxk0" name="wd:Q30227110"/>
+	<ownedLiteral xmi:id="l1vyjxk1" name="wd:Q46401024"/>
+	<ownedLiteral xmi:id="l1vyjxk2" name="wd:Q57339524"/>
+	<ownedLiteral xmi:id="l1vyjxk3" name="wd:Q63170780"/>
+	<ownedLiteral xmi:id="l1vyjxk4" name="wd:Q67600000"/>
+	<ownedLiteral xmi:id="l1vyjxk5" name="wd:Q71033229"/>
+	<ownedLiteral xmi:id="l1vyjxk6" name="wd:Q83867711"/>
+	<ownedLiteral xmi:id="l1vyjxk7" name="wd:Q110249889"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxjn" name="p:reference/P248">
+	<ownedLiteral xmi:id="l1vyjxk8" name="wd:Q20976936"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxjq" name="p:reference/P248">
+	<ownedLiteral xmi:id="l1vyjxk9" name="wd:Q16335166"/>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="l1vyjxjt" name="p:reference/P248">
+	<ownedLiteral xmi:id="l1vyjxka" name="wd:Q905695"/>
+</packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l1vyjxjd" name="wd:#ncbi-gene-reference"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l1vyjxjj" name="xsd:dateTime"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l1vyjxgh" name="Literal"/>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="l1vyjxh8" name="IRI"/>
+</uml:Model>`;
+	}
 
 }
 module.exports = Xmirepository;

@@ -108,7 +108,8 @@ class UMLGen {
 		$( "#" + id + " div span.edgeLabel" ).each(function( index ) {
 			let contenido = $(this).text();
 			$(this).text(contenido.replace(/-\/\//g, "{")
-								  .replace(/\/\/-/g, "}"));
+								  .replace(/\/\/-/g, "}")
+								  .replace(/_hash_/g, "#"));
 		});
 		
 		
@@ -790,7 +791,7 @@ class UMLGen {
     }
 	
 	adaptPref(prefix) {
-		return prefix.replace(/[\:<>\^\-\/\.]/g, "_");
+		return prefix.replace(/[\:<>\^\-\/\.]/g, "_").replace(/#/g, "_hash_");
 	}
 	
 	saveTerm(term) {

@@ -608,6 +608,188 @@ class Enum0 {
 }
 `;
 	}
+	
+		static getMUML19() {
+        return `classDiagram
+class Prefixes {
+<<enumeration>>
+prefix \\E108: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108#>
+prefix \\E109: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E109#>
+prefix \\wd: <http://www.wikidata.org/entity/>
+prefix \\wdt: <http://www.wikidata.org/prop/direct/>
+prefix \\p: <http://www.wikidata.org/prop/>
+prefix \\prov: <http://www.w3.org/ns/prov#>
+prefix \\pq: <http://www.wikidata.org/prop/qualifier/>
+prefix \\xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix \\prv: <http://www.wikidata.org/prop/reference/value/>
+prefix \\pr: <http://www.wikidata.org/prop/reference/>
+prefix \\ps: <http://www.wikidata.org/prop/statement/>
+base <http://www.wikidata.org/entity/>
+}
+class wd__hash_wikidata_human_gene {
+p_P2888 "Any\\" 
+Extra "Extra_wd__hash_wikidata_human_gene\\" 
+}
+wd__hash_wikidata_human_gene -->  wd__hash_P31_instance_of_gene : p_P31
+wd__hash_wikidata_human_gene *-- " *" _Blank1 : EachOf
+wd__hash_wikidata_human_gene --> " *" wd__hash_P684_ortholog : p_P684
+wd__hash_wikidata_human_gene --> " *" wd__hash_P688_encodes : p_P688
+wd__hash_wikidata_human_gene -->  wd__hash_P703_found_in_taxon_human : p_P703
+wd__hash_wikidata_human_gene --> " *" wd__hash_P1057_chromosome : p_P1057
+wd__hash_wikidata_human_gene -->  wd__hash_P2548_strand_orientation : p_P2548
+wd__hash_wikidata_human_gene -->  wd__hash_P351_ncbi_gene_id : p_P351
+wd__hash_wikidata_human_gene -->  wd__hash_P353_hgnc_gene_symbol : p_P353
+wd__hash_wikidata_human_gene -->  wd__hash_P354_hgnc_gene_id : p_P354
+wd__hash_wikidata_human_gene --> " *" wd__hash_P594_ensembl_gene_id : p_P594
+wd__hash_wikidata_human_gene --> " *" wd__hash_P639_refseq_rna_id : p_P639
+wd__hash_wikidata_human_gene --> " *" wd__hash_P704_ensembl_transcript_id : p_P704
+wd__hash_wikidata_human_gene -->  wd__hash_P593_homologene_id : p_P593
+wd__hash_wikidata_human_gene --> " -//0, 0//-" wd__hash_P352_uniprot_id_wor : p_P352
+class _Blank1
+_Blank1 -->  wd__hash_P644_genomic_start : p_P644
+_Blank1 -->  wd__hash_P645_genomic_end : p_P645
+class wd__hash_P31_instance_of_gene
+wd__hash_P31_instance_of_gene -->  wd__hash_gene_types : p_statement_P31
+wd__hash_P31_instance_of_gene -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom
+wd__hash_P31_instance_of_gene -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom0
+class wd__hash_P279_subclass_of_gene
+wd__hash_P279_subclass_of_gene -->  wd__hash_gene_types : p_statement_P279
+wd__hash_P279_subclass_of_gene -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom1
+wd__hash_P279_subclass_of_gene -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom2
+class wd__hash_P644_genomic_start {
+p_statement_P644 "Literal\\" 
+}
+wd__hash_P644_genomic_start --> " +" E109_humanChromosome : p_qualifier_P1057
+wd__hash_P644_genomic_start --> " +" E108_sequence_assembly : p_qualifier_P659
+wd__hash_P644_genomic_start -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom3
+class E109_humanChromosome
+class E108_sequence_assembly
+class wd__hash_P645_genomic_end {
+p_statement_P645 "Literal\\" 
+}
+wd__hash_P645_genomic_end --> " +" E109_humanChromosome : p_qualifier_P10574
+wd__hash_P645_genomic_end --> " +" E108_sequence_assembly : p_qualifier_P6595
+wd__hash_P645_genomic_end -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom6
+class wd__hash_P684_ortholog {
+p_statement_P684 "IRI\\" 
+p_qualifier_P703 "IRI\\" 
+}
+wd__hash_P684_ortholog -->  wd__hash_homologene_reference : prov_wasDerivedFrom7
+class wd__hash_P688_encodes {
+p_statement_P688 "IRI\\" 
+}
+wd__hash_P688_encodes -->  wd__hash_uniprot_reference : prov_wasDerivedFrom8
+class wd__hash_P703_found_in_taxon_human {
+p_statement_P703 "p_statement_P703\\" 
+}
+wd__hash_P703_found_in_taxon_human -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom9
+wd__hash_P703_found_in_taxon_human -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom10
+class wd__hash_P1057_chromosome
+wd__hash_P1057_chromosome -->  E109_humanChromosome : p_statement_P1057
+wd__hash_P1057_chromosome --> " +" E108_sequence_assembly : p_qualifier_P65911
+wd__hash_P1057_chromosome -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom12
+class wd__hash_P2888_exact_match {
+p_statement_P2888 "IRI\\" 
+}
+wd__hash_P2888_exact_match -->  wd__hash_miriam_reference : prov_wasDerivedFrom13
+wd__hash_P2888_exact_match -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom14
+class wd__hash_P2548_strand_orientation
+wd__hash_P2548_strand_orientation -->  wd__hash_strand_orientation : p_statement_P2548
+wd__hash_P2548_strand_orientation --> " +" E108_sequence_assembly : p_qualifier_P65915
+wd__hash_P2548_strand_orientation -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom16
+class wd__hash_strand_orientation
+class wd__hash_P351_ncbi_gene_id {
+p_statement_P351 "Literal\\" 
+}
+wd__hash_P351_ncbi_gene_id -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom17
+class wd__hash_P352_uniprot_id_wor {
+p_statement_P352 "Literal\\" 
+}
+class wd__hash_P353_hgnc_gene_symbol {
+p_statement_P353 "Literal\\" 
+}
+wd__hash_P353_hgnc_gene_symbol -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom18
+class wd__hash_P354_hgnc_gene_id {
+p_statement_P354 "Literal\\" 
+}
+wd__hash_P354_hgnc_gene_id -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom19
+class wd__hash_P593_homologene_id {
+p_statement_P593 "Literal\\" 
+}
+wd__hash_P593_homologene_id -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom20
+class wd__hash_P594_ensembl_gene_id {
+p_statement_P594 "Literal\\" 
+}
+wd__hash_P594_ensembl_gene_id -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom21
+class wd__hash_P639_refseq_rna_id {
+p_statement_P639 "Literal\\" 
+}
+wd__hash_P639_refseq_rna_id -->  wd__hash_ncbi_gene_reference : prov_wasDerivedFrom22
+class wd__hash_P704_ensembl_transcript_id {
+p_statement_P704 "Literal\\" 
+prov_wasDerivedFrom "wd__hash_ncbi_gene_reference\\" 
+}
+wd__hash_P704_ensembl_transcript_id -->  wd__hash_ensembl_gene_reference : prov_wasDerivedFrom23
+class wd__hash_ncbi_gene_reference {
+p_reference_P248 "p_reference_P248\\" 
+p_reference_P351 "Literal\\" 
+p_reference_P813 "xsd_dateTime\\" 
+}
+class wd__hash_ensembl_gene_reference {
+p_reference_P248 "p_reference_P248\\" 
+p_reference_P594 "Literal\\" 
+}
+class wd__hash_homologene_reference {
+p_reference_P248 "p_reference_P248\\" 
+p_reference_P593 "Literal\\" 
+}
+class wd__hash_miriam_reference {
+p_reference_P248 "p_reference_P248\\" 
+p_reference_P854 "IRI\\" 
+}
+class wd__hash_uniprot_reference {
+p_reference_P248 "p_reference_P248\\" 
+p_reference_P352 "Literal\\" 
+p_reference_P813 "xsd_dateTime\\" 
+}
+class wd__hash_gene_types
+class Extra_wd__hash_wikidata_human_gene {
+<<enumeration>>
+p:P31
+}
+class p_statement_P703 {
+<<enumeration>>
+wd:Q15978631
+}
+class p_reference_P248 {
+<<enumeration>>
+wd:Q20641742
+}
+class p_reference_P248 {
+<<enumeration>>
+wd:Q30227110
+wd:Q46401024
+wd:Q57339524
+wd:Q63170780
+wd:Q67600000
+wd:Q71033229
+wd:Q83867711
+wd:Q110249889
+}
+class p_reference_P248 {
+<<enumeration>>
+wd:Q20976936
+}
+class p_reference_P248 {
+<<enumeration>>
+wd:Q16335166
+}
+class p_reference_P248 {
+<<enumeration>>
+wd:Q905695
+}
+`;
+	}
 
 }
 module.exports = MUMLRepository;

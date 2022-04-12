@@ -138,6 +138,13 @@ describe('Pruebas de la representación de UML mediante Mermaid', () => {
         expect(muml)
             .toEqual(MermaidRep.getMUML18());
     });
+	
+	test('EntitySchema 37', () => {
+		um.clear();
+        let muml = um.generarCodigoMUML(XMIRep.getXMI26());
+        expect(muml)
+            .toEqual(MermaidRep.getMUML19());
+    });
 
 
 });
