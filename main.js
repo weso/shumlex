@@ -1,31 +1,32 @@
-const shexparser = require('./src/shex_util/ShExParser.js');
-const xmiparser = require('./src/xmi_util/XMIParser.js');
-const UMLGen = require("./src/visual/UMLGen.js");
+const UMLGen = require("./src/UMLGen.js");
 let umlgen = new UMLGen();
+const shexParser = require("./src/ShExParser.js");
 
-function shExToXMI(text) {
-	shexparser.resetParser();
-    return shexparser.parseShExToXMI(text);
-}
-
-function XMIToShEx(text) {
-    return xmiparser.parseXMIToShEx(text);
-}
-
-function crearMUML(xmi) {
-	return umlgen.generarCodigoMUML(xmi);
-}
-
-function crearDiagramaUML(id, xmi, options) {
+function shexToUML(id, text, options) {
 	
+	let muml = "";
 	let ops = options;
 	if (!options) {
 		ops = {};
 	}
-			
-	let umlcr = crearMUML(xmi);
-	umlgen.crearSVG(id, umlcr, ops);
-}
+	
+	try {
+		muml = shexParser.parseShExToMUML(text);
+	} catch(ex) {
+		alert("An error has occurred when generating the diagram data: \n" + ex);
+	}
+		
+	umlgen.originalNames = shexParser.mg.originalNames;
+	umlgen.relationships = shexParser.mg.relationships;
+	umlgen.rpTerms = shexParser.mg.rpTerms;
+	
+	try {
+		umlgen.crearSVG(id, muml, ops);
+		
+	} catch(ex) {
+		alert("An error has occurred when generating the visualization: \n" + ex);
+	}
+	}
 
 function asignarEventos(id) {
 	umlgen.asignarEventos(id);
@@ -36,10 +37,7 @@ function base64SVG(idsvg) {
 }
 
 module.exports = {
-    shExToXMI,
-    XMIToShEx,
-	crearMUML,
-	crearDiagramaUML,
+	shexToUML,
 	base64SVG,
 	asignarEventos
 }
