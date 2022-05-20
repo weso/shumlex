@@ -1,0 +1,172 @@
+body {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+h1 {
+    color: black;
+    font-size: 2.714em;
+}
+
+.CodeMirror {
+    border: 0.071em solid #eee;
+    height: auto;
+}
+
+.header h1 {
+	text-align: center;
+    font-size: 1.786em;
+	margin: 1.071em;
+}
+
+.centerdiv {
+    display: flex;
+    justify-content: center;
+}
+.btn1 {
+	text-align: center;
+	vertical-align: middle;
+	margin: 1.5em;
+}
+
+.active {
+    background-color: #4CAF50; /* Add an active/current color */
+}
+
+.button {
+  background-color: #e7e7e7;
+  border: none;
+  color: black;
+  padding: 0.3em 0.571em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.button:hover {
+  background-color: darkgray;
+}
+
+.autocomplete {
+  position: absolute;
+  display: inline-block;
+  z-index: 2000;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+.hidden {
+	display: none;
+}
+
+.open-modal {
+  font-weight: bold;
+  padding: .75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2000;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.open-modal img {
+  width: 20px;
+}
+
+.modal { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.7);
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 0.35s ease-in;
+  z-index: 3000;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: white;
+  overflow: auto;
+  cursor: default;
+}
+
+.modal-dialog > * {
+  padding: 1rem;
+  z-index: 3000;
+}
+ 
+.modal-header,
+.modal-footer {
+  background: lightgray;
+}
+ 
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.modal-header .modal-close {
+  font-size: 1.5rem;
+}
+ 
+.modal p + p {
+  margin-top: 1rem;
+}
+
+.modal.is-visible {
+  visibility: visible;
+}
