@@ -4,8 +4,7 @@
   "description": "ShEx visualization through UML-like diagrams",
   "main": "main.js",
   "scripts": {
-    "build": "browserify public/main.js > public/index.js",
-    "test": "jest --coverage --collectCoverageFrom=src/** test/mermaid.test.js"
+    "build": "browserify public/main.js > public/index.js"
   },
   "bin": {},
   "repository": {
