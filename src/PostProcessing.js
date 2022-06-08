@@ -3,7 +3,7 @@ const uniqid = require("uniqid");
 const mermaid = require('../lib/mermaid/mermaid.min.js');
 const $ = require('jquery');
 
-class Eventos {
+class PostProcessing {
 
     constructor() {	
 		this.blankCount = 1;
@@ -408,4 +408,4 @@ class Eventos {
 	}	
 
 }
-module.exports = Eventos;
+module.exports = PostProcessing;
