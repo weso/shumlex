@@ -19,7 +19,7 @@ function shexToUML(id, text, options) {
 	}
 		
 	vis.originalNames = shexParser.mg.originalNames;
-	vis.relationships = shexParser.mg.relationships;
+	pps.relationships = shexParser.mg.relationships;
 	vis.rpTerms = shexParser.mg.rpTerms;
 	
 	try {
