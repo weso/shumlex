@@ -1,5 +1,7 @@
 const PostProcessing = require("./src/PostProcessing.js");
-let umlgen = new PostProcessing();
+let pps = new PostProcessing();
+const Visualization = require("./src/Visualization.js");
+let vis = new Visualization();
 const shexParser = require("./src/ShExParser.js");
 
 function shexToUML(id, text, options) {
@@ -16,12 +18,12 @@ function shexToUML(id, text, options) {
 		alert("An error has occurred when generating the diagram data: \n" + ex);
 	}
 		
-	umlgen.originalNames = shexParser.mg.originalNames;
-	umlgen.relationships = shexParser.mg.relationships;
-	umlgen.rpTerms = shexParser.mg.rpTerms;
+	vis.originalNames = shexParser.mg.originalNames;
+	vis.relationships = shexParser.mg.relationships;
+	vis.rpTerms = shexParser.mg.rpTerms;
 	
 	try {
-		umlgen.crearSVG(id, muml, ops);
+		vis.crearSVG(id, muml, ops);
 		
 	} catch(ex) {
 		alert("An error has occurred when generating the visualization: \n" + ex);
@@ -29,11 +31,11 @@ function shexToUML(id, text, options) {
 	}
 
 function asignarEventos(id) {
-	umlgen.asignarEventos(id);
+	pps.asignarEventos(id);
 }
 
 function base64SVG(idsvg) {
-	return umlgen.base64SVG(idsvg);
+	return pps.base64SVG(idsvg);
 }
 
 module.exports = {
