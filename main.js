@@ -1,5 +1,5 @@
-const UMLGen = require("./src/UMLGen.js");
-let umlgen = new UMLGen();
+const Eventos = require("./src/Eventos.js");
+let umlgen = new Eventos();
 const shexParser = require("./src/ShExParser.js");
 
 function shexToUML(id, text, options) {
